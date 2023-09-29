@@ -2,31 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
+    <loc>https://dannotes.github.io/bookofdaniel/</loc>
     <lastmod>2018-03-18T12:13:38+05:30</lastmod>
   </url><url>
-    <loc>/posts/</loc>
+    <loc>https://dannotes.github.io/bookofdaniel/posts/</loc>
     <lastmod>2018-03-18T12:13:38+05:30</lastmod>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>https://dannotes.github.io/bookofdaniel/tags/</loc>
     <lastmod>2018-03-18T12:13:38+05:30</lastmod>
   </url><url>
-    <loc>/tags/typography/</loc>
+    <loc>https://dannotes.github.io/bookofdaniel/tags/typography/</loc>
     <lastmod>2018-03-18T12:13:38+05:30</lastmod>
   </url><url>
-    <loc>/posts/post-5/</loc>
+    <loc>https://dannotes.github.io/bookofdaniel/posts/post-5/</loc>
     <lastmod>2018-03-18T12:13:38+05:30</lastmod>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>https://dannotes.github.io/bookofdaniel/categories/</loc>
     <lastmod>2017-04-09T10:58:08-04:00</lastmod>
   </url><url>
-    <loc>/posts/post-1/</loc>
+    <loc>https://dannotes.github.io/bookofdaniel/posts/post-1/</loc>
     <lastmod>2017-04-09T10:58:08-04:00</lastmod>
   </url><url>
-    <loc>/tags/scene/</loc>
+    <loc>https://dannotes.github.io/bookofdaniel/tags/scene/</loc>
     <lastmod>2017-04-09T10:58:08-04:00</lastmod>
   </url><url>
-    <loc>/categories/story/</loc>
+    <loc>https://dannotes.github.io/bookofdaniel/categories/story/</loc>
     <lastmod>2017-04-09T10:58:08-04:00</lastmod>
   </url>
 </urlset>

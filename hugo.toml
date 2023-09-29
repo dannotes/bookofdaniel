@@ -1,7 +1,7 @@
 baseURL = "https://bookofdaniel.in/"
 DefaultContentLanguage = "en" # Theme's display language, supports: en, fr, zh, zh-hant
 languageCode = "en-us"
-title = "🧑🏻‍💻 Daniel"
+title = "🧑🏻‍💻 Book Of Daniel"
 copyright = "2023"
 theme = "diary"
 
@@ -22,6 +22,6 @@ url = "/posts"
 name = "Archive"
 weight = 1 
 [[menu.main]]
-url = "/about"
+url = "/page/about"
 name = "About"
 weight = 4      

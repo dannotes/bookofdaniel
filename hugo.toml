@@ -1,6 +1,6 @@
-baseURL = "https://dannotes.github.io/bookofdaniel/"
+baseURL = "https://bookofdaniel.in/"
 DefaultContentLanguage = "en" # Theme's display language, supports: en, fr, zh, zh-hant
 languageCode = "en-us"
 title = "Book Of Daniel"
-copyright = "Daniel © 2023"
+copyright = "2023"
 theme = "diary"

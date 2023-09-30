@@ -6,7 +6,9 @@ copyright = "2023"
 theme = "diary"
 
 
+
 [params]
+    favicon = "https://bookofdaniel.in/static/images/favicon.png"
     enableReadingTime = true
 
 [[menu.main]]

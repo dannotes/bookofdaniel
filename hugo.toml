@@ -8,7 +8,7 @@ theme = "diary"
 
 
 [params]
-    favicon = "https://bookofdaniel.in/static/images/favicon.png"
+    favicon = "https://bookofdaniel.in/images/favicon.png"
     enableReadingTime = true
 
 [[menu.main]]

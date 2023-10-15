@@ -55,11 +55,11 @@ Email Ticket with mandatory fields | We created a [Zoho Task](https://help.zoho.
 ## Real-Time Monitoring & Scoreboard
 Zoho analytics with additional license offers Dashboard experience but I needed something more interesting like a real-time dashboard to proactively act on tickets which does not require additional license.
 
-So I came up with a solution using Grafana dashboard and project it in a monitor. For that we used zoho web hook, instead of polling ticket meta details from Zoho desk.
+So I came up with a solution which is powered by Grafana Dashboard and projected it on a monitor. For that, I used zoho web hook, instead of polling ticket meta details from Zoho desk.
 
 The Webhook listener is developed using a simple java script. The json payload recieved will be deserialized and stored in a relational database like SQL Server.
 
-Then we created a grafana dashboard to pull the details from the database. 
+Then I created a Grafana Dashboard to pull the details from the database. 
 
 ### Architecture Diagram
 <img title="Zoho Real-Time Grafana Dashbord" alt="Zoho Real-Time Dashboard Solution" src="/images/Zoho Desk Real Time Monitoring.png">

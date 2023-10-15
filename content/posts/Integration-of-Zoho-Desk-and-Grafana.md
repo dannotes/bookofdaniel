@@ -9,9 +9,9 @@ draft : false
 
 Have you ever been a part of a hardworking team that, despite their efforts, ends up shouldering blame? If yes, our situation in operations might resonate with you. On any given day, our Zoho Desk is inundated with approximately 300 tickets, each falling under various classifications and priorities. Many of these tickets are complex and time-consuming to resolve, causing them to carry over to the next day and become overdue.
 
-The challenge we face is the lack of visibility into critical metrics. Questions like the total number of tickets created, the various classifications in use, who is closing the most tickets, and what remains pending are difficult to answer definitively. Convincing others about the workload overload has proven to be quite a task.
+The challenge we face is the lack of visibility into critical metrics. Questions like the total number of tickets created, the various classifications in use, the resource who close the most tickets, and pending tickets are difficult to answer definitively. Convincing others about the work overload has proven to be quite a task.
 
-While Zoho Desk does offer predefined dashboards and customization options, our workflow relies heavily on custom fields. Additionally, the platform lacks real-time monitoring capabilities out of the box.
+While Zoho Desk does offer predefined dashboards and customization options, our workflow relies heavily on custom fields. Additionally, the platform lacks real-time monitoring capabilities.
 
 If you've followed along this far, you may find yourself in a similar scenario or be seeking solutions for building real-time monitoring functionality within Zoho Desk. Keep reading!
 
@@ -28,7 +28,7 @@ As a team, we set out to tackle these challenges head-on, with the ultimate goal
     To maintain SLA compliance, we required a solution which will escalate the tickets to a manager when there is breach in a predefined time threshold (e.g., x minutes/hours).
 
 **4. Email Tickets with Mandatory Fields:**
-    Zoho Desk offers a convenient feature that allows users to raise tickets via email. However, this feature creates tickets without mandatory fields, such as client or environment name. 
+    Zoho Desk offers a convenient feature that allows users to raise tickets via email. However, this feature creates tickets without mandatory fields, such as client or environment name. This calls for communicating the team over and over again resulting in time consumption.
 
 **5. Real-Time Monitoring & Scoreboard:**
     The absence of a real-time dashboard has caused inefficiencies in tracking productivity.
@@ -43,19 +43,19 @@ As a team, we set out to tackle these challenges head-on, with the ultimate goal
 
 # Solutions 
 
-I have slept with this challenges for a day and explored the Zoho documentation along with some Google search. it look like we can solve some of these issues using zoho's features, while others might require custom development.
+I have slept on these challenges for a day and explored the Zoho documentation along with some Google search. It seemed like I could solve some of these issues using zoho's features, while others might require development.
 
 | Challenge     |   Solution    |
 | :---------    | :--------     |
-| Large Team Management | Proposed to split the team into multiple pod or pool. So that it can be managed with a senior / lead with minimal members and work can be monitored efficiently. <br> Pool segregation will be based on the client, X number client for pool 1, Y no.of client to pool 2, so on. <br> Additional Zoho Desk account with standard license is required per pool. |
-| Ticket Assignment Automation | Since the team is arranged into multiple pool based on the client hierarchy, whenever a ticket raise for the specific client it should be allocated directly to the respecitve pool. Then the pool lead / member can assign and work accordingly. <br> To Automate this process Zoho Desk provide a feature called [Direct Assignment](https://help.zoho.com/portal/en/kb/desk/automation/assignment-rules-notification/articles/creating-ticket-assignment-rules). Create an assignment rule with client name and select respective pool account. Viola ticket will be assigned automatically on creation. |
-| Timely Escalation |  Zoho provided a feature called [SLAs](https://help.zoho.com/portal/en/kb/desk/automation/escalate-sla/articles/creating-and-using-slas) escalation, if an escalation is happened with in x minutes it will be escalated to 2 levels. We have adopted that so breached ticket will be esclated to respective pool lead and manager with in 30 mins. | 
-Email Ticket with mandatory fields | We have created a [Zoho Task](https://help.zoho.com/portal/en/kb/desk/activities/articles/working-with-tasks-zoho-desk#Creating_Tasks) to close email ticket with an automated reply to fill mandatory fields. So tickets raised through email will be closed automatically if mandatory fields are not available. |
+| Large Team Management | Proposed to split the team into multiple pods or pools. So that it can be managed by a senior / lead with minimal members and work can be monitored efficiently. <br> Pool segregation will be based on the number of clients.|
+| Ticket Assignment Automation | Since the team is arranged into multiple pools, based on the client hierarchy, whenever a ticket is raised for the specific client it should be allocated directly to the respecitve pool. Then the pool lead / member can assign and work accordingly. <br> To Automate this process Zoho Desk provides a feature called [Direct Assignment](https://help.zoho.com/portal/en/kb/desk/automation/assignment-rules-notification/articles/creating-ticket-assignment-rules). Create an assignment rule with client name and select respective pool account. Viola! The ticket will be assigned automatically on creation. |
+| Timely Escalation |  Zoho provides a feature called [SLAs](https://help.zoho.com/portal/en/kb/desk/automation/escalate-sla/articles/creating-and-using-slas) escalation. If an escalation occurs within x minutes it will be escalated to 2 levels. We chose to adopt it, so that the breached ticket will be esclated to the respective lead / manager of the pool within 30 mins. | 
+Email Ticket with mandatory fields | We created a [Zoho Task](https://help.zoho.com/portal/en/kb/desk/activities/articles/working-with-tasks-zoho-desk#Creating_Tasks) to close the email ticket with an automated reply to fill the mandatory fields. So the tickets in which the mandatory fields are not filled will be closed automatically. |
 
 ## Real-Time Monitoring & Scoreboard
-Zoho analytics with additional license offers dashboard experience but we need something more interesting like a real-time dashboard to proactively act on tickets without additional license.
+Zoho analytics with additional license offers Dashboard experience but I needed something more interesting like a real-time dashboard to proactively act on tickets which does not require additional license.
 
-So we came up with a solution using Grafana dashbaord and project it in a monitor. For that we used zoho web hook, instead of polling ticket meta details from Zoho desk.
+So I came up with a solution using Grafana dashboard and project it in a monitor. For that we used zoho web hook, instead of polling ticket meta details from Zoho desk.
 
 The Webhook listener is developed using a simple java script. The json payload recieved will be deserialized and stored in a relational database like SQL Server.
 

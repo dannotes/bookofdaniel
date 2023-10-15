@@ -2,31 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://bookofdaniel.in/posts/</loc>
-    <lastmod>2018-03-18T12:13:38+05:30</lastmod>
-  </url><url>
-    <loc>https://bookofdaniel.in/tags/</loc>
-    <lastmod>2018-03-18T12:13:38+05:30</lastmod>
-  </url><url>
-    <loc>https://bookofdaniel.in/tags/typography/</loc>
-    <lastmod>2018-03-18T12:13:38+05:30</lastmod>
-  </url><url>
-    <loc>https://bookofdaniel.in/posts/post-5/</loc>
-    <lastmod>2018-03-18T12:13:38+05:30</lastmod>
-  </url><url>
-    <loc>https://bookofdaniel.in/</loc>
-    <lastmod>2018-03-18T12:13:38+05:30</lastmod>
+    <loc>https://bookofdaniel.in/categories/case-study/</loc>
+    <lastmod>2023-10-02T17:40:05+05:30</lastmod>
   </url><url>
     <loc>https://bookofdaniel.in/categories/</loc>
-    <lastmod>2017-04-09T10:58:08-04:00</lastmod>
+    <lastmod>2023-10-02T17:40:05+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/posts/post-1/</loc>
-    <lastmod>2017-04-09T10:58:08-04:00</lastmod>
+    <loc>https://bookofdaniel.in/tags/grafana/</loc>
+    <lastmod>2023-10-02T17:40:05+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/tags/scene/</loc>
-    <lastmod>2017-04-09T10:58:08-04:00</lastmod>
+    <loc>https://bookofdaniel.in/tags/java-script/</loc>
+    <lastmod>2023-10-02T17:40:05+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/categories/story/</loc>
-    <lastmod>2017-04-09T10:58:08-04:00</lastmod>
+    <loc>https://bookofdaniel.in/posts/</loc>
+    <lastmod>2023-10-02T17:40:05+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/posts/integration-of-zoho-desk-and-grafana/</loc>
+    <lastmod>2023-10-02T17:40:05+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/tags/sql-server/</loc>
+    <lastmod>2023-10-02T17:40:05+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/tags/</loc>
+    <lastmod>2023-10-02T17:40:05+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/tags/team-building/</loc>
+    <lastmod>2023-10-02T17:40:05+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/tags/zoho/</loc>
+    <lastmod>2023-10-02T17:40:05+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/</loc>
+    <lastmod>2023-10-02T17:40:05+05:30</lastmod>
   </url>
 </urlset>

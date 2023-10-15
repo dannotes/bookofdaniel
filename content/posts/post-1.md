@@ -6,8 +6,8 @@ images: ["/images/Pope-Edouard-de-Beaumont-1844s.jpg"]
 tags: ["scene"]
 categories: "Story"
 title: "Chapter I: The Grand Hall"
-draft: false
----
+draft: true
+--- 
 
 Hello
 

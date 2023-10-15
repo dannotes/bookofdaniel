@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>🧑🏻‍💻 Book Of Daniel</title>
-    <link>http://localhost:1313/</link>
+    <link>https://bookofdaniel.in/</link>
     <description>Recent content on 🧑🏻‍💻 Book Of Daniel</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2023</copyright>
     <lastBuildDate>Mon, 02 Oct 2023 17:40:05 +0530</lastBuildDate>
     
-        <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://bookofdaniel.in/index.xml" rel="self" type="application/rss+xml" />
     
     
     
         <item>
         <title>Push your team to be Good to Great: Integration of Zoho Desk and Grafana</title>
-        <link>http://localhost:1313/posts/integration-of-zoho-desk-and-grafana/</link>
+        <link>https://bookofdaniel.in/posts/integration-of-zoho-desk-and-grafana/</link>
         <pubDate>Mon, 02 Oct 2023 17:40:05 +0530</pubDate>
         
-        <guid>http://localhost:1313/posts/integration-of-zoho-desk-and-grafana/</guid>
-        <description>🧑🏻‍💻 Book Of Daniel http://localhost:1313/posts/integration-of-zoho-desk-and-grafana/ -&lt;p&gt;Have you ever been a part of a hardworking team that, despite their efforts, ends up shouldering blame? If yes, our situation in operations might resonate with you. On any given day, our Zoho Desk is inundated with approximately 300 tickets, each falling under various classifications and priorities. Many of these tickets are complex and time-consuming to resolve, causing them to carry over to the next day and become overdue.&lt;/p&gt;
+        <guid>https://bookofdaniel.in/posts/integration-of-zoho-desk-and-grafana/</guid>
+        <description>🧑🏻‍💻 Book Of Daniel https://bookofdaniel.in/posts/integration-of-zoho-desk-and-grafana/ -&lt;p&gt;Have you ever been a part of a hardworking team that, despite their efforts, ends up shouldering blame? If yes, our situation in operations might resonate with you. On any given day, our Zoho Desk is inundated with approximately 300 tickets, each falling under various classifications and priorities. Many of these tickets are complex and time-consuming to resolve, causing them to carry over to the next day and become overdue.&lt;/p&gt;
 &lt;p&gt;The challenge we face is the lack of visibility into critical metrics. Questions like the total number of tickets created, the various classifications in use, the resource who close the most tickets, and pending tickets are difficult to answer definitively. Convincing others about the work overload has proven to be quite a task.&lt;/p&gt;
 &lt;p&gt;While Zoho Desk does offer predefined dashboards and customization options, our workflow relies heavily on custom fields. Additionally, the platform lacks real-time monitoring capabilities.&lt;/p&gt;
 &lt;p&gt;If you&amp;rsquo;ve followed along this far, you may find yourself in a similar scenario or be seeking solutions for building real-time monitoring functionality within Zoho Desk. Keep reading!&lt;/p&gt;
@@ -72,92 +72,13 @@ The absence of a real-time dashboard has caused inefficiencies in tracking produ
 &lt;p&gt;The Webhook listener is developed using a simple java script. The json payload recieved will be deserialized and stored in a relational database like SQL Server.&lt;/p&gt;
 &lt;p&gt;Then we created a grafana dashboard to pull the details from the database.&lt;/p&gt;
 &lt;h3 id=&#34;architecture-diagram&#34;&gt;Architecture Diagram&lt;/h3&gt;
-&lt;img title=&#34;Zoho Real-Time Grafana Dashbord&#34; alt=&#34;Zoho Real-Time Dashboard Solution&#34; src=&#34;http://localhost:1313/images/Zoho Desk Real Time Monitoring.png&#34;&gt;
+&lt;img title=&#34;Zoho Real-Time Grafana Dashbord&#34; alt=&#34;Zoho Real-Time Dashboard Solution&#34; src=&#34;https://bookofdaniel.in/images/Zoho Desk Real Time Monitoring.png&#34;&gt;
 &lt;h3 id=&#34;final-results&#34;&gt;Final Results&lt;/h3&gt;
-&lt;img title=&#34;Zoho Real-Time Grafana Dashbord&#34; alt=&#34;Zoho Real-Time Dashboard Solution on TV&#34; src=&#34;http://localhost:1313/images/Zoho Desk Real Time Monitoring on TV.jpg&#34;&gt;
+&lt;img title=&#34;Zoho Real-Time Grafana Dashbord&#34; alt=&#34;Zoho Real-Time Dashboard Solution on TV&#34; src=&#34;https://bookofdaniel.in/images/Zoho Desk Real Time Monitoring on TV.jpg&#34;&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;A great team doesn’t mean that they had the smartest people. What made those teams great is that everyone trusted one another. It can be a powerful thing when that magic dynamic exists.&lt;/strong&gt; - The Phoenix Project&lt;/p&gt;
 &lt;/blockquote&gt;
-- http://localhost:1313/posts/integration-of-zoho-desk-and-grafana/ - 2023</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Chapter I: The Grand Hall</title>
-        <link>http://localhost:1313/posts/post-1/</link>
-        <pubDate>Sun, 09 Apr 2017 10:58:08 -0400</pubDate>
-        
-        <guid>http://localhost:1313/posts/post-1/</guid>
-        <description>🧑🏻‍💻 Book Of Daniel http://localhost:1313/posts/post-1/ -&lt;p&gt;Hello&lt;/p&gt;
-&lt;p&gt;Meta data updated&lt;/p&gt;
-&lt;p&gt;Three hundred and forty-eight years, six months, and nineteen days ago
-to-day, the Parisians awoke to the sound of all the bells in the triple
-circuit of the city, the university, and the town ringing a full peal.&lt;/p&gt;
-&lt;p&gt;The sixth of January, 1482, is not, however, a day of which history has
-preserved the memory. There was nothing notable in the event which thus
-set the bells and the bourgeois of Paris in a ferment from early morning.
-It was neither an assault by the Picards nor the Burgundians, nor a hunt
-led along in procession, nor a revolt of scholars in the town of Laas, nor
-an entry of “our much dread lord, monsieur the king,” nor even a pretty
-hanging of male and female thieves by the courts of Paris. Neither was it
-the arrival, so frequent in the fifteenth century, of some plumed and
-bedizened embassy. It was barely two days since the last cavalcade of that
-nature, that of the Flemish ambassadors charged with concluding the
-marriage between the dauphin and Marguerite of Flanders, had made its
-entry into Paris, to the great annoyance of M. le Cardinal de Bourbon,
-who, for the sake of pleasing the king, had been obliged to assume an
-amiable mien towards this whole rustic rabble of Flemish burgomasters, and
-to regale them at his Hôtel de Bourbon, with a very “pretty morality,
-allegorical satire, and farce,” while a driving rain drenched the
-magnificent tapestries at his door.&lt;/p&gt;
-&lt;p&gt;What put the “whole population of Paris in commotion,” as Jehan de Troyes
-expresses it, on the sixth of January, was the double solemnity, united
-from time immemorial, of the Epiphany and the Feast of Fools.&lt;/p&gt;
-&lt;p&gt;On that day, there was to be a bonfire on the Place de Grève, a maypole at
-the Chapelle de Braque, and a mystery at the Palais de Justice. It had
-been cried, to the sound of the trumpet, the preceding evening at all the
-cross roads, by the provost’s men, clad in handsome, short, sleeveless
-coats of violet camelot, with large white crosses upon their breasts.&lt;/p&gt;
-&lt;p&gt;So the crowd of citizens, male and female, having closed their houses and
-shops, thronged from every direction, at early morn, towards some one of
-the three spots designated.&lt;/p&gt;
-&lt;p&gt;Each had made his choice; one, the bonfire; another, the maypole; another,
-the mystery play. It must be stated, in honor of the good sense of the
-loungers of Paris, that the greater part of this crowd directed their
-steps towards the bonfire, which was quite in season, or towards the
-mystery play, which was to be presented in the grand hall of the Palais de
-Justice (the courts of law), which was well roofed and walled; and that
-the curious left the poor, scantily flowered maypole to shiver all alone
-beneath the sky of January, in the cemetery of the Chapel of Braque.&lt;/p&gt;
-&lt;p&gt;The populace thronged the avenues of the law courts in particular, because
-they knew that the Flemish ambassadors, who had arrived two days
-previously, intended to be present at the representation of the mystery,
-and at the election of the Pope of the Fools, which was also to take place
-in the grand hall.&lt;/p&gt;
-&lt;p&gt;It was no easy matter on that day, to force one’s way into that grand
-hall, although it was then reputed to be the largest covered enclosure in
-the world (it is true that Sauval had not yet measured the grand hall of
-the Château of Montargis). The palace place, encumbered with people,
-offered to the curious gazers at the windows the aspect of a sea; into
-which five or six streets, like so many mouths of rivers, discharged every
-moment fresh floods of heads. The waves of this crowd, augmented
-incessantly, dashed against the angles of the houses which projected here
-and there, like so many promontories, into the irregular basin of the
-place. In the centre of the lofty Gothic* façade of the palace, the grand
-staircase, incessantly ascended and descended by a double current, which,
-after parting on the intermediate landing-place, flowed in broad waves
-along its lateral slopes,—the grand staircase, I say, trickled
-incessantly into the place, like a cascade into a lake. The cries, the
-laughter, the trampling of those thousands of feet, produced a great noise
-and a great clamor. From time to time, this noise and clamor redoubled;
-the current which drove the crowd towards the grand staircase flowed
-backwards, became troubled, formed whirlpools. This was produced by the
-buffet of an archer, or the horse of one of the provost’s sergeants, which
-kicked to restore order; an admirable tradition which the provostship has
-bequeathed to the constablery, the constablery to the &lt;em&gt;maréchaussée&lt;/em&gt;,
-the &lt;em&gt;maréchaussée&lt;/em&gt; to our &lt;em&gt;gendarmeri&lt;/em&gt; of Paris.&lt;/p&gt;
-- http://localhost:1313/posts/post-1/ - 2023</description>
+- https://bookofdaniel.in/posts/integration-of-zoho-desk-and-grafana/ - 2023</description>
         </item>
     
     

@@ -68,9 +68,9 @@ The absence of a real-time dashboard has caused inefficiencies in tracking produ
 &lt;/table&gt;
 &lt;h2 id=&#34;real-time-monitoring--scoreboard&#34;&gt;Real-Time Monitoring &amp;amp; Scoreboard&lt;/h2&gt;
 &lt;p&gt;Zoho analytics with additional license offers Dashboard experience but I needed something more interesting like a real-time dashboard to proactively act on tickets which does not require additional license.&lt;/p&gt;
-&lt;p&gt;So I came up with a solution using Grafana dashboard and project it in a monitor. For that we used zoho web hook, instead of polling ticket meta details from Zoho desk.&lt;/p&gt;
+&lt;p&gt;So I came up with a solution which is powered by Grafana Dashboard and projected it on a monitor. For that, I used zoho web hook, instead of polling ticket meta details from Zoho desk.&lt;/p&gt;
 &lt;p&gt;The Webhook listener is developed using a simple java script. The json payload recieved will be deserialized and stored in a relational database like SQL Server.&lt;/p&gt;
-&lt;p&gt;Then we created a grafana dashboard to pull the details from the database.&lt;/p&gt;
+&lt;p&gt;Then I created a Grafana Dashboard to pull the details from the database.&lt;/p&gt;
 &lt;h3 id=&#34;architecture-diagram&#34;&gt;Architecture Diagram&lt;/h3&gt;
 &lt;img title=&#34;Zoho Real-Time Grafana Dashbord&#34; alt=&#34;Zoho Real-Time Dashboard Solution&#34; src=&#34;https://bookofdaniel.in/images/Zoho Desk Real Time Monitoring.png&#34;&gt;
 &lt;h3 id=&#34;final-results&#34;&gt;Final Results&lt;/h3&gt;

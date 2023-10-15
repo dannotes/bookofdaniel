@@ -2,54 +2,63 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 🧑🏻‍💻 Book Of Daniel</title>
-    <link>https://bookofdaniel.in/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on 🧑🏻‍💻 Book Of Daniel</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2023</copyright>
-    <lastBuildDate>Mon, 02 Oct 2023 17:40:05 +0530</lastBuildDate><atom:link href="https://bookofdaniel.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Oct 2023 17:40:05 +0530</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>grafana</title>
-      <link>https://bookofdaniel.in/tags/grafana/</link>
+      <link>http://localhost:1313/tags/grafana/</link>
       <pubDate>Mon, 02 Oct 2023 17:40:05 +0530</pubDate>
       
-      <guid>https://bookofdaniel.in/tags/grafana/</guid>
+      <guid>http://localhost:1313/tags/grafana/</guid>
       <description></description>
     </item>
     
     <item>
       <title>java script</title>
-      <link>https://bookofdaniel.in/tags/java-script/</link>
+      <link>http://localhost:1313/tags/java-script/</link>
       <pubDate>Mon, 02 Oct 2023 17:40:05 +0530</pubDate>
       
-      <guid>https://bookofdaniel.in/tags/java-script/</guid>
+      <guid>http://localhost:1313/tags/java-script/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sql server</title>
-      <link>https://bookofdaniel.in/tags/sql-server/</link>
+      <link>http://localhost:1313/tags/sql-server/</link>
       <pubDate>Mon, 02 Oct 2023 17:40:05 +0530</pubDate>
       
-      <guid>https://bookofdaniel.in/tags/sql-server/</guid>
+      <guid>http://localhost:1313/tags/sql-server/</guid>
       <description></description>
     </item>
     
     <item>
       <title>team building</title>
-      <link>https://bookofdaniel.in/tags/team-building/</link>
+      <link>http://localhost:1313/tags/team-building/</link>
       <pubDate>Mon, 02 Oct 2023 17:40:05 +0530</pubDate>
       
-      <guid>https://bookofdaniel.in/tags/team-building/</guid>
+      <guid>http://localhost:1313/tags/team-building/</guid>
       <description></description>
     </item>
     
     <item>
       <title>zoho</title>
-      <link>https://bookofdaniel.in/tags/zoho/</link>
+      <link>http://localhost:1313/tags/zoho/</link>
       <pubDate>Mon, 02 Oct 2023 17:40:05 +0530</pubDate>
       
-      <guid>https://bookofdaniel.in/tags/zoho/</guid>
+      <guid>http://localhost:1313/tags/zoho/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scene</title>
+      <link>http://localhost:1313/tags/scene/</link>
+      <pubDate>Sun, 09 Apr 2017 10:58:08 -0400</pubDate>
+      
+      <guid>http://localhost:1313/tags/scene/</guid>
       <description></description>
     </item>
     

@@ -2,37 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://bookofdaniel.in/categories/case-study/</loc>
+    <loc>http://localhost:1313/categories/case-study/</loc>
     <lastmod>2023-10-02T17:40:05+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <lastmod>2023-10-02T17:40:05+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/tags/grafana/</loc>
+    <loc>http://localhost:1313/tags/grafana/</loc>
     <lastmod>2023-10-02T17:40:05+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/tags/java-script/</loc>
+    <loc>http://localhost:1313/tags/java-script/</loc>
     <lastmod>2023-10-02T17:40:05+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2023-10-02T17:40:05+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/posts/integration-of-zoho-desk-and-grafana/</loc>
+    <loc>http://localhost:1313/posts/integration-of-zoho-desk-and-grafana/</loc>
     <lastmod>2023-10-02T17:40:05+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/tags/sql-server/</loc>
+    <loc>http://localhost:1313/tags/sql-server/</loc>
     <lastmod>2023-10-02T17:40:05+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2023-10-02T17:40:05+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/tags/team-building/</loc>
+    <loc>http://localhost:1313/tags/team-building/</loc>
     <lastmod>2023-10-02T17:40:05+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/tags/zoho/</loc>
+    <loc>http://localhost:1313/tags/zoho/</loc>
     <lastmod>2023-10-02T17:40:05+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2023-10-02T17:40:05+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/post-1/</loc>
+    <lastmod>2017-04-09T10:58:08-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/scene/</loc>
+    <lastmod>2017-04-09T10:58:08-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/story/</loc>
+    <lastmod>2017-04-09T10:58:08-04:00</lastmod>
   </url>
 </urlset>

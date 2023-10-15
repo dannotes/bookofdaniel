@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>java script on 🧑🏻‍💻 Book Of Daniel</title>
-    <link>https://bookofdaniel.in/tags/java-script/</link>
+    <link>http://localhost:1313/tags/java-script/</link>
     <description>Recent content in java script on 🧑🏻‍💻 Book Of Daniel</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2023</copyright>
-    <lastBuildDate>Mon, 02 Oct 2023 17:40:05 +0530</lastBuildDate><atom:link href="https://bookofdaniel.in/tags/java-script/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Oct 2023 17:40:05 +0530</lastBuildDate><atom:link href="http://localhost:1313/tags/java-script/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Push your team to be Good to Great: Integration of Zoho Desk and Grafana</title>
-      <link>https://bookofdaniel.in/posts/integration-of-zoho-desk-and-grafana/</link>
+      <link>http://localhost:1313/posts/integration-of-zoho-desk-and-grafana/</link>
       <pubDate>Mon, 02 Oct 2023 17:40:05 +0530</pubDate>
       
-      <guid>https://bookofdaniel.in/posts/integration-of-zoho-desk-and-grafana/</guid>
+      <guid>http://localhost:1313/posts/integration-of-zoho-desk-and-grafana/</guid>
       <description>Have you ever been a part of a hardworking team that, despite their efforts, ends up shouldering blame? If yes, our situation in operations might resonate with you. On any given day, our Zoho Desk is inundated with approximately 300 tickets, each falling under various classifications and priorities. Many of these tickets are complex and time-consuming to resolve, causing them to carry over to the next day and become overdue.</description>
     </item>
     

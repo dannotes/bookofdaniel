@@ -241,7 +241,7 @@
                 menu
             </i>
         </button>
-        <a id="navTitle" class="navbar-brand" href="https://bookofdaniel.in/">
+        <a id="navTitle" class="navbar-brand" href="http://localhost:1313/">
             🧑🏻‍💻 Book Of Daniel
         </a>
         
@@ -255,7 +255,7 @@
 </nav>
 <div class="single-column-header-container" id="pageHead"
      v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
-    <a href="https://bookofdaniel.in/">
+    <a href="http://localhost:1313/">
         <div class="single-column-header-title">🧑🏻‍💻 Book Of Daniel</div>
         
 
@@ -277,7 +277,7 @@
                 
                     
                     
-                    style="background-image: url('https://bookofdaniel.in/images/Push%20your%20team%20to%20be%20Good%20to%20Great%20Integration%20of%20Zoho%20Desk%20and%20Grafana.png')"
+                    style="background-image: url('http://localhost:1313/images/Push%20your%20team%20to%20be%20Good%20to%20Great%20Integration%20of%20Zoho%20Desk%20and%20Grafana.png')"
                     
                 
             >
@@ -326,7 +326,7 @@
                             
                             3 min
                             
-                            39 s.
+                            38 s.
                         
                     </div>
                 </div>
@@ -337,26 +337,26 @@
                 <div class="post-body" v-pre>
                 
                     <p>Have you ever been a part of a hardworking team that, despite their efforts, ends up shouldering blame? If yes, our situation in operations might resonate with you. On any given day, our Zoho Desk is inundated with approximately 300 tickets, each falling under various classifications and priorities. Many of these tickets are complex and time-consuming to resolve, causing them to carry over to the next day and become overdue.</p>
-<p>The challenge we face is the lack of visibility into critical metrics. Questions like the total number of tickets created, the various classifications in use, who is closing the most tickets, and what remains pending are difficult to answer definitively. Convincing others about the workload overload has proven to be quite a task.</p>
-<p>While Zoho Desk does offer predefined dashboards and customization options, our workflow relies heavily on custom fields. Additionally, the platform lacks real-time monitoring capabilities out of the box.</p>
+<p>The challenge we face is the lack of visibility into critical metrics. Questions like the total number of tickets created, the various classifications in use, the resource who close the most tickets, and pending tickets are difficult to answer definitively. Convincing others about the work overload has proven to be quite a task.</p>
+<p>While Zoho Desk does offer predefined dashboards and customization options, our workflow relies heavily on custom fields. Additionally, the platform lacks real-time monitoring capabilities.</p>
 <p>If you&rsquo;ve followed along this far, you may find yourself in a similar scenario or be seeking solutions for building real-time monitoring functionality within Zoho Desk. Keep reading!</p>
 <h1 id="challenges">Challenges</h1>
 <p>As a team, we set out to tackle these challenges head-on, with the ultimate goal of maximizing throughput and efficiency to ensure customer satisfaction. Here are the key challenges we identified on our team board:</p>
-<p><strong>1. Large Team Management:</strong> <!-- raw HTML omitted -->
+<p><strong>1. Large Team Management:</strong> <br>
 With a growing client base, our team size has expanded proportionally. Managing a larger team is becoming increasingly challenging without access to key metrics.</p>
 <p><strong>2. Ticket Assignment Automation:</strong>
 Currently, our ticket assignment process involves agents or team members manually assigning tickets from a common email account. Some agents assign tickets to themselves, while others choose to assign them to the next team member. This variation in assignment might be due to differences in ticket complexity, with some opting for the low-hanging fruit.</p>
 <p><strong>3. Timely Escalation:</strong>
 To maintain SLA compliance, we required a solution which will escalate the tickets to a manager when there is breach in a predefined time threshold (e.g., x minutes/hours).</p>
 <p><strong>4. Email Tickets with Mandatory Fields:</strong>
-Zoho Desk offers a convenient feature that allows users to raise tickets via email. However, this feature creates tickets without mandatory fields, such as client or environment name.</p>
+Zoho Desk offers a convenient feature that allows users to raise tickets via email. However, this feature creates tickets without mandatory fields, such as client or environment name. This calls for communicating the team over and over again resulting in time consumption.</p>
 <p><strong>5. Real-Time Monitoring &amp; Scoreboard:</strong>
 The absence of a real-time dashboard has caused inefficiencies in tracking productivity.</p>
 <blockquote>
 <p><strong>Improving Daily work is even more important than doing daily work.</strong>  - The Phoenix Project</p>
 </blockquote>
 <h1 id="solutions">Solutions</h1>
-<p>I have slept with this challenges for a day and explored the Zoho documentation along with some Google search. it look like we can solve some of these issues using zoho&rsquo;s features, while others might require custom development.</p>
+<p>I have slept on these challenges for a day and explored the Zoho documentation along with some Google search. It seemed like I could solve some of these issues using zoho&rsquo;s features, while others might require development.</p>
 <table>
 <thead>
 <tr>
@@ -367,31 +367,31 @@ The absence of a real-time dashboard has caused inefficiencies in tracking produ
 <tbody>
 <tr>
 <td style="text-align:left">Large Team Management</td>
-<td style="text-align:left">Proposed to split the team into multiple pod or pool. So that it can be managed with a senior / lead with minimal members and work can be monitored efficiently. <!-- raw HTML omitted --> Pool segregation will be based on the client, X number client for pool 1, Y no.of client to pool 2, so on. <!-- raw HTML omitted --> Additional Zoho Desk account with standard license is required per pool.</td>
+<td style="text-align:left">Proposed to split the team into multiple pods or pools. So that it can be managed by a senior / lead with minimal members and work can be monitored efficiently. <br> Pool segregation will be based on the number of clients.</td>
 </tr>
 <tr>
 <td style="text-align:left">Ticket Assignment Automation</td>
-<td style="text-align:left">Since the team is arranged into multiple pool based on the client hierarchy, whenever a ticket raise for the specific client it should be allocated directly to the respecitve pool. Then the pool lead / member can assign and work accordingly. <!-- raw HTML omitted --> To Automate this process Zoho Desk provide a feature called <a href="https://help.zoho.com/portal/en/kb/desk/automation/assignment-rules-notification/articles/creating-ticket-assignment-rules">Direct Assignment</a>. Create an assignment rule with client name and select respective pool account. Viola ticket will be assigned automatically on creation.</td>
+<td style="text-align:left">Since the team is arranged into multiple pools, based on the client hierarchy, whenever a ticket is raised for the specific client it should be allocated directly to the respecitve pool. Then the pool lead / member can assign and work accordingly. <br> To Automate this process Zoho Desk provides a feature called <a href="https://help.zoho.com/portal/en/kb/desk/automation/assignment-rules-notification/articles/creating-ticket-assignment-rules">Direct Assignment</a>. Create an assignment rule with client name and select respective pool account. Viola! The ticket will be assigned automatically on creation.</td>
 </tr>
 <tr>
 <td style="text-align:left">Timely Escalation</td>
-<td style="text-align:left">Zoho provided a feature called <a href="https://help.zoho.com/portal/en/kb/desk/automation/escalate-sla/articles/creating-and-using-slas">SLAs</a> escalation, if an escalation is happened with in x minutes it will be escalated to 2 levels. We have adopted that so breached ticket will be esclated to respective pool lead and manager with in 30 mins.</td>
+<td style="text-align:left">Zoho provides a feature called <a href="https://help.zoho.com/portal/en/kb/desk/automation/escalate-sla/articles/creating-and-using-slas">SLAs</a> escalation. If an escalation occurs within x minutes it will be escalated to 2 levels. We chose to adopt it, so that the breached ticket will be esclated to the respective lead / manager of the pool within 30 mins.</td>
 </tr>
 <tr>
 <td style="text-align:left">Email Ticket with mandatory fields</td>
-<td style="text-align:left">We have created a <a href="https://help.zoho.com/portal/en/kb/desk/activities/articles/working-with-tasks-zoho-desk#Creating_Tasks">Zoho Task</a> to close email ticket with an automated reply to fill mandatory fields. So tickets raised through email will be closed automatically if mandatory fields are not available.</td>
+<td style="text-align:left">We created a <a href="https://help.zoho.com/portal/en/kb/desk/activities/articles/working-with-tasks-zoho-desk#Creating_Tasks">Zoho Task</a> to close the email ticket with an automated reply to fill the mandatory fields. So the tickets in which the mandatory fields are not filled will be closed automatically.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="real-time-monitoring--scoreboard">Real-Time Monitoring &amp; Scoreboard</h2>
-<p>Zoho analytics with additional license offers dashboard experience but we need something more interesting like a real-time dashboard to proactively act on tickets without additional license.</p>
-<p>So we came up with a solution using Grafana dashbaord and project it in a monitor. For that we used zoho web hook, instead of polling ticket meta details from Zoho desk.</p>
+<p>Zoho analytics with additional license offers Dashboard experience but I needed something more interesting like a real-time dashboard to proactively act on tickets which does not require additional license.</p>
+<p>So I came up with a solution using Grafana dashboard and project it in a monitor. For that we used zoho web hook, instead of polling ticket meta details from Zoho desk.</p>
 <p>The Webhook listener is developed using a simple java script. The json payload recieved will be deserialized and stored in a relational database like SQL Server.</p>
 <p>Then we created a grafana dashboard to pull the details from the database.</p>
 <h3 id="architecture-diagram">Architecture Diagram</h3>
-<!-- raw HTML omitted -->
+<img title="Zoho Real-Time Grafana Dashbord" alt="Zoho Real-Time Dashboard Solution" src="/images/Zoho Desk Real Time Monitoring.png">
 <h3 id="final-results">Final Results</h3>
-<!-- raw HTML omitted -->
+<img title="Zoho Real-Time Grafana Dashbord" alt="Zoho Real-Time Dashboard Solution on TV" src="/images/Zoho Desk Real Time Monitoring on TV.jpg">
 <blockquote>
 <p><strong>A great team doesn’t mean that they had the smartest people. What made those teams great is that everyone trusted one another. It can be a powerful thing when that magic dynamic exists.</strong> - The Phoenix Project</p>
 </blockquote>
@@ -413,8 +413,8 @@ The absence of a real-time dashboard has caused inefficiencies in tracking produ
                 
                 
                 
-                <a class="older-posts">
-			Previous<br>No older posts.
+                <a class="older-posts" href="/posts/post-1/">
+			Previous<br>Chapter I: The Grand Hall
                 </a>
                 
             </nav>
@@ -440,7 +440,7 @@ The absence of a real-time dashboard has caused inefficiencies in tracking produ
                     </div>
             </div><div id="sideContainer" class="side-container">
     
-    <a class="a-block nav-head false" href="https://bookofdaniel.in/">
+    <a class="a-block nav-head false" href="http://localhost:1313/">
     
         <div class="nav-title">
             🧑🏻‍💻 Book Of Daniel

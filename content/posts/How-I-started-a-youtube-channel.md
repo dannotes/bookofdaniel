@@ -16,7 +16,7 @@ I was late to join the motivation genre. In June 2022, I realized the potential 
 
 I started multiple motivational channels like learnwithniel and musetales. Some garnered a few views in the first month due to the infamous YouTube algorithm push. After that, the views dwindled.
 
-I've long been a fan of Jay Shetty and a regular viewer of his Jay Shetty Podcast channel. In December 2022, I noticed there were no fan channels for Jay Shetty, so I started one called Jay Shetty Shorts 😉.
+I've long been a fan of Jay Shetty and a regular viewer of his [Jay Shetty Podcast channel](https://www.youtube.com/@JayShettyPodcast.). In December 2022, I noticed there were no fan channels for Jay Shetty, so I started one called [Jay Shetty Shorts](https://www.youtube.com/@jayshettyshorts) 😉.
 
 Since Jay Shetty is a popular motivational speaker, the channel was a hit. It attracted a lot of attention from both haters and supporters, which helped increase views and comments 😊.
 

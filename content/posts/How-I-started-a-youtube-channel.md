@@ -1,10 +1,10 @@
 ---
-date = 2023-11-05T08:54:22+05:30
-title = 'How I Started a YouTube Channel and Got 100K Subscribers in 6 Months (Even Though I Got Copyright Strikes)
+date : 2023-11-05T08:54:22+05:30
+title : "How I Started a YouTube Channel and Got 100K Subscribers in 6 Months (Even Though I Got Copyright Strikes)"
 featured_image: "/images/How I Started a YouTube Channel and Got 100K Subscribers in 6 Months.png`"
 categories: "Life Journey"
 tags: ["youtube", "google adsense", "life journey", "silver play button" ]
-draft = false
+draft : false
 ---
 
 During the COVID-19 lockdown, people had differing views: some felt it could be the end, while others saw it as an opportunity to start something new. One common thread was that everyone was glued to their smartphones. YouTube [trends during the pandemic](https://www.youtube.com/trends/articles/covid-impact/) showed skyrocketing watch times since everyone was either watching videos or sleeping.

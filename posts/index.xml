@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2023</copyright>
-    <lastBuildDate>Sat, 18 Nov 2023 23:03:52 +0530</lastBuildDate><atom:link href="https://bookofdaniel.in/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Nov 2023 08:49:43 +0530</lastBuildDate><atom:link href="https://bookofdaniel.in/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5 principles for cloud-native architecture: An Inspired Post 🔥</title>
+      <link>https://bookofdaniel.in/posts/key-principles-of-any-cloud-environments/</link>
+      <pubDate>Mon, 20 Nov 2023 08:49:43 +0530</pubDate>
+      
+      <guid>https://bookofdaniel.in/posts/key-principles-of-any-cloud-environments/</guid>
+      <description>Original Post : https://cloud.google.com/blog/products/application-development/5-principles-for-cloud-native-architecture-what-it-is-and-how-to-master-it
+In the dynamic world of cloud computing, the term &amp;lsquo;cloud-native architecture&amp;rsquo; is often synonymous with innovation and efficiency. This article, inspired by a Google Cloud blog post, expands the concept to encompass universal principles applicable across all cloud platforms, be it Amazon Web Services (AWS), Microsoft Azure, or Google Cloud Platform (GCP). 🌦️🏗️
+Understanding Cloud-Native Architecture Cloud-native architecture is about leveraging the unique capabilities of cloud environments.</description>
+    </item>
+    
     <item>
       <title>Reclaiming Our Digital Space: The Rise of NOSTR and the Renaissance of Social Media 💪🏻</title>
       <link>https://bookofdaniel.in/posts/the-rise-of-nostr-and-the-renaissance-of-social-media/</link>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>design on 🧑🏻‍💻 Book Of Daniel</title>
+    <link>https://bookofdaniel.in/tags/design/</link>
+    <description>Recent content in design on 🧑🏻‍💻 Book Of Daniel</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>2023</copyright>
+    <lastBuildDate>Mon, 20 Nov 2023 08:49:43 +0530</lastBuildDate><atom:link href="https://bookofdaniel.in/tags/design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5 principles for cloud-native architecture: An Inspired Post 🔥</title>
+      <link>https://bookofdaniel.in/posts/key-principles-of-any-cloud-environments/</link>
+      <pubDate>Mon, 20 Nov 2023 08:49:43 +0530</pubDate>
+      
+      <guid>https://bookofdaniel.in/posts/key-principles-of-any-cloud-environments/</guid>
+      <description>Original Post : https://cloud.google.com/blog/products/application-development/5-principles-for-cloud-native-architecture-what-it-is-and-how-to-master-it
+In the dynamic world of cloud computing, the term &amp;lsquo;cloud-native architecture&amp;rsquo; is often synonymous with innovation and efficiency. This article, inspired by a Google Cloud blog post, expands the concept to encompass universal principles applicable across all cloud platforms, be it Amazon Web Services (AWS), Microsoft Azure, or Google Cloud Platform (GCP). 🌦️🏗️
+Understanding Cloud-Native Architecture Cloud-native architecture is about leveraging the unique capabilities of cloud environments.</description>
+    </item>
+    
+  </channel>
+</rss>

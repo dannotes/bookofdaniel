@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2023</copyright>
-    <lastBuildDate>Sat, 18 Nov 2023 23:03:52 +0530</lastBuildDate><atom:link href="https://bookofdaniel.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Nov 2023 08:49:43 +0530</lastBuildDate><atom:link href="https://bookofdaniel.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloud Architecture</title>
+      <link>https://bookofdaniel.in/categories/cloud-architecture/</link>
+      <pubDate>Mon, 20 Nov 2023 08:49:43 +0530</pubDate>
+      
+      <guid>https://bookofdaniel.in/categories/cloud-architecture/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>World</title>
       <link>https://bookofdaniel.in/categories/world/</link>

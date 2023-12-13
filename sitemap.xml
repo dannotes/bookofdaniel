@@ -2,13 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://bookofdaniel.in/posts/a-beginners-guide-to-vim-shortcuts/</loc>
+    <lastmod>2023-12-13T09:39:37+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/categories/</loc>
+    <lastmod>2023-12-13T09:39:37+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/tags/commandline/</loc>
+    <lastmod>2023-12-13T09:39:37+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/categories/commands/</loc>
+    <lastmod>2023-12-13T09:39:37+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/posts/</loc>
+    <lastmod>2023-12-13T09:39:37+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/tags/shortcuts/</loc>
+    <lastmod>2023-12-13T09:39:37+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/tags/</loc>
+    <lastmod>2023-12-13T09:39:37+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/tags/vim/</loc>
+    <lastmod>2023-12-13T09:39:37+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/</loc>
+    <lastmod>2023-12-13T09:39:37+05:30</lastmod>
+  </url><url>
     <loc>https://bookofdaniel.in/posts/key-principles-of-any-cloud-environments/</loc>
     <lastmod>2023-11-20T08:49:43+05:30</lastmod>
   </url><url>
     <loc>https://bookofdaniel.in/tags/architecture/</loc>
-    <lastmod>2023-11-20T08:49:43+05:30</lastmod>
-  </url><url>
-    <loc>https://bookofdaniel.in/categories/</loc>
     <lastmod>2023-11-20T08:49:43+05:30</lastmod>
   </url><url>
     <loc>https://bookofdaniel.in/tags/cloud/</loc>
@@ -18,15 +42,6 @@
     <lastmod>2023-11-20T08:49:43+05:30</lastmod>
   </url><url>
     <loc>https://bookofdaniel.in/tags/design/</loc>
-    <lastmod>2023-11-20T08:49:43+05:30</lastmod>
-  </url><url>
-    <loc>https://bookofdaniel.in/posts/</loc>
-    <lastmod>2023-11-20T08:49:43+05:30</lastmod>
-  </url><url>
-    <loc>https://bookofdaniel.in/tags/</loc>
-    <lastmod>2023-11-20T08:49:43+05:30</lastmod>
-  </url><url>
-    <loc>https://bookofdaniel.in/</loc>
     <lastmod>2023-11-20T08:49:43+05:30</lastmod>
   </url><url>
     <loc>https://bookofdaniel.in/tags/freedom/</loc>

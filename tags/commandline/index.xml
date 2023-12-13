@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>commandline on 🧑🏻‍💻 Book Of Daniel</title>
+    <link>https://bookofdaniel.in/tags/commandline/</link>
+    <description>Recent content in commandline on 🧑🏻‍💻 Book Of Daniel</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>2023</copyright>
+    <lastBuildDate>Wed, 13 Dec 2023 09:39:37 +0530</lastBuildDate><atom:link href="https://bookofdaniel.in/tags/commandline/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Beginners Guide to Vim Shortcuts</title>
+      <link>https://bookofdaniel.in/posts/a-beginners-guide-to-vim-shortcuts/</link>
+      <pubDate>Wed, 13 Dec 2023 09:39:37 +0530</pubDate>
+      
+      <guid>https://bookofdaniel.in/posts/a-beginners-guide-to-vim-shortcuts/</guid>
+      <description>A Beginner&amp;rsquo;s Guide to Vim Shortcuts and Commands Vim is a highly configurable text editor used in programming. It&amp;rsquo;s known for its efficiency, enabling users to navigate and edit documents with minimal use of the mouse. This blog post will introduce you to the most important Vim shortcuts and commands, making your coding journey smoother and more efficient.
+Understanding Vim Modes Before we dive into the commands, it&amp;rsquo;s crucial to understand Vim&amp;rsquo;s modes.</description>
+    </item>
+    
+  </channel>
+</rss>

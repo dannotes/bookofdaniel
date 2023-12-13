@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html><head>
+<title>A Beginners Guide to Vim Shortcuts</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<link rel="icon" href="https://bookofdaniel.in/images/favicon.png">
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    Archive
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    Categories
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    Tags
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#a-beginners-guide-to-vim-shortcuts-and-commands" class="nav-a-beginners-guide-to-vim-shortcuts-and-commands">
+									A Beginner’s Guide to Vim Shortcuts and Commands
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#understanding-vim-modes" class="nav-understanding-vim-modes">
+									Understanding Vim Modes
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#cursor-movement" class="nav-cursor-movement">
+									Cursor Movement
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#insert-mode" class="nav-insert-mode">
+									Insert Mode
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#visual-mode" class="nav-visual-mode">
+									Visual Mode
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#cut-copy-and-paste" class="nav-cut-copy-and-paste">
+									Cut, Copy, and Paste
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#undo-and-redo" class="nav-undo-and-redo">
+									Undo and Redo
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#search-and-replace" class="nav-search-and-replace">
+									Search and Replace
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#file-operations" class="nav-file-operations">
+									File Operations
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#miscellaneous" class="nav-miscellaneous">
+									Miscellaneous
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#references" class="nav-references">
+									References:
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://bookofdaniel.in/">
+            🧑🏻‍💻 Book Of Daniel
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://bookofdaniel.in/">
+        <div class="single-column-header-title">🧑🏻‍💻 Book Of Daniel</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+                
+            
+
+            <div class="post-head-wrapper"
+                
+                    
+                    
+                    style="background-image: url('https://bookofdaniel.in/images/A%20Beginners%20Guide%20to%20Vim%20Shortcuts.png')"
+                    
+                
+            >
+                <div class="post-title">
+                    A Beginners Guide to Vim Shortcuts
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2023-12-13 09:39
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/commands">Commands</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/shortcuts">shortcuts</a>
+                                &nbsp;
+                            
+                                <a href="/tags/commandline">commandline</a>
+                                &nbsp;
+                            
+                                <a href="/tags/vim">vim</a>
+                                &nbsp;
+                            
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            2 min
+                            
+                            35 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h1 id="a-beginners-guide-to-vim-shortcuts-and-commands">A Beginner&rsquo;s Guide to Vim Shortcuts and Commands</h1>
+<p>Vim is a highly configurable text editor used in programming. It&rsquo;s known for its efficiency, enabling users to navigate and edit documents with minimal use of the mouse. This blog post will introduce you to the most important Vim shortcuts and commands, making your coding journey smoother and more efficient.</p>
+<h2 id="understanding-vim-modes">Understanding Vim Modes</h2>
+<p>Before we dive into the commands, it&rsquo;s crucial to understand Vim&rsquo;s modes. Vim operates in several modes, each with a specific purpose:</p>
+<ul>
+<li><strong>Normal Mode</strong>: The default mode when you open Vim. It&rsquo;s used to execute commands.</li>
+<li><strong>Insert Mode</strong>: Allows you to insert text into your document.</li>
+<li><strong>Visual Mode</strong>: Used for selecting lines, blocks, and text in your document.</li>
+<li><strong>Command-Line Mode</strong>: Allows you to enter Vim commands and/or search for text.</li>
+</ul>
+<p>You can switch between these modes using various commands, which we&rsquo;ll cover in the following sections[1][2][4][9].</p>
+<h2 id="cursor-movement">Cursor Movement</h2>
+<p>In normal mode, you can move the cursor around with the following commands:</p>
+<ul>
+<li><code>h</code>: move cursor left</li>
+<li><code>j</code>: move cursor down</li>
+<li><code>k</code>: move cursor up</li>
+<li><code>l</code>: move cursor right</li>
+<li><code>w</code>: jump forwards to the start of a word</li>
+<li><code>b</code>: jump backwards to the start of a word</li>
+<li><code>0</code>: jump to the start of the line</li>
+<li><code>$</code>: jump to the end of the line</li>
+<li><code>gg</code>: go to the first line of the document</li>
+<li><code>G</code>: go to the last line of the document</li>
+</ul>
+<h2 id="insert-mode">Insert Mode</h2>
+<p>To enter insert mode from normal mode, use the following commands:</p>
+<ul>
+<li><code>i</code>: enter insert mode before the cursor</li>
+<li><code>a</code>: enter insert mode after the cursor</li>
+<li><code>A</code>: enter insert mode at the end of the line</li>
+<li><code>o</code>: open a new line below the current line and enter insert mode</li>
+<li><code>O</code>: open a new line above the current line and enter insert mode</li>
+</ul>
+<p>To return to normal mode from insert mode, press <code>Esc</code>.</p>
+<h2 id="visual-mode">Visual Mode</h2>
+<p>To select text, you can switch to visual mode using these commands:</p>
+<ul>
+<li><code>v</code>: enter visual mode</li>
+<li><code>V</code>: enter linewise visual mode</li>
+<li><code>Ctrl + v</code>: enter blockwise visual mode</li>
+</ul>
+<h2 id="cut-copy-and-paste">Cut, Copy, and Paste</h2>
+<p>Vim uses different terminology for these operations:</p>
+<ul>
+<li><code>x</code>: delete character under the cursor</li>
+<li><code>dd</code>: delete line</li>
+<li><code>D</code>: delete from cursor to end of line</li>
+<li><code>yy</code>: yank (copy) line</li>
+<li><code>p</code>: paste after the cursor</li>
+<li><code>P</code>: paste before the cursor</li>
+</ul>
+<h2 id="undo-and-redo">Undo and Redo</h2>
+<p>To undo or redo changes, use the following commands:</p>
+<ul>
+<li><code>u</code>: undo</li>
+<li><code>Ctrl + r</code>: redo</li>
+</ul>
+<h2 id="search-and-replace">Search and Replace</h2>
+<p>Vim provides powerful search and replace functionality:</p>
+<ul>
+<li><code>/pattern</code>: search for a pattern</li>
+<li><code>n</code>: move to the next match</li>
+<li><code>N</code>: move to the previous match</li>
+<li><code>:%s/old/new/g</code>: replace all occurrences of &lsquo;old&rsquo; with &rsquo;new&rsquo; in the entire file</li>
+</ul>
+<h2 id="file-operations">File Operations</h2>
+<p>You can perform various file operations using these commands:</p>
+<ul>
+<li><code>:e {file}</code>: edit another file</li>
+<li><code>:w</code>: write (save) file</li>
+<li><code>:wq</code>: write file and exit</li>
+<li><code>:q!</code>: exit without saving</li>
+</ul>
+<h2 id="miscellaneous">Miscellaneous</h2>
+<p>Here are some additional useful commands:</p>
+<ul>
+<li><code>:help {keyword}</code>: open help for a keyword</li>
+<li><code>:set number</code>: show line numbers</li>
+<li><code>:set nonumber</code>: hide line numbers</li>
+<li><code>:split {file}</code>: split the window horizontally and open a file</li>
+<li><code>:vsplit {file}</code>: split the window vertically and open a file</li>
+<li><code>Ctrl + w + arrow keys</code>: navigate between split windows</li>
+</ul>
+<p>This guide covers the most commonly used Vim commands. As you become more proficient with Vim, you can explore additional commands and functionalities. Happy coding!</p>
+<h2 id="references">References:</h2>
+<ul>
+<li>[1] <a href="https://www.linuxfoundation.org/blog/blog/classic-sysadmin-vim-101-a-beginners-guide-to-vim">https://www.linuxfoundation.org/blog/blog/classic-sysadmin-vim-101-a-beginners-guide-to-vim</a></li>
+<li>[2] <a href="https://opensource.com/article/19/3/getting-started-vim">https://opensource.com/article/19/3/getting-started-vim</a></li>
+<li>[3] <a href="https://www.reddit.com/r/vim/comments/166q64q/an_effective_beginner_vim_tutorial_focusing_on/">https://www.reddit.com/r/vim/comments/166q64q/an_effective_beginner_vim_tutorial_focusing_on/</a></li>
+<li>[4] <a href="https://coderwall.com/p/adv71w/basic-vim-commands-for-getting-started">https://coderwall.com/p/adv71w/basic-vim-commands-for-getting-started</a></li>
+<li>[5] <a href="https://youtube.com/watch?v=ggSyF1SVFr4">https://youtube.com/watch?v=ggSyF1SVFr4</a></li>
+<li>[6] <a href="https://danielmiessler.com/p/vim/">https://danielmiessler.com/p/vim/</a></li>
+<li>[7] <a href="https://www.unomaha.edu/college-of-information-science-and-technology/computer-science-learning-center/_files/resources/CSLC-Helpdocs-Vim.pdf">https://www.unomaha.edu/college-of-information-science-and-technology/computer-science-learning-center/_files/resources/CSLC-Helpdocs-Vim.pdf</a></li>
+<li>[8] <a href="https://www.reddit.com/r/vim/comments/lbjw3u/good_guides_on_vim/">https://www.reddit.com/r/vim/comments/lbjw3u/good_guides_on_vim/</a></li>
+<li>[9] <a href="https://www.freecodecamp.org/news/vim-beginners-guide/">https://www.freecodecamp.org/news/vim-beginners-guide/</a></li>
+<li>[10] <a href="https://www.reddit.com/r/vim/comments/k60da0/best_vim_tutorial_for_beginners/">https://www.reddit.com/r/vim/comments/k60da0/best_vim_tutorial_for_beginners/</a></li>
+<li>[11] <a href="https://vim.rtorr.com">https://vim.rtorr.com</a></li>
+<li>[12] <a href="https://www.howtoforge.com/vim-basics">https://www.howtoforge.com/vim-basics</a></li>
+<li>[13] <a href="https://thevaluable.dev/vim-commands-beginner/">https://thevaluable.dev/vim-commands-beginner/</a></li>
+<li>[14] <a href="https://youtube.com/watch?v=RZ4p-saaQkc">https://youtube.com/watch?v=RZ4p-saaQkc</a></li>
+<li>[15] <a href="https://linuxhandbook.com/basic-vim-commands/">https://linuxhandbook.com/basic-vim-commands/</a></li>
+</ul>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">Last modified on 2023-12-13</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts">
+			Next<br>No newer posts.
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/key-principles-of-any-cloud-environments/">
+			Previous<br>5 principles for cloud-native architecture: An Inspired Post 🔥
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://bookofdaniel.in/">
+    
+        <div class="nav-title">
+            🧑🏻‍💻 Book Of Daniel
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                Archive
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                Categories
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                Tags
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+&copy;
+	
+	2023
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#a-beginners-guide-to-vim-shortcuts-and-commands" class="nav-a-beginners-guide-to-vim-shortcuts-and-commands">
+									A Beginner’s Guide to Vim Shortcuts and Commands
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#understanding-vim-modes" class="nav-understanding-vim-modes">
+									Understanding Vim Modes
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#cursor-movement" class="nav-cursor-movement">
+									Cursor Movement
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#insert-mode" class="nav-insert-mode">
+									Insert Mode
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#visual-mode" class="nav-visual-mode">
+									Visual Mode
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#cut-copy-and-paste" class="nav-cut-copy-and-paste">
+									Cut, Copy, and Paste
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#undo-and-redo" class="nav-undo-and-redo">
+									Undo and Redo
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#search-and-replace" class="nav-search-and-replace">
+									Search and Replace
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#file-operations" class="nav-file-operations">
+									File Operations
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#miscellaneous" class="nav-miscellaneous">
+									Miscellaneous
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#references" class="nav-references">
+									References:
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div><div id="single-column-footer">
+&copy;
+	
+	2023
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

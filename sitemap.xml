@@ -11,19 +11,7 @@
     <loc>https://bookofdaniel.in/categories/code/</loc>
     <lastmod>2023-12-13T09:39:37+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/tags/commandline/</loc>
-    <lastmod>2023-12-13T09:39:37+05:30</lastmod>
-  </url><url>
     <loc>https://bookofdaniel.in/posts/</loc>
-    <lastmod>2023-12-13T09:39:37+05:30</lastmod>
-  </url><url>
-    <loc>https://bookofdaniel.in/tags/shortcuts/</loc>
-    <lastmod>2023-12-13T09:39:37+05:30</lastmod>
-  </url><url>
-    <loc>https://bookofdaniel.in/tags/</loc>
-    <lastmod>2023-12-13T09:39:37+05:30</lastmod>
-  </url><url>
-    <loc>https://bookofdaniel.in/tags/vim/</loc>
     <lastmod>2023-12-13T09:39:37+05:30</lastmod>
   </url><url>
     <loc>https://bookofdaniel.in/</loc>
@@ -55,5 +43,7 @@
   </url><url>
     <loc>https://bookofdaniel.in/posts/integration-of-zoho-desk-and-grafana/</loc>
     <lastmod>2023-10-02T17:40:05+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/tags/</loc>
   </url>
 </urlset>

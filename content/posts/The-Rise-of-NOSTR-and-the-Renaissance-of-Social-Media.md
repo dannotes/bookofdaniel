@@ -2,8 +2,7 @@
 date : 2023-11-18T23:03:52+05:30
 title : 'Reclaiming Our Digital Space: The Rise of NOSTR and the Renaissance of Social Media 💪🏻'
 featured_image: "/images/The Rise of NOSTR and the Renaissance of Social Media-Cover.png"
-categories: "World"
-tags: ["freedom", "nostr","internet" ]
+categories: "Notes"
 draft : false
 ---
 

@@ -3,7 +3,6 @@ date : 2023-10-02T17:40:05+05:30
 title : "Push your team to be Good to Great: Integration of Zoho Desk and Grafana"
 featured_image: "/images/Push your team to be Good to Great Integration of Zoho Desk and Grafana.png"
 categories: "Case Study"
-tags: ["zoho", "grafana", "sql server", "java script", "team building"]
 draft : false    
 ---
 

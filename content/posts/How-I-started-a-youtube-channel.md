@@ -3,7 +3,6 @@ date : 2023-11-05T08:54:22+05:30
 title : "How I Started a YouTube Channel and Got 100K Subscribers in 6 Months (Even Though I Got Copyright Strikes)"
 featured_image: "/images/How I Started a YouTube Channel and Got 100K Subscribers in 6 Months.png"
 categories: "Life Journey"
-tags: ["youtube", "google adsense", "life journey", "silver play button" ]
 draft : false
 ---
 

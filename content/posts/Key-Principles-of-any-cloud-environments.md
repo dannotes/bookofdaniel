@@ -2,8 +2,7 @@
 date : 2023-11-20T08:49:43+05:30
 title : '5 principles for cloud-native architecture: An Inspired Post 🔥'
 featured_image: "/images/5 principles for cloud-native architecture.png"
-categories: "Cloud Architecture"
-tags: ["cloud", "architecture","design" ]
+categories: "Notes"
 draft : false
 ---
 

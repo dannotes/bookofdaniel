@@ -3,7 +3,6 @@ date  : 2023-11-11T09:18:36+05:30
 title : "Why I'm Wearing the Same Outfit to Work Every Day - My Minimalist Journey 🌿"
 featured_image: "/images/Why I'm Wearing the Same Outfit to Work Every Day.png"
 categories: "Life Journey"
-tags: ["minimalism", "wearing same outfit", "life journey" ]
 draft : false
 ---
 

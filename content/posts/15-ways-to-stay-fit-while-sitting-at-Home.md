@@ -3,8 +3,6 @@ date : 2023-12-20T16:12:14+05:30
 title : "15 Ways to Stay Fit While Sitting at Home"
 draft : false
 ---
-# 15 Ways to Stay Fit While Sitting at Home
-
 In our current era of remote work and virtual learning, prioritizing physical and mental fitness is more crucial than ever. Luckily, there are numerous strategies you can incorporate into your daily routine without stepping outside your home. The following 15 ways, inspired by the insightful content from a YouTube video by [Warikoo](https://youtu.be/FKNRNY5ji_M?si=ueCpV5g2vEtG5bjS), will guide you towards a healthier and more balanced lifestyle.
 
 ## Basic Fitness

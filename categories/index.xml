@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2023</copyright>
-    <lastBuildDate>Mon, 01 Jan 2024 16:26:56 +0530</lastBuildDate><atom:link href="https://bookofdaniel.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Jan 2024 09:19:15 +0530</lastBuildDate><atom:link href="https://bookofdaniel.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Notes</title>
+      <link>https://bookofdaniel.in/categories/notes/</link>
+      <pubDate>Fri, 05 Jan 2024 09:19:15 +0530</pubDate>
+      
+      <guid>https://bookofdaniel.in/categories/notes/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Books</title>
       <link>https://bookofdaniel.in/categories/books/</link>
@@ -32,15 +41,6 @@
       <pubDate>Wed, 13 Dec 2023 09:39:37 +0530</pubDate>
       
       <guid>https://bookofdaniel.in/categories/code/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Notes</title>
-      <link>https://bookofdaniel.in/categories/notes/</link>
-      <pubDate>Mon, 20 Nov 2023 08:49:43 +0530</pubDate>
-      
-      <guid>https://bookofdaniel.in/categories/notes/</guid>
       <description></description>
     </item>
     

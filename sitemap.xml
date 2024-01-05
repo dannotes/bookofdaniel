@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://bookofdaniel.in/categories/</loc>
+    <lastmod>2024-01-05T09:19:15+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/posts/lessons-learned-from-a-former-whatsapp-engineer/</loc>
+    <lastmod>2024-01-05T09:19:15+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/categories/notes/</loc>
+    <lastmod>2024-01-05T09:19:15+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/posts/</loc>
+    <lastmod>2024-01-05T09:19:15+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/</loc>
+    <lastmod>2024-01-05T09:19:15+05:30</lastmod>
+  </url><url>
     <loc>https://bookofdaniel.in/categories/books/</loc>
     <lastmod>2024-01-01T16:26:56+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/categories/</loc>
-    <lastmod>2024-01-01T16:26:56+05:30</lastmod>
-  </url><url>
     <loc>https://bookofdaniel.in/posts/make-your-bed-summary/</loc>
-    <lastmod>2024-01-01T16:26:56+05:30</lastmod>
-  </url><url>
-    <loc>https://bookofdaniel.in/posts/</loc>
-    <lastmod>2024-01-01T16:26:56+05:30</lastmod>
-  </url><url>
-    <loc>https://bookofdaniel.in/</loc>
     <lastmod>2024-01-01T16:26:56+05:30</lastmod>
   </url><url>
     <loc>https://bookofdaniel.in/posts/15-ways-to-stay-fit-while-sitting-at-home/</loc>
@@ -30,9 +36,6 @@
     <lastmod>2023-12-13T09:39:37+05:30</lastmod>
   </url><url>
     <loc>https://bookofdaniel.in/posts/key-principles-of-any-cloud-environments/</loc>
-    <lastmod>2023-11-20T08:49:43+05:30</lastmod>
-  </url><url>
-    <loc>https://bookofdaniel.in/categories/notes/</loc>
     <lastmod>2023-11-20T08:49:43+05:30</lastmod>
   </url><url>
     <loc>https://bookofdaniel.in/posts/the-rise-of-nostr-and-the-renaissance-of-social-media/</loc>

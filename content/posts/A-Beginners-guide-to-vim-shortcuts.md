@@ -5,8 +5,6 @@ featured_image: "/images/A Beginners Guide to Vim Shortcuts.png"
 categories: "Code"
 draft : false
 ---
-# A Beginner's Guide to Vim Shortcuts and Commands
-
 Vim is a highly configurable text editor used in programming. It's known for its efficiency, enabling users to navigate and edit documents with minimal use of the mouse. This blog post will introduce you to the most important Vim shortcuts and commands, making your coding journey smoother and more efficient.
 
 ## Understanding Vim Modes

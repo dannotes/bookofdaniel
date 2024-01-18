@@ -7,9 +7,492 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2023</copyright>
-    <lastBuildDate>Thu, 11 Jan 2024 08:04:16 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jan 2024 22:45:09 +0530</lastBuildDate>
     
         <atom:link href="https://bookofdaniel.in/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>The Batchology Handbook: Mastering the Art of Batch Scripting in Windows</title>
+        <link>https://bookofdaniel.in/posts/the-batchology-handbook/</link>
+        <pubDate>Wed, 17 Jan 2024 22:45:09 +0530</pubDate>
+        
+        <guid>https://bookofdaniel.in/posts/the-batchology-handbook/</guid>
+        <description>🧑🏻‍💻 Book Of Daniel https://bookofdaniel.in/posts/the-batchology-handbook/ -&lt;p&gt;Hello there! If you&amp;rsquo;ve ever wondered how to make your computer tasks faster and more efficient, you&amp;rsquo;re in the right place. This blog post is all about Batch scripting - a simple yet powerful way to automate tasks in Windows.&lt;/p&gt;
+&lt;p&gt;Whether you&amp;rsquo;re new to programming or have some experience, &amp;ldquo;The Batchology Handbook&amp;rdquo; is designed to be easy to follow and understand. We&amp;rsquo;ll start with the basics, like setting up your workspace, and gradually move into more exciting stuff, like automating file management and using cool commands you might not know about.&lt;/p&gt;
+&lt;p&gt;Batch scripting might sound a bit technical, but I promise to keep things light and straightforward. You&amp;rsquo;ll find practical examples that you can try out yourself, and I&amp;rsquo;ll explain everything step by step. By the end of this guide, you&amp;rsquo;ll be amazed at how much you can do with just a few simple commands.&lt;/p&gt;
+&lt;p&gt;So, let&amp;rsquo;s get started and explore the world of Batch scripting together!&lt;/p&gt;
+&lt;h1 id=&#34;1-introduction&#34;&gt;1. Introduction&lt;/h1&gt;
+&lt;p&gt;Batch programming, also known as batch scripting, is a method of automating repetitive tasks in the Windows operating system. This is achieved through the creation of a batch file, a text file containing a series of commands to be executed by the command-line interpreter. Batch files are identified by their &lt;code&gt;.bat&lt;/code&gt; or &lt;code&gt;.cmd&lt;/code&gt; extension.&lt;/p&gt;
+&lt;h3 id=&#34;purpose&#34;&gt;Purpose&lt;/h3&gt;
+&lt;p&gt;The primary purpose of batch programming is to simplify the execution of multiple commands. It&amp;rsquo;s a powerful tool for system administrators, developers, and power users to automate routine tasks like file management, software installation, and system configuration.&lt;/p&gt;
+&lt;h3 id=&#34;advantages&#34;&gt;Advantages&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Efficiency: Automates repetitive tasks, saving time and effort.&lt;/li&gt;
+&lt;li&gt;Ease of Use: Requires no special programming skills, making it accessible for beginners.&lt;/li&gt;
+&lt;li&gt;Flexibility: Can be combined with other scripts and programs for more complex operations.&lt;/li&gt;
+&lt;li&gt;Resource-Friendly: Consumes minimal system resources.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;basic-components&#34;&gt;Basic Components&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Command Prompt: The environment where batch files are executed.&lt;/li&gt;
+&lt;li&gt;Commands: Instructions executed sequentially in a batch file.&lt;/li&gt;
+&lt;li&gt;Scripting Elements: Include loops, conditional statements, and variables.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;2-requirements&#34;&gt;2. Requirements&lt;/h1&gt;
+&lt;p&gt;Batch programming doesn&amp;rsquo;t require any additional software installations on Windows operating systems as it utilizes the built-in Command Prompt. However, to create and edit batch files efficiently, the following are recommended:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Windows OS&lt;/strong&gt;: Any modern version (Windows 7, 8, 10, or 11).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Text Editor&lt;/strong&gt;: Notepad (built-in), Notepad++, or any other preferred text editor, Recommended: Visual Studio Code.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;configuring-the-command-prompt&#34;&gt;Configuring the Command Prompt&lt;/h3&gt;
+&lt;p&gt;While not strictly necessary, configuring the Command Prompt for better usability can enhance the batch scripting experience:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Accessing Command Prompt&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;Press &lt;code&gt;Win + R&lt;/code&gt;, type &lt;code&gt;cmd&lt;/code&gt;, and press Enter.&lt;/li&gt;
+&lt;li&gt;Alternatively, search for &amp;ldquo;Command Prompt&amp;rdquo; in the start menu.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Customization&lt;/strong&gt; (Optional):
+&lt;ul&gt;
+&lt;li&gt;Right-click the title bar of the Command Prompt window.&lt;/li&gt;
+&lt;li&gt;Choose &amp;lsquo;Properties&amp;rsquo; to adjust settings like font size, layout, and color scheme for better visibility.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;creating-your-first-batch-file&#34;&gt;Creating Your First Batch File&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Open a Text Editor&lt;/strong&gt;: Right-click on your desktop or in any folder, select &amp;ldquo;New&amp;rdquo; &amp;gt; &amp;ldquo;Text Document.&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Enter a Simple Command&lt;/strong&gt;: For example, type &lt;code&gt;echo Hello, world!&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Save the File with a .bat Extension&lt;/strong&gt;: Click &amp;lsquo;File&amp;rsquo; &amp;gt; &amp;lsquo;Save As&amp;rsquo;, name your file (e.g., &lt;code&gt;HelloWorld.bat&lt;/code&gt;), and change the &amp;lsquo;Save as type&amp;rsquo; to &amp;lsquo;All Files&amp;rsquo;. Ensure the filename ends with &lt;code&gt;.bat&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Run Your Batch File&lt;/strong&gt;: Double-click the file to execute or run it from the Command Prompt.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;setting-file-associations-optional&#34;&gt;Setting File Associations (Optional)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;If double-clicking the &lt;code&gt;.bat&lt;/code&gt; file doesn&amp;rsquo;t execute it, ensure that &lt;code&gt;.bat&lt;/code&gt; files are associated with the Command Prompt:&lt;/li&gt;
+&lt;li&gt;Right-click on a &lt;code&gt;.bat&lt;/code&gt; file and select &amp;lsquo;Open with&amp;rsquo; &amp;gt; &amp;lsquo;Choose another app.&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;Select &amp;lsquo;More apps&amp;rsquo;, scroll down, and choose &amp;lsquo;Look for another app on this PC.&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;Navigate to &lt;code&gt;C:\Windows\System32&lt;/code&gt; and select &lt;code&gt;cmd.exe&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;tips&#34;&gt;Tips&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;File Locations&lt;/strong&gt;: Store your batch files in a dedicated folder for easy management.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Testing&lt;/strong&gt;: Always test new scripts in a controlled environment to prevent unintended actions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;3-basic-commands&#34;&gt;3. Basic Commands&lt;/h1&gt;
+&lt;p&gt;Batch files execute a series of Command Prompt commands. Here, we&amp;rsquo;ll explore some fundamental commands that form the building blocks of batch scripting.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Command&lt;/th&gt;
+&lt;th&gt;Purpose&lt;/th&gt;
+&lt;th&gt;Example&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Echo&lt;/td&gt;
+&lt;td&gt;Displays messages or turns command echoing on/off.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;echo Hello, world!&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Displays &amp;ldquo;Hello, world!&amp;rdquo; in Command Prompt.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;REM&lt;/td&gt;
+&lt;td&gt;Adds comments in the script for readability.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;REM This is a comment&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Ignored during execution, used for notes.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SET&lt;/td&gt;
+&lt;td&gt;Creates or changes environment variables.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;SET name=John&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Sets the value of &lt;code&gt;name&lt;/code&gt; to &amp;ldquo;John.&amp;rdquo;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GOTO&lt;/td&gt;
+&lt;td&gt;Directs the script to another section.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;GOTO END&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Jumps to the label &lt;code&gt;:END&lt;/code&gt; in the script.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Labels&lt;/td&gt;
+&lt;td&gt;Marks a section of the script.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;:END&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Used with &lt;code&gt;GOTO&lt;/code&gt; to create script sections.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PAUSE&lt;/td&gt;
+&lt;td&gt;Pauses the script, waiting for a key press.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PAUSE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Used for testing or script pauses.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;EXIT&lt;/td&gt;
+&lt;td&gt;Exits the Command Prompt or a script.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;EXIT&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Closes the Command Prompt window in a script.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;sample-batch-file&#34;&gt;Sample Batch File&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; @&lt;span style=&#34;color:#ff7b72&#34;&gt;ECHO&lt;/span&gt; OFF
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;REM Sample batch script&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#ff7b72&#34;&gt;SET&lt;/span&gt; &lt;span style=&#34;color:#79c0ff&#34;&gt;name&lt;/span&gt;=John
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#ff7b72&#34;&gt;echo&lt;/span&gt; Hello, &lt;span style=&#34;color:#79c0ff&#34;&gt;%name%&lt;/span&gt;!
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#ff7b72&#34;&gt;PAUSE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#ff7b72&#34;&gt;GOTO&lt;/span&gt; &lt;span style=&#34;color:#79c0ff;font-weight:bold&#34;&gt;END&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; :&lt;span style=&#34;color:#79c0ff;font-weight:bold&#34;&gt;END&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#ff7b72&#34;&gt;echo&lt;/span&gt; Script is ending...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#ff7b72&#34;&gt;EXIT&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This script introduces basic commands, including setting a variable, displaying messages, and controlling the script flow.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;4-advanced-scripting-techniques&#34;&gt;4. Advanced Scripting Techniques&lt;/h1&gt;
+&lt;p&gt;After mastering basic commands, you can enhance your batch scripts with more sophisticated techniques. These advanced methods allow for greater flexibility and functionality in your scripts.&lt;/p&gt;
+&lt;h3 id=&#34;using-variables&#34;&gt;Using Variables&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dynamic Variable Assignment&lt;/strong&gt;:Variables can be set based on user input or other commands.
+&lt;ul&gt;
+&lt;li&gt;Example: &lt;code&gt;SET /P username=Enter your username: &lt;/code&gt;This command prompts the user to enter a username, which is stored in the &lt;code&gt;username&lt;/code&gt; variable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Manipulating Strings&lt;/strong&gt;: Batch scripts support basic string manipulation.
+&lt;ul&gt;
+&lt;li&gt;Example: &lt;code&gt;SET fullname=%firstname% %lastname%&lt;/code&gt;
+Concatenates two variables to create a full name.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;conditional-statements&#34;&gt;Conditional Statements&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;IF Command&lt;/strong&gt;: Used for making decisions in scripts.
+&lt;ul&gt;
+&lt;li&gt;Syntax: &lt;code&gt;IF [condition] [command]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Example: &lt;code&gt;IF %age% LEQ 18 echo You are a minor.&lt;/code&gt;
+Checks if the value of &lt;code&gt;age&lt;/code&gt; is less than or equal to 18.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Using ELSE&lt;/strong&gt;: To specify an alternative action if the IF condition is false.
+&lt;ul&gt;
+&lt;li&gt;Example: &lt;code&gt;IF %number% EQU 10 (echo Number is 10) ELSE (echo Number is not 10)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;loops&#34;&gt;Loops&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;FOR Command&lt;/strong&gt;: Executes a command for each item in a set.
+&lt;ul&gt;
+&lt;li&gt;Syntax: &lt;code&gt;FOR %%parameter IN (set) DO command&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Example: &lt;code&gt;FOR %%G IN (*.txt) DO echo %%G&lt;/code&gt;
+This will echo the name of each &lt;code&gt;.txt&lt;/code&gt; file in the current directory.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;subroutines&#34;&gt;Subroutines&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;CALL Command&lt;/strong&gt;: Calls another batch file or a label within the same file.
+&lt;ul&gt;
+&lt;li&gt;Example: &lt;code&gt;CALL :subroutine&lt;/code&gt;
+Calls a label named &lt;code&gt;:subroutine&lt;/code&gt; within the script.&lt;/li&gt;
+&lt;li&gt;Creating a Subroutine:
+&lt;ul&gt;
+&lt;li&gt;Example:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;:&lt;span style=&#34;color:#79c0ff;font-weight:bold&#34;&gt;subroutine&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff7b72&#34;&gt;echo&lt;/span&gt; This is a subroutine.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff7b72&#34;&gt;GOTO&lt;/span&gt; :&lt;span style=&#34;color:#79c0ff;font-weight:bold&#34;&gt;EOF&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;error-handling&#34;&gt;Error Handling&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ErrorLevel&lt;/strong&gt;: Used to check the status of the last executed command.
+&lt;ul&gt;
+&lt;li&gt;Example: &lt;code&gt;IF %ERRORLEVEL% NEQ 0 echo Error occurred.&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Using &lt;code&gt;EXIT /B&lt;/code&gt;&lt;/strong&gt;: Exits the script or subroutine without closing the Command Prompt.
+&lt;ul&gt;
+&lt;li&gt;Example: &lt;code&gt;EXIT /B 1&lt;/code&gt;
+Exits the subroutine or script and sets the &lt;code&gt;ErrorLevel&lt;/code&gt; to 1.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;delay-execution&#34;&gt;Delay Execution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;TIMEOUT Command&lt;/strong&gt;: Pauses the script for a specified number of seconds.&lt;/li&gt;
+&lt;li&gt;Example: &lt;code&gt;TIMEOUT /T 10&lt;/code&gt;
+Pauses the script for 10 seconds.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;sample-advanced-batch-file&#34;&gt;Sample Advanced Batch File&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@&lt;span style=&#34;color:#ff7b72&#34;&gt;ECHO&lt;/span&gt; OFF
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff7b72&#34;&gt;SET&lt;/span&gt; &lt;span style=&#34;color:#ff7b72&#34;&gt;/P&lt;/span&gt; &lt;span style=&#34;color:#79c0ff&#34;&gt;userinput&lt;/span&gt;=Enter a number: 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff7b72&#34;&gt;IF&lt;/span&gt; &lt;span style=&#34;color:#79c0ff&#34;&gt;%userinput%&lt;/span&gt; &lt;span style=&#34;color:#ff7b72;font-weight:bold&#34;&gt;EQU&lt;/span&gt; 10 (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff7b72&#34;&gt;echo&lt;/span&gt; The number is 10.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;) &lt;span style=&#34;color:#ff7b72&#34;&gt;ELSE&lt;/span&gt; (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#ff7b72&#34;&gt;echo&lt;/span&gt; The number is not 10.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff7b72&#34;&gt;FOR&lt;/span&gt; &lt;span style=&#34;color:#79c0ff&#34;&gt;%%&lt;/span&gt;G &lt;span style=&#34;color:#ff7b72&#34;&gt;IN&lt;/span&gt; (*.docx) &lt;span style=&#34;color:#ff7b72&#34;&gt;DO&lt;/span&gt; &lt;span style=&#34;color:#ff7b72&#34;&gt;echo&lt;/span&gt; Found document: &lt;span style=&#34;color:#79c0ff&#34;&gt;%%&lt;/span&gt;G
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff7b72&#34;&gt;CALL&lt;/span&gt; :&lt;span style=&#34;color:#79c0ff;font-weight:bold&#34;&gt;subroutine&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff7b72&#34;&gt;EXIT&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;:&lt;span style=&#34;color:#79c0ff;font-weight:bold&#34;&gt;subroutine&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff7b72&#34;&gt;echo&lt;/span&gt; This is a subroutine.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff7b72&#34;&gt;GOTO&lt;/span&gt; :&lt;span style=&#34;color:#79c0ff;font-weight:bold&#34;&gt;EOF&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This script combines various advanced techniques, showcasing conditional logic, loops, subroutines, and user input.&lt;/p&gt;
+&lt;h3 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;Advanced scripting techniques in batch programming significantly enhance the capabilities of your scripts, allowing you to automate more complex tasks and handle various scenarios efficiently.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;4-file-operations&#34;&gt;4. File Operations&lt;/h1&gt;
+&lt;p&gt;File operations are crucial in batch programming for managing files and directories. This section covers commands to perform various file operations such as creating, copying, moving, and deleting files and directories.&lt;/p&gt;
+&lt;h3 id=&#34;creating-files-and-directories&#34;&gt;Creating Files and Directories&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Creating a New File:
+&lt;ul&gt;
+&lt;li&gt;Command: &lt;code&gt;type nul &amp;gt; filename.ext&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Example: &lt;code&gt;type nul &amp;gt; example.txt&lt;/code&gt;
+Creates an empty file named &lt;code&gt;example.txt&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Creating a Directory:
+&lt;ul&gt;
+&lt;li&gt;Command: &lt;code&gt;mkdir directoryname&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Example: &lt;code&gt;mkdir MyFolder&lt;/code&gt;
+Creates a new directory named &lt;code&gt;MyFolder&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;copying-files-and-directories&#34;&gt;Copying Files and Directories&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Copying a File:
+&lt;ul&gt;
+&lt;li&gt;Command: &lt;code&gt;copy source destination&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Example: &lt;code&gt;copy example.txt D:\Backup\example.txt&lt;/code&gt;
+Copies &lt;code&gt;example.txt&lt;/code&gt; to the &lt;code&gt;D:\Backup&lt;/code&gt; directory.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Copying a Directory:
+&lt;ul&gt;
+&lt;li&gt;Command: &lt;code&gt;xcopy source destination /E /H /C /I&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Example: &lt;code&gt;xcopy MyFolder D:\Backup\MyFolder /E /H /C /I&lt;/code&gt;
+Recursively copies &lt;code&gt;MyFolder&lt;/code&gt; to &lt;code&gt;D:\Backup&lt;/code&gt;, including hidden files and subdirectories.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;moving-and-renaming-files-and-directories&#34;&gt;Moving and Renaming Files and Directories&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Moving a File:
+&lt;ul&gt;
+&lt;li&gt;Command: &lt;code&gt;move source destination&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Example: &lt;code&gt;move example.txt D:\Archive&lt;/code&gt;
+Moves &lt;code&gt;example.txt&lt;/code&gt; to &lt;code&gt;D:\Archive&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Renaming a File or Directory:
+&lt;ul&gt;
+&lt;li&gt;Command: &lt;code&gt;ren oldname newname&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Example: &lt;code&gt;ren example.txt new_example.txt&lt;/code&gt;
+Renames &lt;code&gt;example.txt&lt;/code&gt; to &lt;code&gt;new_example.txt&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;deleting-files-and-directories&#34;&gt;Deleting Files and Directories&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Deleting a File:
+&lt;ul&gt;
+&lt;li&gt;Command: &lt;code&gt;del filename&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Example: &lt;code&gt;del example.txt&lt;/code&gt;
+Deletes &lt;code&gt;example.txt&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Deleting a Directory:
+- Command: &lt;code&gt;rmdir /S /Q directoryname&lt;/code&gt;
+- Example: &lt;code&gt;rmdir /S /Q MyFolder&lt;/code&gt;
+Deletes &lt;code&gt;MyFolder&lt;/code&gt; and all of its contents.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;working-with-file-attributes&#34;&gt;Working with File Attributes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Changing File Attributes:
+&lt;ul&gt;
+&lt;li&gt;Command: &lt;code&gt;attrib [+|-][R|A|S|H] filename&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Example: &lt;code&gt;attrib +R example.txt&lt;/code&gt;
+Sets the read-only attribute to &lt;code&gt;example.txt&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;sample-script-for-file-operations&#34;&gt;Sample Script for File Operations&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  @&lt;span style=&#34;color:#ff7b72&#34;&gt;ECHO&lt;/span&gt; OFF
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff7b72&#34;&gt;mkdir&lt;/span&gt; MyDocuments
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff7b72&#34;&gt;type&lt;/span&gt; nul &amp;gt; MyDocuments\doc1.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  xcopy MyDocuments D:\Backup\MyDocuments /E /H /C /I
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff7b72&#34;&gt;move&lt;/span&gt; MyDocuments\doc1.txt MyDocuments\document.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff7b72&#34;&gt;del&lt;/span&gt; MyDocuments\doc1.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff7b72&#34;&gt;rmdir&lt;/span&gt; /S /Q MyDocuments
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This script demonstrates creating a directory and a file, copying the directory, renaming a file, deleting the file, and finally deleting the directory.&lt;/p&gt;
+&lt;h3 id=&#34;conclusion-1&#34;&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;Understanding file operations in batch programming is essential for effective script writing, especially when handling bulk file management tasks. These operations lay the foundation for automating routine file management tasks in a Windows environment.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;5-cool-commands&#34;&gt;5. Cool Commands&lt;/h1&gt;
+&lt;p&gt;In addition to basic file operations and scripting techniques, batch programming offers a plethora of &amp;ldquo;cool commands&amp;rdquo; that can be used for a wide range of purposes, from system administration to advanced file manipulation. Let&amp;rsquo;s explore some of these commands and their functionalities.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Command&lt;/th&gt;
+&lt;th&gt;Purpose&lt;/th&gt;
+&lt;th&gt;Usage&lt;/th&gt;
+&lt;th&gt;Reference Link&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;FC&lt;/td&gt;
+&lt;td&gt;Compares two files and displays the differences.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;FC file1 file2&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/fc&#34;&gt;🔗&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;FORFILES&lt;/td&gt;
+&lt;td&gt;Executes a command on each file in a set of files.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;FORFILES /P directory /M searchmask /C cmd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/forfiles&#34;&gt;🔗&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;HELP&lt;/td&gt;
+&lt;td&gt;Provides help information for batch commands.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;HELP command&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/help&#34;&gt;🔗&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MSG&lt;/td&gt;
+&lt;td&gt;Sends a message to a user or session.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;MSG [username]&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/msg&#34;&gt;🔗&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PROMPT&lt;/td&gt;
+&lt;td&gt;Changes the command prompt.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PROMPT [text]&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/prompt&#34;&gt;🔗&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;QUERY&lt;/td&gt;
+&lt;td&gt;Displays the status of a specified service/session.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;QUERY session&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/query&#34;&gt;🔗&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;REG&lt;/td&gt;
+&lt;td&gt;Manages registry keys and values.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;REG QUERY key&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/reg-query&#34;&gt;🔗&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RUNAS&lt;/td&gt;
+&lt;td&gt;Executes a program under a different user account.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;RUNAS /USER:user program&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771525(v=ws.11)&#34;&gt;🔗&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SC&lt;/td&gt;
+&lt;td&gt;Manages Windows services.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;SC command service_name&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc754599(v=ws.11)&#34;&gt;🔗&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SCHTASKS&lt;/td&gt;
+&lt;td&gt;Schedules commands/programs to run periodically.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;SCHTASKS /CREATE /SC schedule /TN task /TR run&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc725744(v=ws.11)&#34;&gt;🔗&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SHORTCUT&lt;/td&gt;
+&lt;td&gt;Creates a Windows shortcut.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;SHORTCUT /F:filename /A:C /T:targetpath&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://ss64.com/nt/shortcut.html&#34;&gt;🔗&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SHUTDOWN&lt;/td&gt;
+&lt;td&gt;Shuts down or restarts a computer.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;SHUTDOWN /s /t time&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://ss64.com/nt/shutdown.html&#34;&gt;🔗&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SUBST&lt;/td&gt;
+&lt;td&gt;Associates a path with a drive letter.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;SUBST drive: path&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://ss64.com/nt/subst.html&#34;&gt;🔗&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SYSTEMINFO&lt;/td&gt;
+&lt;td&gt;Displays detailed system information.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;SYSTEMINFO&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://ss64.com/nt/systeminfo.html&#34;&gt;🔗&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TAKEOWN&lt;/td&gt;
+&lt;td&gt;Takes ownership of a file or folder.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;TAKEOWN /F file_or_folder&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://ss64.com/nt/takeown.html&#34;&gt;🔗&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TASKKILL&lt;/td&gt;
+&lt;td&gt;Ends tasks or processes.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;TASKKILL /IM imagename&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://ss64.com/nt/taskkill.html&#34;&gt;🔗&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TASKLIST&lt;/td&gt;
+&lt;td&gt;Displays a list of currently running tasks.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;TASKLIST&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://ss64.com/nt/tasklist.html&#34;&gt;🔗&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TELNET&lt;/td&gt;
+&lt;td&gt;Communicates using the Telnet protocol.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;TELNET [host] [port]&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://ss64.com/nt/telnet.html&#34;&gt;🔗&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TREE&lt;/td&gt;
+&lt;td&gt;Graphically displays folder structure.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;TREE path&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://ss64.com/nt/tree.html&#34;&gt;🔗&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TSDISCON&lt;/td&gt;
+&lt;td&gt;Disconnects a Terminal Services session.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;TSDISCON sessionid&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://ss64.com/nt/tsdiscon.html&#34;&gt;🔗&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;WHERE&lt;/td&gt;
+&lt;td&gt;Locates and displays file paths matching a pattern.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;WHERE pattern&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://ss64.com/nt/where.html&#34;&gt;🔗&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;WHOAMI&lt;/td&gt;
+&lt;td&gt;Displays user, group, and privilege information.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;WHOAMI&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://ss64.com/nt/whoami.html&#34;&gt;🔗&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;references&#34;&gt;References&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://ss64.com/nt/syntax.html&#34;&gt;Windows CMD Command Syntax - SS64.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ss64.com/nt/&#34;&gt;An A-Z Index of Windows CMD commands - SS64.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+- https://bookofdaniel.in/posts/the-batchology-handbook/ - 2023</description>
+        </item>
     
     
     
@@ -513,63 +996,6 @@ The idea is to step away from your work in a way that refreshes you, not one tha
 &lt;p&gt;In summary, the essence of this productivity system lies in its simplicity and flexibility. It&amp;rsquo;s about making the most of your time and effort by focusing on what truly matters. Whether you&amp;rsquo;re aiming for academic excellence, professional growth, or personal development, these strategies can be tailored to fit your needs and help you achieve your goals.&lt;/p&gt;
 &lt;p&gt;Until next time, keep it productive, folks! 🔥&lt;/p&gt;
 - https://bookofdaniel.in/posts/the-ultimate-productive-system/ - 2023</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>How I Started a YouTube Channel and Got 100K Subscribers in 6 Months (Even Though I Got Copyright Strikes)</title>
-        <link>https://bookofdaniel.in/posts/how-i-started-a-youtube-channel/</link>
-        <pubDate>Sun, 05 Nov 2023 08:54:22 +0530</pubDate>
-        
-        <guid>https://bookofdaniel.in/posts/how-i-started-a-youtube-channel/</guid>
-        <description>🧑🏻‍💻 Book Of Daniel https://bookofdaniel.in/posts/how-i-started-a-youtube-channel/ -&lt;p&gt;During the COVID-19 lockdown, people had differing views: some felt it could be the end, while others saw it as an opportunity to start something new. One common thread was that everyone was glued to their smartphones. YouTube &lt;a href=&#34;https://www.youtube.com/trends/articles/covid-impact/&#34;&gt;trends during the pandemic&lt;/a&gt; showed skyrocketing watch times since everyone was either watching videos or sleeping.&lt;/p&gt;
-&lt;p&gt;YouTube Shorts started gaining more traction over time, particularly those related to motivation. Everyone needed motivation because those were the tough times.&lt;/p&gt;
-&lt;h1 id=&#34;seizing-the-moment-&#34;&gt;Seizing the Moment ⏱️&lt;/h1&gt;
-&lt;p&gt;I was late to join the motivation genre. In June 2022, I realized the potential of starting a motivational channel. Compared to the other channels, like &amp;lsquo;Day in the Life&amp;rsquo;, educational, or travel channels, it&amp;rsquo;s relatively simple. You just cut clips from long-form videos of other channels into shorts of less than 30 or 60 seconds with copyright-free music.&lt;/p&gt;
-&lt;p&gt;I started multiple motivational channels like learnwithniel and musetales. Some garnered a few views in the first month due to the infamous YouTube algorithm push. After that, the views dwindled.&lt;/p&gt;
-&lt;p&gt;I&amp;rsquo;ve long been a fan of Jay Shetty and a regular viewer of his &lt;a href=&#34;https://www.youtube.com/@JayShettyPodcast.&#34;&gt;Jay Shetty Podcast channel&lt;/a&gt;. In December 2022, I noticed there were no fan channels for Jay Shetty, so I started one called &lt;a href=&#34;https://www.youtube.com/@jayshettyshorts&#34;&gt;Jay Shetty Shorts&lt;/a&gt; 😉.&lt;/p&gt;
-&lt;p&gt;Since Jay Shetty is a popular motivational speaker, the channel was a hit. It attracted a lot of attention from both haters and supporters, which helped increase views and comments 😊.&lt;/p&gt;
-&lt;img title=&#34;Jay Shetty Fan Channel&#34; alt=&#34;Jay Shetty Fan Channel&#34; src=&#34;https://bookofdaniel.in/images/Jay Shetty Fan Channel.png&#34;&gt;
-&lt;h1 id=&#34;the-grind-of-consistency-&#34;&gt;The Grind of Consistency 💪🏻&lt;/h1&gt;
-&lt;p&gt;Before starting the YouTube channel, I thought it was easy money—people post videos and earn millions, like a money-printing machine.&lt;/p&gt;
-&lt;p&gt;Then I realized that being a YouTuber is not easy! It&amp;rsquo;s a commitment to subscribers. If you&amp;rsquo;re consistent, the YouTube Algorithm will promote your videos, leading to more views. I committed to posting 2 clips + 2 shorts daily.&lt;/p&gt;
-&lt;p&gt;It was difficult because I was not naturally consistent. After starting this channel, I committed myself to editing videos daily. There were many sleepless nights, as I had to balance this with my day job. But let me tell you, it was worth it, and I experienced the power of consistency in my life.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;Success isn&amp;rsquo;t always about greatness. It&amp;rsquo;s about consistency. Consistent hard work leads to success. Greatness will come.&amp;rdquo; - Dwayne Johnson&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;beyond-subscribers-and-likes-&#34;&gt;Beyond Subscribers and Likes 👍🏻&lt;/h1&gt;
-&lt;p&gt;On YouTube, having a large number of subscribers doesn&amp;rsquo;t necessarily mean higher earnings; it&amp;rsquo;s all about the views. If you have more views, you&amp;rsquo;ll earn more and gain subscribers as a by-product.&lt;/p&gt;
-&lt;p&gt;The comments from Jay Shetty&amp;rsquo;s fans were one of my motivations for this channel. It was inspiring to see how supporters took the content to heart and how it inspired them to express love and inspire others.&lt;/p&gt;
-&lt;p&gt;But remember, if you&amp;rsquo;re solely focused on subscriber count, comments, and likes, you won&amp;rsquo;t be able to continue the journey of being a YouTuber. Do good work and commit to the cause.&lt;/p&gt;
-&lt;p&gt;Earning for your hard work is also important since you&amp;rsquo;re investing a lot of effort and precious time.&lt;/p&gt;
-&lt;p&gt;&amp;ldquo;Time is what we want most, but what we use worst.&amp;rdquo; - William Penn&lt;/p&gt;
-&lt;h1 id=&#34;monetization-and-google-adsense-&#34;&gt;Monetization and Google AdSense 💰&lt;/h1&gt;
-&lt;p&gt;YouTube isn&amp;rsquo;t the money printing machine I once thought it was. Your channel only starts earning after reaching certain thresholds: 1000 Subscribers (now 500), 4000 watch hours (now 3000), and for Shorts, 3 million valid public shorts views in 90 days. These thresholds are there to ensure you&amp;rsquo;re consistent and to see if it&amp;rsquo;s worth betting on you for Google AdSense revenue.&lt;/p&gt;
-&lt;p&gt;By the grace of God, I started earning within 1.5 months. The revenue isn&amp;rsquo;t the same for every channel; it depends on the content and the ads.&lt;/p&gt;
-&lt;p&gt;One &lt;a href=&#34;https://www.youtube.com/shorts/uG64TZWbQSc&#34;&gt;Shorts video&lt;/a&gt;  featuring Jay Shetty and Drew Barrymore helped me surpass the YouTube revenue threshold.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Sometimes all you need is a single shot to turn your hard work into a dream ✨; keep digging ⛏️.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;the-milestone-100k-subscribers--the-silver-play-button-&#34;&gt;The Milestone: 100K Subscribers &amp;amp; The Silver Play Button 🏆&lt;/h1&gt;
-&lt;p&gt;After six months of sleepless nights and consistent hard work, the channel reached 100K subscribers ✨.&lt;/p&gt;
-&lt;img title=&#34;YouTube channel views&#34; alt=&#34;YouTube channel views for 2023&#34; src=&#34;https://bookofdaniel.in/images/YouTube Views.png&#34;&gt;
-&lt;p&gt;Does this number of subscribers mean something? Yes, in terms of hard work and consistency it&amp;rsquo;s a reward, but it doesn&amp;rsquo;t mean you&amp;rsquo;re superior to anyone else; it humbles you to thank every subscriber, hater, and supporter for engaging with the content.&lt;/p&gt;
-&lt;p&gt;It took about three weeks to receive the YouTube Silver Play Button after reaching 100K subscribers.&lt;/p&gt;
-&lt;p&gt;Holding that award for the first time felt good. I thanked Almighty God for it and, like a typical human being, shared the news on social media.&lt;/p&gt;
-&lt;p&gt;Most of my colleagues and friends were surprised because only a few knew that I owned a YouTube channel.&lt;/p&gt;
-&lt;p&gt;After posting on social media, I put the award back in its box and stored it away. I haven&amp;rsquo;t had the time to frame it and hang it on the wall.&lt;/p&gt;
-&lt;h1 id=&#34;copyright-strike-&#34;&gt;Copyright Strike ⚡️&lt;/h1&gt;
-&lt;p&gt;By the time I had posted over 1000 videos and amassed 100K+ subscribers, I began receiving copyright strikes from &lt;a href=&#34;https://www.superbam.com/&#34;&gt;SuperBam&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I had anticipated this for a long time. 😊 Although it was a fan channel, the content was still from the Jay Shetty Podcast Channel. The copyright strike was legitimate.&lt;/p&gt;
-&lt;p&gt;The nature of the strike was such that I could continue posting videos but was prohibited from earning any revenue from them.&lt;/p&gt;
-&lt;h1 id=&#34;the-end&#34;&gt;The End&lt;/h1&gt;
-&lt;p&gt;Now, I have stopped posting videos as we are receiving copyright strikes ⚡️. I&amp;rsquo;ve learned so many things over these months and am thankful to Jay Shetty for pushing me to exceed my own limits regarding consistency. Editing his 1000+ videos has taught me about his commitment to his purpose and his consistency in posting weekly without fail.&lt;/p&gt;
-&lt;p&gt;If you are planning to start a YouTube channel, I hope this will serve as motivation for you. Consistency is the key in every trade.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;The best time to start a YouTube channel was yesterday.&amp;rdquo; - Unknown&lt;/p&gt;
-&lt;/blockquote&gt;
-- https://bookofdaniel.in/posts/how-i-started-a-youtube-channel/ - 2023</description>
         </item>
     
     

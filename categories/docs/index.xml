@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on 🧑🏻‍💻 Book Of Daniel</title>
+    <link>https://bookofdaniel.in/categories/docs/</link>
+    <description>Recent content in Docs on 🧑🏻‍💻 Book Of Daniel</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>2023</copyright>
+    <lastBuildDate>Wed, 17 Jan 2024 22:45:09 +0530</lastBuildDate><atom:link href="https://bookofdaniel.in/categories/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Batchology Handbook: Mastering the Art of Batch Scripting in Windows</title>
+      <link>https://bookofdaniel.in/posts/the-batchology-handbook/</link>
+      <pubDate>Wed, 17 Jan 2024 22:45:09 +0530</pubDate>
+      
+      <guid>https://bookofdaniel.in/posts/the-batchology-handbook/</guid>
+      <description>Hello there! If you&amp;rsquo;ve ever wondered how to make your computer tasks faster and more efficient, you&amp;rsquo;re in the right place. This blog post is all about Batch scripting - a simple yet powerful way to automate tasks in Windows.
+Whether you&amp;rsquo;re new to programming or have some experience, &amp;ldquo;The Batchology Handbook&amp;rdquo; is designed to be easy to follow and understand. We&amp;rsquo;ll start with the basics, like setting up your workspace, and gradually move into more exciting stuff, like automating file management and using cool commands you might not know about.</description>
+    </item>
+    
+  </channel>
+</rss>

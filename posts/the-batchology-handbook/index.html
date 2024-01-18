@@ -1,0 +1,2081 @@
+<!DOCTYPE html>
+<html><head>
+<title>The Batchology Handbook: Mastering the Art of Batch Scripting in Windows</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<link rel="icon" href="https://bookofdaniel.in/images/favicon.png">
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.ff0aac816f46e60f7fa3eff2233a3a7afab2864b4571de3a7bad7adaba84c3cb.css" integrity="sha256-/wqsgW9G5g9/o&#43;/yIzo6evqyhktFcd46e6162rqEw8s=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    Archive
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    Categories
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    Tags
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#1-introduction" class="nav-1-introduction">
+									1. Introduction
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#purpose" class="nav-purpose">
+									Purpose
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#advantages" class="nav-advantages">
+									Advantages
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#basic-components" class="nav-basic-components">
+									Basic Components
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#2-requirements" class="nav-2-requirements">
+									2. Requirements
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#configuring-the-command-prompt" class="nav-configuring-the-command-prompt">
+									Configuring the Command Prompt
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#creating-your-first-batch-file" class="nav-creating-your-first-batch-file">
+									Creating Your First Batch File
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#setting-file-associations-optional" class="nav-setting-file-associations-optional">
+									Setting File Associations (Optional)
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#tips" class="nav-tips">
+									Tips
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#3-basic-commands" class="nav-3-basic-commands">
+									3. Basic Commands
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#sample-batch-file" class="nav-sample-batch-file">
+									Sample Batch File
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#4-advanced-scripting-techniques" class="nav-4-advanced-scripting-techniques">
+									4. Advanced Scripting Techniques
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#using-variables" class="nav-using-variables">
+									Using Variables
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#conditional-statements" class="nav-conditional-statements">
+									Conditional Statements
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#loops" class="nav-loops">
+									Loops
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#subroutines" class="nav-subroutines">
+									Subroutines
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#error-handling" class="nav-error-handling">
+									Error Handling
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#delay-execution" class="nav-delay-execution">
+									Delay Execution
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#sample-advanced-batch-file" class="nav-sample-advanced-batch-file">
+									Sample Advanced Batch File
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#conclusion" class="nav-conclusion">
+									Conclusion
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#4-file-operations" class="nav-4-file-operations">
+									4. File Operations
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#creating-files-and-directories" class="nav-creating-files-and-directories">
+									Creating Files and Directories
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#copying-files-and-directories" class="nav-copying-files-and-directories">
+									Copying Files and Directories
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#moving-and-renaming-files-and-directories" class="nav-moving-and-renaming-files-and-directories">
+									Moving and Renaming Files and Directories
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#deleting-files-and-directories" class="nav-deleting-files-and-directories">
+									Deleting Files and Directories
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#working-with-file-attributes" class="nav-working-with-file-attributes">
+									Working with File Attributes
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#sample-script-for-file-operations" class="nav-sample-script-for-file-operations">
+									Sample Script for File Operations
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#conclusion-1" class="nav-conclusion-1">
+									Conclusion
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#5-cool-commands" class="nav-5-cool-commands">
+									5. Cool Commands
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#references" class="nav-references">
+									References
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://bookofdaniel.in/">
+            🧑🏻‍💻 Book Of Daniel
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://bookofdaniel.in/">
+        <div class="single-column-header-title">🧑🏻‍💻 Book Of Daniel</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+                
+            
+
+            <div class="post-head-wrapper"
+                
+                    
+                    
+                    style="background-image: url('https://bookofdaniel.in/images/The%20Batchology%20Handbook.png')"
+                    
+                
+            >
+                <div class="post-title">
+                    The Batchology Handbook: Mastering the Art of Batch Scripting in Windows
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2024-01-17 22:45
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/docs">Docs</a>
+                                &nbsp;
+                        
+
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            8 min
+                            
+                            9 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p>Hello there! If you&rsquo;ve ever wondered how to make your computer tasks faster and more efficient, you&rsquo;re in the right place. This blog post is all about Batch scripting - a simple yet powerful way to automate tasks in Windows.</p>
+<p>Whether you&rsquo;re new to programming or have some experience, &ldquo;The Batchology Handbook&rdquo; is designed to be easy to follow and understand. We&rsquo;ll start with the basics, like setting up your workspace, and gradually move into more exciting stuff, like automating file management and using cool commands you might not know about.</p>
+<p>Batch scripting might sound a bit technical, but I promise to keep things light and straightforward. You&rsquo;ll find practical examples that you can try out yourself, and I&rsquo;ll explain everything step by step. By the end of this guide, you&rsquo;ll be amazed at how much you can do with just a few simple commands.</p>
+<p>So, let&rsquo;s get started and explore the world of Batch scripting together!</p>
+<h1 id="1-introduction">1. Introduction</h1>
+<p>Batch programming, also known as batch scripting, is a method of automating repetitive tasks in the Windows operating system. This is achieved through the creation of a batch file, a text file containing a series of commands to be executed by the command-line interpreter. Batch files are identified by their <code>.bat</code> or <code>.cmd</code> extension.</p>
+<h3 id="purpose">Purpose</h3>
+<p>The primary purpose of batch programming is to simplify the execution of multiple commands. It&rsquo;s a powerful tool for system administrators, developers, and power users to automate routine tasks like file management, software installation, and system configuration.</p>
+<h3 id="advantages">Advantages</h3>
+<ul>
+<li>Efficiency: Automates repetitive tasks, saving time and effort.</li>
+<li>Ease of Use: Requires no special programming skills, making it accessible for beginners.</li>
+<li>Flexibility: Can be combined with other scripts and programs for more complex operations.</li>
+<li>Resource-Friendly: Consumes minimal system resources.</li>
+</ul>
+<h3 id="basic-components">Basic Components</h3>
+<ul>
+<li>Command Prompt: The environment where batch files are executed.</li>
+<li>Commands: Instructions executed sequentially in a batch file.</li>
+<li>Scripting Elements: Include loops, conditional statements, and variables.</li>
+</ul>
+<hr>
+<h1 id="2-requirements">2. Requirements</h1>
+<p>Batch programming doesn&rsquo;t require any additional software installations on Windows operating systems as it utilizes the built-in Command Prompt. However, to create and edit batch files efficiently, the following are recommended:</p>
+<ul>
+<li><strong>Windows OS</strong>: Any modern version (Windows 7, 8, 10, or 11).</li>
+<li><strong>Text Editor</strong>: Notepad (built-in), Notepad++, or any other preferred text editor, Recommended: Visual Studio Code.</li>
+</ul>
+<h3 id="configuring-the-command-prompt">Configuring the Command Prompt</h3>
+<p>While not strictly necessary, configuring the Command Prompt for better usability can enhance the batch scripting experience:</p>
+<ul>
+<li><strong>Accessing Command Prompt</strong>:
+<ul>
+<li>Press <code>Win + R</code>, type <code>cmd</code>, and press Enter.</li>
+<li>Alternatively, search for &ldquo;Command Prompt&rdquo; in the start menu.</li>
+</ul>
+</li>
+<li><strong>Customization</strong> (Optional):
+<ul>
+<li>Right-click the title bar of the Command Prompt window.</li>
+<li>Choose &lsquo;Properties&rsquo; to adjust settings like font size, layout, and color scheme for better visibility.</li>
+</ul>
+</li>
+</ul>
+<h3 id="creating-your-first-batch-file">Creating Your First Batch File</h3>
+<ul>
+<li><strong>Open a Text Editor</strong>: Right-click on your desktop or in any folder, select &ldquo;New&rdquo; &gt; &ldquo;Text Document.&rdquo;</li>
+<li><strong>Enter a Simple Command</strong>: For example, type <code>echo Hello, world!</code>.</li>
+<li><strong>Save the File with a .bat Extension</strong>: Click &lsquo;File&rsquo; &gt; &lsquo;Save As&rsquo;, name your file (e.g., <code>HelloWorld.bat</code>), and change the &lsquo;Save as type&rsquo; to &lsquo;All Files&rsquo;. Ensure the filename ends with <code>.bat</code>.</li>
+<li><strong>Run Your Batch File</strong>: Double-click the file to execute or run it from the Command Prompt.</li>
+</ul>
+<h3 id="setting-file-associations-optional">Setting File Associations (Optional)</h3>
+<ul>
+<li>If double-clicking the <code>.bat</code> file doesn&rsquo;t execute it, ensure that <code>.bat</code> files are associated with the Command Prompt:</li>
+<li>Right-click on a <code>.bat</code> file and select &lsquo;Open with&rsquo; &gt; &lsquo;Choose another app.&rsquo;</li>
+<li>Select &lsquo;More apps&rsquo;, scroll down, and choose &lsquo;Look for another app on this PC.&rsquo;</li>
+<li>Navigate to <code>C:\Windows\System32</code> and select <code>cmd.exe</code>.</li>
+</ul>
+<h3 id="tips">Tips</h3>
+<ul>
+<li><strong>File Locations</strong>: Store your batch files in a dedicated folder for easy management.</li>
+<li><strong>Testing</strong>: Always test new scripts in a controlled environment to prevent unintended actions.</li>
+</ul>
+<hr>
+<h1 id="3-basic-commands">3. Basic Commands</h1>
+<p>Batch files execute a series of Command Prompt commands. Here, we&rsquo;ll explore some fundamental commands that form the building blocks of batch scripting.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Echo</td>
+<td>Displays messages or turns command echoing on/off.</td>
+<td><code>echo Hello, world!</code></td>
+<td>Displays &ldquo;Hello, world!&rdquo; in Command Prompt.</td>
+</tr>
+<tr>
+<td>REM</td>
+<td>Adds comments in the script for readability.</td>
+<td><code>REM This is a comment</code></td>
+<td>Ignored during execution, used for notes.</td>
+</tr>
+<tr>
+<td>SET</td>
+<td>Creates or changes environment variables.</td>
+<td><code>SET name=John</code></td>
+<td>Sets the value of <code>name</code> to &ldquo;John.&rdquo;</td>
+</tr>
+<tr>
+<td>GOTO</td>
+<td>Directs the script to another section.</td>
+<td><code>GOTO END</code></td>
+<td>Jumps to the label <code>:END</code> in the script.</td>
+</tr>
+<tr>
+<td>Labels</td>
+<td>Marks a section of the script.</td>
+<td><code>:END</code></td>
+<td>Used with <code>GOTO</code> to create script sections.</td>
+</tr>
+<tr>
+<td>PAUSE</td>
+<td>Pauses the script, waiting for a key press.</td>
+<td><code>PAUSE</code></td>
+<td>Used for testing or script pauses.</td>
+</tr>
+<tr>
+<td>EXIT</td>
+<td>Exits the Command Prompt or a script.</td>
+<td><code>EXIT</code></td>
+<td>Closes the Command Prompt window in a script.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sample-batch-file">Sample Batch File</h3>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span> @<span style="color:#ff7b72">ECHO</span> OFF
+</span></span><span style="display:flex;"><span> <span style="color:#8b949e;font-style:italic">REM Sample batch script</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ff7b72">SET</span> <span style="color:#79c0ff">name</span>=John
+</span></span><span style="display:flex;"><span> <span style="color:#ff7b72">echo</span> Hello, <span style="color:#79c0ff">%name%</span>!
+</span></span><span style="display:flex;"><span> <span style="color:#ff7b72">PAUSE</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ff7b72">GOTO</span> <span style="color:#79c0ff;font-weight:bold">END</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span> :<span style="color:#79c0ff;font-weight:bold">END</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ff7b72">echo</span> Script is ending...
+</span></span><span style="display:flex;"><span> <span style="color:#ff7b72">EXIT</span>
+</span></span></code></pre></div><p>This script introduces basic commands, including setting a variable, displaying messages, and controlling the script flow.</p>
+<hr>
+<h1 id="4-advanced-scripting-techniques">4. Advanced Scripting Techniques</h1>
+<p>After mastering basic commands, you can enhance your batch scripts with more sophisticated techniques. These advanced methods allow for greater flexibility and functionality in your scripts.</p>
+<h3 id="using-variables">Using Variables</h3>
+<ul>
+<li><strong>Dynamic Variable Assignment</strong>:Variables can be set based on user input or other commands.
+<ul>
+<li>Example: <code>SET /P username=Enter your username: </code>This command prompts the user to enter a username, which is stored in the <code>username</code> variable.</li>
+</ul>
+</li>
+<li><strong>Manipulating Strings</strong>: Batch scripts support basic string manipulation.
+<ul>
+<li>Example: <code>SET fullname=%firstname% %lastname%</code>
+Concatenates two variables to create a full name.</li>
+</ul>
+</li>
+</ul>
+<h3 id="conditional-statements">Conditional Statements</h3>
+<ul>
+<li><strong>IF Command</strong>: Used for making decisions in scripts.
+<ul>
+<li>Syntax: <code>IF [condition] [command]</code></li>
+<li>Example: <code>IF %age% LEQ 18 echo You are a minor.</code>
+Checks if the value of <code>age</code> is less than or equal to 18.</li>
+</ul>
+</li>
+<li><strong>Using ELSE</strong>: To specify an alternative action if the IF condition is false.
+<ul>
+<li>Example: <code>IF %number% EQU 10 (echo Number is 10) ELSE (echo Number is not 10)</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="loops">Loops</h3>
+<ul>
+<li><strong>FOR Command</strong>: Executes a command for each item in a set.
+<ul>
+<li>Syntax: <code>FOR %%parameter IN (set) DO command</code></li>
+<li>Example: <code>FOR %%G IN (*.txt) DO echo %%G</code>
+This will echo the name of each <code>.txt</code> file in the current directory.</li>
+</ul>
+</li>
+</ul>
+<h3 id="subroutines">Subroutines</h3>
+<ul>
+<li><strong>CALL Command</strong>: Calls another batch file or a label within the same file.
+<ul>
+<li>Example: <code>CALL :subroutine</code>
+Calls a label named <code>:subroutine</code> within the script.</li>
+<li>Creating a Subroutine:
+<ul>
+<li>Example:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>:<span style="color:#79c0ff;font-weight:bold">subroutine</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">echo</span> This is a subroutine.
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">GOTO</span> :<span style="color:#79c0ff;font-weight:bold">EOF</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+<h3 id="error-handling">Error Handling</h3>
+<ul>
+<li><strong>ErrorLevel</strong>: Used to check the status of the last executed command.
+<ul>
+<li>Example: <code>IF %ERRORLEVEL% NEQ 0 echo Error occurred.</code></li>
+</ul>
+</li>
+<li><strong>Using <code>EXIT /B</code></strong>: Exits the script or subroutine without closing the Command Prompt.
+<ul>
+<li>Example: <code>EXIT /B 1</code>
+Exits the subroutine or script and sets the <code>ErrorLevel</code> to 1.</li>
+</ul>
+</li>
+</ul>
+<h3 id="delay-execution">Delay Execution</h3>
+<ul>
+<li><strong>TIMEOUT Command</strong>: Pauses the script for a specified number of seconds.</li>
+<li>Example: <code>TIMEOUT /T 10</code>
+Pauses the script for 10 seconds.</li>
+</ul>
+<h3 id="sample-advanced-batch-file">Sample Advanced Batch File</h3>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>@<span style="color:#ff7b72">ECHO</span> OFF
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">SET</span> <span style="color:#ff7b72">/P</span> <span style="color:#79c0ff">userinput</span>=Enter a number: 
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">IF</span> <span style="color:#79c0ff">%userinput%</span> <span style="color:#ff7b72;font-weight:bold">EQU</span> 10 (
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">echo</span> The number is 10.
+</span></span><span style="display:flex;"><span>) <span style="color:#ff7b72">ELSE</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">echo</span> The number is not 10.
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>		  
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">FOR</span> <span style="color:#79c0ff">%%</span>G <span style="color:#ff7b72">IN</span> (*.docx) <span style="color:#ff7b72">DO</span> <span style="color:#ff7b72">echo</span> Found document: <span style="color:#79c0ff">%%</span>G
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">CALL</span> :<span style="color:#79c0ff;font-weight:bold">subroutine</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">EXIT</span>
+</span></span><span style="display:flex;"><span>		  
+</span></span><span style="display:flex;"><span>:<span style="color:#79c0ff;font-weight:bold">subroutine</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">echo</span> This is a subroutine.
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">GOTO</span> :<span style="color:#79c0ff;font-weight:bold">EOF</span>
+</span></span></code></pre></div><p>This script combines various advanced techniques, showcasing conditional logic, loops, subroutines, and user input.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Advanced scripting techniques in batch programming significantly enhance the capabilities of your scripts, allowing you to automate more complex tasks and handle various scenarios efficiently.</p>
+<hr>
+<h1 id="4-file-operations">4. File Operations</h1>
+<p>File operations are crucial in batch programming for managing files and directories. This section covers commands to perform various file operations such as creating, copying, moving, and deleting files and directories.</p>
+<h3 id="creating-files-and-directories">Creating Files and Directories</h3>
+<ul>
+<li>Creating a New File:
+<ul>
+<li>Command: <code>type nul &gt; filename.ext</code></li>
+<li>Example: <code>type nul &gt; example.txt</code>
+Creates an empty file named <code>example.txt</code>.</li>
+</ul>
+</li>
+<li>Creating a Directory:
+<ul>
+<li>Command: <code>mkdir directoryname</code></li>
+<li>Example: <code>mkdir MyFolder</code>
+Creates a new directory named <code>MyFolder</code>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="copying-files-and-directories">Copying Files and Directories</h3>
+<ul>
+<li>Copying a File:
+<ul>
+<li>Command: <code>copy source destination</code></li>
+<li>Example: <code>copy example.txt D:\Backup\example.txt</code>
+Copies <code>example.txt</code> to the <code>D:\Backup</code> directory.</li>
+</ul>
+</li>
+<li>Copying a Directory:
+<ul>
+<li>Command: <code>xcopy source destination /E /H /C /I</code></li>
+<li>Example: <code>xcopy MyFolder D:\Backup\MyFolder /E /H /C /I</code>
+Recursively copies <code>MyFolder</code> to <code>D:\Backup</code>, including hidden files and subdirectories.</li>
+</ul>
+</li>
+</ul>
+<h3 id="moving-and-renaming-files-and-directories">Moving and Renaming Files and Directories</h3>
+<ul>
+<li>Moving a File:
+<ul>
+<li>Command: <code>move source destination</code></li>
+<li>Example: <code>move example.txt D:\Archive</code>
+Moves <code>example.txt</code> to <code>D:\Archive</code>.</li>
+</ul>
+</li>
+<li>Renaming a File or Directory:
+<ul>
+<li>Command: <code>ren oldname newname</code></li>
+<li>Example: <code>ren example.txt new_example.txt</code>
+Renames <code>example.txt</code> to <code>new_example.txt</code>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="deleting-files-and-directories">Deleting Files and Directories</h3>
+<ul>
+<li>Deleting a File:
+<ul>
+<li>Command: <code>del filename</code></li>
+<li>Example: <code>del example.txt</code>
+Deletes <code>example.txt</code>.</li>
+</ul>
+</li>
+<li>Deleting a Directory:
+- Command: <code>rmdir /S /Q directoryname</code>
+- Example: <code>rmdir /S /Q MyFolder</code>
+Deletes <code>MyFolder</code> and all of its contents.</li>
+</ul>
+<h3 id="working-with-file-attributes">Working with File Attributes</h3>
+<ul>
+<li>Changing File Attributes:
+<ul>
+<li>Command: <code>attrib [+|-][R|A|S|H] filename</code></li>
+<li>Example: <code>attrib +R example.txt</code>
+Sets the read-only attribute to <code>example.txt</code>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="sample-script-for-file-operations">Sample Script for File Operations</h3>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>  @<span style="color:#ff7b72">ECHO</span> OFF
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">mkdir</span> MyDocuments
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">type</span> nul &gt; MyDocuments\doc1.txt
+</span></span><span style="display:flex;"><span>  xcopy MyDocuments D:\Backup\MyDocuments /E /H /C /I
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">move</span> MyDocuments\doc1.txt MyDocuments\document.txt
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">del</span> MyDocuments\doc1.txt
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">rmdir</span> /S /Q MyDocuments
+</span></span></code></pre></div><p>This script demonstrates creating a directory and a file, copying the directory, renaming a file, deleting the file, and finally deleting the directory.</p>
+<h3 id="conclusion-1">Conclusion</h3>
+<p>Understanding file operations in batch programming is essential for effective script writing, especially when handling bulk file management tasks. These operations lay the foundation for automating routine file management tasks in a Windows environment.</p>
+<hr>
+<h1 id="5-cool-commands">5. Cool Commands</h1>
+<p>In addition to basic file operations and scripting techniques, batch programming offers a plethora of &ldquo;cool commands&rdquo; that can be used for a wide range of purposes, from system administration to advanced file manipulation. Let&rsquo;s explore some of these commands and their functionalities.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+<th>Usage</th>
+<th>Reference Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FC</td>
+<td>Compares two files and displays the differences.</td>
+<td><code>FC file1 file2</code></td>
+<td><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/fc">🔗</a></td>
+</tr>
+<tr>
+<td>FORFILES</td>
+<td>Executes a command on each file in a set of files.</td>
+<td><code>FORFILES /P directory /M searchmask /C cmd</code></td>
+<td><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/forfiles">🔗</a></td>
+</tr>
+<tr>
+<td>HELP</td>
+<td>Provides help information for batch commands.</td>
+<td><code>HELP command</code></td>
+<td><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/help">🔗</a></td>
+</tr>
+<tr>
+<td>MSG</td>
+<td>Sends a message to a user or session.</td>
+<td><code>MSG [username]</code></td>
+<td><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/msg">🔗</a></td>
+</tr>
+<tr>
+<td>PROMPT</td>
+<td>Changes the command prompt.</td>
+<td><code>PROMPT [text]</code></td>
+<td><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/prompt">🔗</a></td>
+</tr>
+<tr>
+<td>QUERY</td>
+<td>Displays the status of a specified service/session.</td>
+<td><code>QUERY session</code></td>
+<td><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/query">🔗</a></td>
+</tr>
+<tr>
+<td>REG</td>
+<td>Manages registry keys and values.</td>
+<td><code>REG QUERY key</code></td>
+<td><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/reg-query">🔗</a></td>
+</tr>
+<tr>
+<td>RUNAS</td>
+<td>Executes a program under a different user account.</td>
+<td><code>RUNAS /USER:user program</code></td>
+<td><a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771525(v=ws.11)">🔗</a></td>
+</tr>
+<tr>
+<td>SC</td>
+<td>Manages Windows services.</td>
+<td><code>SC command service_name</code></td>
+<td><a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc754599(v=ws.11)">🔗</a></td>
+</tr>
+<tr>
+<td>SCHTASKS</td>
+<td>Schedules commands/programs to run periodically.</td>
+<td><code>SCHTASKS /CREATE /SC schedule /TN task /TR run</code></td>
+<td><a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc725744(v=ws.11)">🔗</a></td>
+</tr>
+<tr>
+<td>SHORTCUT</td>
+<td>Creates a Windows shortcut.</td>
+<td><code>SHORTCUT /F:filename /A:C /T:targetpath</code></td>
+<td><a href="https://ss64.com/nt/shortcut.html">🔗</a></td>
+</tr>
+<tr>
+<td>SHUTDOWN</td>
+<td>Shuts down or restarts a computer.</td>
+<td><code>SHUTDOWN /s /t time</code></td>
+<td><a href="https://ss64.com/nt/shutdown.html">🔗</a></td>
+</tr>
+<tr>
+<td>SUBST</td>
+<td>Associates a path with a drive letter.</td>
+<td><code>SUBST drive: path</code></td>
+<td><a href="https://ss64.com/nt/subst.html">🔗</a></td>
+</tr>
+<tr>
+<td>SYSTEMINFO</td>
+<td>Displays detailed system information.</td>
+<td><code>SYSTEMINFO</code></td>
+<td><a href="https://ss64.com/nt/systeminfo.html">🔗</a></td>
+</tr>
+<tr>
+<td>TAKEOWN</td>
+<td>Takes ownership of a file or folder.</td>
+<td><code>TAKEOWN /F file_or_folder</code></td>
+<td><a href="https://ss64.com/nt/takeown.html">🔗</a></td>
+</tr>
+<tr>
+<td>TASKKILL</td>
+<td>Ends tasks or processes.</td>
+<td><code>TASKKILL /IM imagename</code></td>
+<td><a href="https://ss64.com/nt/taskkill.html">🔗</a></td>
+</tr>
+<tr>
+<td>TASKLIST</td>
+<td>Displays a list of currently running tasks.</td>
+<td><code>TASKLIST</code></td>
+<td><a href="https://ss64.com/nt/tasklist.html">🔗</a></td>
+</tr>
+<tr>
+<td>TELNET</td>
+<td>Communicates using the Telnet protocol.</td>
+<td><code>TELNET [host] [port]</code></td>
+<td><a href="https://ss64.com/nt/telnet.html">🔗</a></td>
+</tr>
+<tr>
+<td>TREE</td>
+<td>Graphically displays folder structure.</td>
+<td><code>TREE path</code></td>
+<td><a href="https://ss64.com/nt/tree.html">🔗</a></td>
+</tr>
+<tr>
+<td>TSDISCON</td>
+<td>Disconnects a Terminal Services session.</td>
+<td><code>TSDISCON sessionid</code></td>
+<td><a href="https://ss64.com/nt/tsdiscon.html">🔗</a></td>
+</tr>
+<tr>
+<td>WHERE</td>
+<td>Locates and displays file paths matching a pattern.</td>
+<td><code>WHERE pattern</code></td>
+<td><a href="https://ss64.com/nt/where.html">🔗</a></td>
+</tr>
+<tr>
+<td>WHOAMI</td>
+<td>Displays user, group, and privilege information.</td>
+<td><code>WHOAMI</code></td>
+<td><a href="https://ss64.com/nt/whoami.html">🔗</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="references">References</h1>
+<ul>
+<li><a href="https://ss64.com/nt/syntax.html">Windows CMD Command Syntax - SS64.com</a></li>
+<li><a href="https://ss64.com/nt/">An A-Z Index of Windows CMD commands - SS64.com</a></li>
+</ul>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">Last modified on 2024-01-17</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts">
+			Next<br>No newer posts.
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/the-unstoppable-framework/">
+			Previous<br>The Unstoppable Framework: A Step-by-Step Guide to Achieving Your Goals
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://bookofdaniel.in/">
+    
+        <div class="nav-title">
+            🧑🏻‍💻 Book Of Daniel
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                Archive
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                Categories
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                Tags
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+&copy;
+	
+	2023
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#1-introduction" class="nav-1-introduction">
+									1. Introduction
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#purpose" class="nav-purpose">
+									Purpose
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#advantages" class="nav-advantages">
+									Advantages
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#basic-components" class="nav-basic-components">
+									Basic Components
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#2-requirements" class="nav-2-requirements">
+									2. Requirements
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#configuring-the-command-prompt" class="nav-configuring-the-command-prompt">
+									Configuring the Command Prompt
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#creating-your-first-batch-file" class="nav-creating-your-first-batch-file">
+									Creating Your First Batch File
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#setting-file-associations-optional" class="nav-setting-file-associations-optional">
+									Setting File Associations (Optional)
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#tips" class="nav-tips">
+									Tips
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#3-basic-commands" class="nav-3-basic-commands">
+									3. Basic Commands
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#sample-batch-file" class="nav-sample-batch-file">
+									Sample Batch File
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#4-advanced-scripting-techniques" class="nav-4-advanced-scripting-techniques">
+									4. Advanced Scripting Techniques
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#using-variables" class="nav-using-variables">
+									Using Variables
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#conditional-statements" class="nav-conditional-statements">
+									Conditional Statements
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#loops" class="nav-loops">
+									Loops
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#subroutines" class="nav-subroutines">
+									Subroutines
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#error-handling" class="nav-error-handling">
+									Error Handling
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#delay-execution" class="nav-delay-execution">
+									Delay Execution
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#sample-advanced-batch-file" class="nav-sample-advanced-batch-file">
+									Sample Advanced Batch File
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#conclusion" class="nav-conclusion">
+									Conclusion
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#4-file-operations" class="nav-4-file-operations">
+									4. File Operations
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#creating-files-and-directories" class="nav-creating-files-and-directories">
+									Creating Files and Directories
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#copying-files-and-directories" class="nav-copying-files-and-directories">
+									Copying Files and Directories
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#moving-and-renaming-files-and-directories" class="nav-moving-and-renaming-files-and-directories">
+									Moving and Renaming Files and Directories
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#deleting-files-and-directories" class="nav-deleting-files-and-directories">
+									Deleting Files and Directories
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#working-with-file-attributes" class="nav-working-with-file-attributes">
+									Working with File Attributes
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#sample-script-for-file-operations" class="nav-sample-script-for-file-operations">
+									Sample Script for File Operations
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#conclusion-1" class="nav-conclusion-1">
+									Conclusion
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#5-cool-commands" class="nav-5-cool-commands">
+									5. Cool Commands
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#references" class="nav-references">
+									References
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div><div id="single-column-footer">
+&copy;
+	
+	2023
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

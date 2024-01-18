@@ -3,7 +3,7 @@ date : 2024-01-17T22:45:09+05:30
 title : 'The Batchology Handbook: Mastering the Art of Batch Scripting in Windows'
 featured_image: "/images/The Batchology Handbook.png"
 categories: "Docs"
-draft : true
+draft : false
 ---
 Hello there! If you've ever wondered how to make your computer tasks faster and more efficient, you're in the right place. This blog post is all about Batch scripting - a simple yet powerful way to automate tasks in Windows.
 

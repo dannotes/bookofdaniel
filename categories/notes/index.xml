@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2023</copyright>
-    <lastBuildDate>Thu, 11 Jan 2024 08:04:16 +0530</lastBuildDate><atom:link href="https://bookofdaniel.in/categories/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Mar 2024 22:58:46 +0530</lastBuildDate><atom:link href="https://bookofdaniel.in/categories/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Issues Faced During WSFC Configuration for SQL Server AlwaysOn Setup</title>
+      <link>https://bookofdaniel.in/posts/issue-faced-on-wsfc-configuration-for-sql-server-alwayson-setup/</link>
+      <pubDate>Fri, 01 Mar 2024 22:58:46 +0530</pubDate>
+      
+      <guid>https://bookofdaniel.in/posts/issue-faced-on-wsfc-configuration-for-sql-server-alwayson-setup/</guid>
+      <description>I&amp;rsquo;ve had the privilege of navigating through a wide array of technical landscapes. Yet, the recent endeavor of configuring a Windows Server Failover Cluster (WSFC) for SQL Server AlwaysOn presented a learning curve that was both steep and enriching. In this piece, I hope to share my experiences, the challenges encountered, and the lessons learned, with a spirit of humility and the intention of contributing to our collective knowledge base.</description>
+    </item>
+    
     <item>
       <title>The Unstoppable Framework: A Step-by-Step Guide to Achieving Your Goals</title>
       <link>https://bookofdaniel.in/posts/the-unstoppable-framework/</link>

@@ -2,7 +2,7 @@
 date : 2024-04-05T10:16:30+05:30
 title : 'The 5 Minute Death Journal Method'
 featured_image: "/images/The 5 Minute Death Journal Cover.png"
-categories: "Life Journey"
+categories: "Notes"
 draft : false
 ---
 

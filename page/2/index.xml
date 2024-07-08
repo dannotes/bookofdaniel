@@ -7,9 +7,122 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2023</copyright>
-    <lastBuildDate>Fri, 05 Apr 2024 10:16:30 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 08 Jul 2024 08:28:44 +0530</lastBuildDate>
     
         <atom:link href="https://bookofdaniel.in/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>A Beginners Guide to Vim Shortcuts</title>
+        <link>https://bookofdaniel.in/posts/a-beginners-guide-to-vim-shortcuts/</link>
+        <pubDate>Wed, 13 Dec 2023 09:39:37 +0530</pubDate>
+        
+        <guid>https://bookofdaniel.in/posts/a-beginners-guide-to-vim-shortcuts/</guid>
+        <description>🧑🏻‍💻 Book Of Daniel https://bookofdaniel.in/posts/a-beginners-guide-to-vim-shortcuts/ -&lt;p&gt;Vim is a highly configurable text editor used in programming. It&amp;rsquo;s known for its efficiency, enabling users to navigate and edit documents with minimal use of the mouse. This blog post will introduce you to the most important Vim shortcuts and commands, making your coding journey smoother and more efficient.&lt;/p&gt;
+&lt;h2 id=&#34;understanding-vim-modes&#34;&gt;Understanding Vim Modes&lt;/h2&gt;
+&lt;p&gt;Before we dive into the commands, it&amp;rsquo;s crucial to understand Vim&amp;rsquo;s modes. Vim operates in several modes, each with a specific purpose:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Normal Mode&lt;/strong&gt;: The default mode when you open Vim. It&amp;rsquo;s used to execute commands.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Insert Mode&lt;/strong&gt;: Allows you to insert text into your document.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Visual Mode&lt;/strong&gt;: Used for selecting lines, blocks, and text in your document.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Command-Line Mode&lt;/strong&gt;: Allows you to enter Vim commands and/or search for text.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can switch between these modes using various commands, which we&amp;rsquo;ll cover in the following sections[1][2][4][9].&lt;/p&gt;
+&lt;h2 id=&#34;cursor-movement&#34;&gt;Cursor Movement&lt;/h2&gt;
+&lt;p&gt;In normal mode, you can move the cursor around with the following commands:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;h&lt;/code&gt;: move cursor left&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;j&lt;/code&gt;: move cursor down&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;k&lt;/code&gt;: move cursor up&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;l&lt;/code&gt;: move cursor right&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;w&lt;/code&gt;: jump forwards to the start of a word&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;b&lt;/code&gt;: jump backwards to the start of a word&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0&lt;/code&gt;: jump to the start of the line&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$&lt;/code&gt;: jump to the end of the line&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gg&lt;/code&gt;: go to the first line of the document&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;G&lt;/code&gt;: go to the last line of the document&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;insert-mode&#34;&gt;Insert Mode&lt;/h2&gt;
+&lt;p&gt;To enter insert mode from normal mode, use the following commands:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;i&lt;/code&gt;: enter insert mode before the cursor&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;a&lt;/code&gt;: enter insert mode after the cursor&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;A&lt;/code&gt;: enter insert mode at the end of the line&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;o&lt;/code&gt;: open a new line below the current line and enter insert mode&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;O&lt;/code&gt;: open a new line above the current line and enter insert mode&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To return to normal mode from insert mode, press &lt;code&gt;Esc&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;visual-mode&#34;&gt;Visual Mode&lt;/h2&gt;
+&lt;p&gt;To select text, you can switch to visual mode using these commands:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;v&lt;/code&gt;: enter visual mode&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;V&lt;/code&gt;: enter linewise visual mode&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + v&lt;/code&gt;: enter blockwise visual mode&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;cut-copy-and-paste&#34;&gt;Cut, Copy, and Paste&lt;/h2&gt;
+&lt;p&gt;Vim uses different terminology for these operations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;x&lt;/code&gt;: delete character under the cursor&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dd&lt;/code&gt;: delete line&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;D&lt;/code&gt;: delete from cursor to end of line&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;yy&lt;/code&gt;: yank (copy) line&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;p&lt;/code&gt;: paste after the cursor&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;P&lt;/code&gt;: paste before the cursor&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;undo-and-redo&#34;&gt;Undo and Redo&lt;/h2&gt;
+&lt;p&gt;To undo or redo changes, use the following commands:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;u&lt;/code&gt;: undo&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + r&lt;/code&gt;: redo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;search-and-replace&#34;&gt;Search and Replace&lt;/h2&gt;
+&lt;p&gt;Vim provides powerful search and replace functionality:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/pattern&lt;/code&gt;: search for a pattern&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;n&lt;/code&gt;: move to the next match&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;N&lt;/code&gt;: move to the previous match&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:%s/old/new/g&lt;/code&gt;: replace all occurrences of &amp;lsquo;old&amp;rsquo; with &amp;rsquo;new&amp;rsquo; in the entire file&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;file-operations&#34;&gt;File Operations&lt;/h2&gt;
+&lt;p&gt;You can perform various file operations using these commands:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;:e {file}&lt;/code&gt;: edit another file&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:w&lt;/code&gt;: write (save) file&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:wq&lt;/code&gt;: write file and exit&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:q!&lt;/code&gt;: exit without saving&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;miscellaneous&#34;&gt;Miscellaneous&lt;/h2&gt;
+&lt;p&gt;Here are some additional useful commands:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;:help {keyword}&lt;/code&gt;: open help for a keyword&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:set number&lt;/code&gt;: show line numbers&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:set nonumber&lt;/code&gt;: hide line numbers&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:split {file}&lt;/code&gt;: split the window horizontally and open a file&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:vsplit {file}&lt;/code&gt;: split the window vertically and open a file&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + w + arrow keys&lt;/code&gt;: navigate between split windows&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This guide covers the most commonly used Vim commands. As you become more proficient with Vim, you can explore additional commands and functionalities. Happy coding!&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[1] &lt;a href=&#34;https://www.linuxfoundation.org/blog/blog/classic-sysadmin-vim-101-a-beginners-guide-to-vim&#34;&gt;https://www.linuxfoundation.org/blog/blog/classic-sysadmin-vim-101-a-beginners-guide-to-vim&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[2] &lt;a href=&#34;https://opensource.com/article/19/3/getting-started-vim&#34;&gt;https://opensource.com/article/19/3/getting-started-vim&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[3] &lt;a href=&#34;https://www.reddit.com/r/vim/comments/166q64q/an_effective_beginner_vim_tutorial_focusing_on/&#34;&gt;https://www.reddit.com/r/vim/comments/166q64q/an_effective_beginner_vim_tutorial_focusing_on/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[4] &lt;a href=&#34;https://coderwall.com/p/adv71w/basic-vim-commands-for-getting-started&#34;&gt;https://coderwall.com/p/adv71w/basic-vim-commands-for-getting-started&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[5] &lt;a href=&#34;https://youtube.com/watch?v=ggSyF1SVFr4&#34;&gt;https://youtube.com/watch?v=ggSyF1SVFr4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[6] &lt;a href=&#34;https://danielmiessler.com/p/vim/&#34;&gt;https://danielmiessler.com/p/vim/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[7] &lt;a href=&#34;https://www.unomaha.edu/college-of-information-science-and-technology/computer-science-learning-center/_files/resources/CSLC-Helpdocs-Vim.pdf&#34;&gt;https://www.unomaha.edu/college-of-information-science-and-technology/computer-science-learning-center/_files/resources/CSLC-Helpdocs-Vim.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[8] &lt;a href=&#34;https://www.reddit.com/r/vim/comments/lbjw3u/good_guides_on_vim/&#34;&gt;https://www.reddit.com/r/vim/comments/lbjw3u/good_guides_on_vim/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[9] &lt;a href=&#34;https://www.freecodecamp.org/news/vim-beginners-guide/&#34;&gt;https://www.freecodecamp.org/news/vim-beginners-guide/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[10] &lt;a href=&#34;https://www.reddit.com/r/vim/comments/k60da0/best_vim_tutorial_for_beginners/&#34;&gt;https://www.reddit.com/r/vim/comments/k60da0/best_vim_tutorial_for_beginners/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[11] &lt;a href=&#34;https://vim.rtorr.com&#34;&gt;https://vim.rtorr.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[12] &lt;a href=&#34;https://www.howtoforge.com/vim-basics&#34;&gt;https://www.howtoforge.com/vim-basics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[13] &lt;a href=&#34;https://thevaluable.dev/vim-commands-beginner/&#34;&gt;https://thevaluable.dev/vim-commands-beginner/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[14] &lt;a href=&#34;https://youtube.com/watch?v=RZ4p-saaQkc&#34;&gt;https://youtube.com/watch?v=RZ4p-saaQkc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[15] &lt;a href=&#34;https://linuxhandbook.com/basic-vim-commands/&#34;&gt;https://linuxhandbook.com/basic-vim-commands/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+- https://bookofdaniel.in/posts/a-beginners-guide-to-vim-shortcuts/ - 2023</description>
+        </item>
     
     
     

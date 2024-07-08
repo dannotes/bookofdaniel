@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>K8s on 🧑🏻‍💻 Book Of Daniel</title>
+    <link>https://bookofdaniel.in/categories/k8s/</link>
+    <description>Recent content in K8s on 🧑🏻‍💻 Book Of Daniel</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>2023</copyright>
+    <lastBuildDate>Mon, 08 Jul 2024 08:28:44 +0530</lastBuildDate><atom:link href="https://bookofdaniel.in/categories/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes Architecture Explained: the Ship Analogy of KodeKloud</title>
+      <link>https://bookofdaniel.in/posts/kubernetes-architecture-explained-the-ship-analogy-of-kodekloud/</link>
+      <pubDate>Mon, 08 Jul 2024 08:28:44 +0530</pubDate>
+      
+      <guid>https://bookofdaniel.in/posts/kubernetes-architecture-explained-the-ship-analogy-of-kodekloud/</guid>
+      <description>Welcome to our exploration of Kubernetes architecture! Kubernetes, often abbreviated as K8s, is a powerful tool designed to manage containerized applications in a scalable and automated fashion. This blog post aims to provide a high-level understanding of Kubernetes architecture using an analogy of ships, which simplifies the complex interplay between its components. Special thanks to KodeKloud for their insightful lecture, which inspired this overview.
+The Kubernetes Cluster: Ships at Sea At its core, a Kubernetes cluster comprises two types of nodes: worker nodes and master nodes.</description>
+    </item>
+    
+  </channel>
+</rss>

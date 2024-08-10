@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html><head>
+<title>Port Not Available: 503 Server Unavailable</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<link rel="icon" href="https://bookofdaniel.in/images/favicon.png">
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.ff0aac816f46e60f7fa3eff2233a3a7afab2864b4571de3a7bad7adaba84c3cb.css" integrity="sha256-/wqsgW9G5g9/o&#43;/yIzo6evqyhktFcd46e6162rqEw8s=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    Archive
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    Categories
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    Tags
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#troubleshooting-port-availability" class="nav-troubleshooting-port-availability">
+									Troubleshooting Port Availability
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#finding-the-process-using-netstat" class="nav-finding-the-process-using-netstat">
+									Finding the Process Using netstat
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#finding-the-process-using-netsh" class="nav-finding-the-process-using-netsh">
+									Finding the Process Using netsh
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#what-the-heck-" class="nav-what-the-heck-">
+									What the Heck?! 😮
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://bookofdaniel.in/">
+            🧑🏻‍💻 Book Of Daniel
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://bookofdaniel.in/">
+        <div class="single-column-header-title">🧑🏻‍💻 Book Of Daniel</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Port Not Available: 503 Server Unavailable
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2024-08-10 12:53
+                        </time>
+                        
+
+                        
+
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            3 min
+                            
+                            27 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p><strong>Yes, you read that right.</strong> The port you’re trying to use is already occupied by another application. If you’re a system or network administrator, you’ve likely encountered this frustrating message more times than you care to remember. It’s challenging to pinpoint which application is hogging the port (though it’s not as hard as it seems, as I’ll show you 😉). These ghost messages can leave you in quite a pickle.</p>
+<p>Just yesterday, we faced this exact issue and wasted two hours troubleshooting so that you don’t have to!</p>
+<p>Our situation was this: We had installed SQL Server 2019 Reporting Services on one of our development servers, and the default port it selected for installation was <code>8082</code>. Unfortunately, this port was already in use by our front-facing application, so we needed to free it up.</p>
+<img title="Port Not Available" alt="Port Not Available" src="/images/not listening.gif">
+<p>After some frantic Googling, we found a solution: we updated the port from <code>8082</code> to <code>8083</code> in the <code>config.json</code> file located in the Reporting Services folder. (You can usually find the file here: <code>C:\Program Files\Microsoft SQL Server Reporting Services\SSRS\RSHostingService\RSHostingService.exe</code>.) We then restarted the <code>SQL Server Reporting Services</code> Windows service, and voilà—<code>RSHostingService.exe</code> started running on port <code>8083</code>.</p>
+<p>We thought everything was resolved and that port <code>8082</code> was free. However, when we configured our front-end application and tried to access it, we were greeted with a <code>503 Server Unavailable</code> error. 😢</p>
+<h2 id="troubleshooting-port-availability">Troubleshooting Port Availability</h2>
+<p>To narrow down the issue, it’s helpful to identify which application is using the port.</p>
+<h3 id="finding-the-process-using-netstat">Finding the Process Using <code>netstat</code></h3>
+<p>The <strong>netstat</strong> command, short for &ldquo;network statistics,&rdquo; is a command-line tool that displays active network connections, routing tables, and various network interface statistics. By running the <code>netstat</code> command with the <code>noa</code> parameters, we can list all the listening ports with process ID information and pipe that command to search for the specific port.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>netstat -noa | find <span style="color:#a5d6ff">&#34;8082&#34;</span>
+</span></span></code></pre></div><p><strong>Output:</strong></p>
+<pre tabindex="0"><code>TCP    0.0.0.0:8082           0.0.0.0:0              LISTENING       4
+TCP    [::]:8082              [::]:0                 LISTENING       4
+</code></pre><p>The process ID <code>4</code> indicates that it’s a system process. Unfortunately, this doesn’t tell us which application is using the port, so we need another method.</p>
+<h3 id="finding-the-process-using-netsh">Finding the Process Using <code>netsh</code></h3>
+<p><strong>Netsh</strong>, short for <strong>Network Shell</strong>, is a command-line utility that allows users to configure and manage network devices both locally and remotely. It’s particularly useful for tasks like changing IP addresses, resetting the TCP/IP stack, and managing wireless settings.</p>
+<p>We can use <code>netsh</code> to query the HTTP request and find out which process is using port <code>8082</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>netsh http show servicestate view=requestq
+</span></span></code></pre></div><p>Save the output of the above command to a file, open it using Notepad, and search for the port details:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>netsh http show servicestate view=requestq &gt; results.log
+</span></span><span style="display:flex;"><span>notepad results.log
+</span></span></code></pre></div><p><strong>Output:</strong></p>
+<pre tabindex="0"><code>Request queue name: Request queue is unnamed.
+    Version: 2.0
+    State: Active
+    Request queue 503 verbosity level: Basic
+    Max requests: 1000
+    Number of active processes attached: 1
+    Process IDs:
+        2312
+    URL groups:
+    URL group ID: BE00000340000001
+        State: Active
+        Request queue name: Request queue is unnamed.
+        Properties:
+            Max bandwidth: inherited
+            Max connections: inherited
+            Timeouts:
+                Timeout values inherited
+            Number of registered URLs: 1
+            Registered URLs:
+                HTTP://LOCALHOST:8082/
+        Server session ID: C000000320000001
+            Version: 2.0
+            State: Active
+            Properties:
+                Max bandwidth: 4294967295
+                Timeouts:
+                    Entity body timeout (secs): 120
+                    Drain entity body timeout (secs): 120
+                    Request queue timeout (secs): 120
+                    Idle connection timeout (secs): 120
+                    Header wait timeout (secs): 120
+                    Minimum send rate (bytes/sec): 150
+</code></pre><p>Now you can see that port <code>8082</code> is being used by process <code>2312</code>. You can check Task Manager to see which process is associated with this PID, or use the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>tasklist /FI <span style="color:#a5d6ff">&#34;PID eq 2312&#34;</span>
+</span></span></code></pre></div><p><strong>Output:</strong></p>
+<pre tabindex="0"><code>Image Name                     PID Session Name        Session#    Mem Usage
+========================= ======== ================ =========== ============
+SQLServerReportingServices     2312 Services                   0     42,232 K
+</code></pre><h2 id="what-the-heck-">What the Heck?! 😮</h2>
+<p>How is this possible? We changed the reporting tool config file, yet <code>netsh</code> still shows that port <code>8082</code> is in use. Upon rechecking the reporting service logs, we confirmed that the application is indeed running on port <code>8083</code>. 🤔</p>
+<p>It turns out that the URL with port <code>8082</code> was reserved by SQL Reporting Services with an Access Control List (ACL) during installation. Changing the config file alone wasn’t enough. To see the list of URL reservations for HTTP services, use this command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>netsh http show urlacl
+</span></span></code></pre></div><p><strong>Output:</strong></p>
+<pre tabindex="0"><code> Reserved URL            : https://*:8082/
+        User: NT SERVICE\SQLServerReportingServices
+            Listen: Yes
+            Delegate: No
+            SDDL: D:(A;;GX;;;BU)(A;;GX;;;LS)
+</code></pre><p>To free up port <code>8082</code> for our front-end application, we needed to delete this obsolete HTTP reservation:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>netsh http delete urlacl url=http://+:8082/
+</span></span></code></pre></div><p><strong>Output:</strong></p>
+<pre tabindex="0"><code>Deleted Successfully.
+</code></pre><p>To confirm that the port is free and available for use, run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>netstat -noa | find <span style="color:#a5d6ff">&#34;8082&#34;</span>
+</span></span></code></pre></div><p>The expected output should be blank! 😉</p>
+<p>Finally, the port is free!</p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">Last modified on 2024-08-10</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts">
+			Next<br>No newer posts.
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/kubernetes-architecture-explained-the-ship-analogy-of-kodekloud/">
+			Previous<br>Kubernetes Architecture Explained: the Ship Analogy of KodeKloud
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://bookofdaniel.in/">
+    
+        <div class="nav-title">
+            🧑🏻‍💻 Book Of Daniel
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                Archive
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                Categories
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                Tags
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+&copy;
+	
+	2023
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#troubleshooting-port-availability" class="nav-troubleshooting-port-availability">
+									Troubleshooting Port Availability
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#finding-the-process-using-netstat" class="nav-finding-the-process-using-netstat">
+									Finding the Process Using netstat
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#finding-the-process-using-netsh" class="nav-finding-the-process-using-netsh">
+									Finding the Process Using netsh
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#what-the-heck-" class="nav-what-the-heck-">
+									What the Heck?! 😮
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div><div id="single-column-footer">
+&copy;
+	
+	2023
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

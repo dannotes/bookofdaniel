@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2023</copyright>
-    <lastBuildDate>Mon, 08 Jul 2024 08:28:44 +0530</lastBuildDate><atom:link href="https://bookofdaniel.in/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Aug 2024 12:53:44 +0530</lastBuildDate><atom:link href="https://bookofdaniel.in/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Port Not Available: 503 Server Unavailable</title>
+      <link>https://bookofdaniel.in/posts/port-not-available/</link>
+      <pubDate>Sat, 10 Aug 2024 12:53:44 +0530</pubDate>
+      
+      <guid>https://bookofdaniel.in/posts/port-not-available/</guid>
+      <description>Yes, you read that right. The port you’re trying to use is already occupied by another application. If you’re a system or network administrator, you’ve likely encountered this frustrating message more times than you care to remember. It’s challenging to pinpoint which application is hogging the port (though it’s not as hard as it seems, as I’ll show you 😉). These ghost messages can leave you in quite a pickle.</description>
+    </item>
+    
     <item>
       <title>Kubernetes Architecture Explained: the Ship Analogy of KodeKloud</title>
       <link>https://bookofdaniel.in/posts/kubernetes-architecture-explained-the-ship-analogy-of-kodekloud/</link>

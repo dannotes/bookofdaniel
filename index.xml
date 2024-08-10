@@ -7,9 +7,99 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2023</copyright>
-    <lastBuildDate>Mon, 08 Jul 2024 08:28:44 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 10 Aug 2024 12:53:44 +0530</lastBuildDate>
     
         <atom:link href="https://bookofdaniel.in/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Port Not Available: 503 Server Unavailable</title>
+        <link>https://bookofdaniel.in/posts/port-not-available/</link>
+        <pubDate>Sat, 10 Aug 2024 12:53:44 +0530</pubDate>
+        
+        <guid>https://bookofdaniel.in/posts/port-not-available/</guid>
+        <description>🧑🏻‍💻 Book Of Daniel https://bookofdaniel.in/posts/port-not-available/ -&lt;p&gt;&lt;strong&gt;Yes, you read that right.&lt;/strong&gt; The port you’re trying to use is already occupied by another application. If you’re a system or network administrator, you’ve likely encountered this frustrating message more times than you care to remember. It’s challenging to pinpoint which application is hogging the port (though it’s not as hard as it seems, as I’ll show you 😉). These ghost messages can leave you in quite a pickle.&lt;/p&gt;
+&lt;p&gt;Just yesterday, we faced this exact issue and wasted two hours troubleshooting so that you don’t have to!&lt;/p&gt;
+&lt;p&gt;Our situation was this: We had installed SQL Server 2019 Reporting Services on one of our development servers, and the default port it selected for installation was &lt;code&gt;8082&lt;/code&gt;. Unfortunately, this port was already in use by our front-facing application, so we needed to free it up.&lt;/p&gt;
+&lt;img title=&#34;Port Not Available&#34; alt=&#34;Port Not Available&#34; src=&#34;https://bookofdaniel.in/images/not listening.gif&#34;&gt;
+&lt;p&gt;After some frantic Googling, we found a solution: we updated the port from &lt;code&gt;8082&lt;/code&gt; to &lt;code&gt;8083&lt;/code&gt; in the &lt;code&gt;config.json&lt;/code&gt; file located in the Reporting Services folder. (You can usually find the file here: &lt;code&gt;C:\Program Files\Microsoft SQL Server Reporting Services\SSRS\RSHostingService\RSHostingService.exe&lt;/code&gt;.) We then restarted the &lt;code&gt;SQL Server Reporting Services&lt;/code&gt; Windows service, and voilà—&lt;code&gt;RSHostingService.exe&lt;/code&gt; started running on port &lt;code&gt;8083&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;We thought everything was resolved and that port &lt;code&gt;8082&lt;/code&gt; was free. However, when we configured our front-end application and tried to access it, we were greeted with a &lt;code&gt;503 Server Unavailable&lt;/code&gt; error. 😢&lt;/p&gt;
+&lt;h2 id=&#34;troubleshooting-port-availability&#34;&gt;Troubleshooting Port Availability&lt;/h2&gt;
+&lt;p&gt;To narrow down the issue, it’s helpful to identify which application is using the port.&lt;/p&gt;
+&lt;h3 id=&#34;finding-the-process-using-netstat&#34;&gt;Finding the Process Using &lt;code&gt;netstat&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The &lt;strong&gt;netstat&lt;/strong&gt; command, short for &amp;ldquo;network statistics,&amp;rdquo; is a command-line tool that displays active network connections, routing tables, and various network interface statistics. By running the &lt;code&gt;netstat&lt;/code&gt; command with the &lt;code&gt;noa&lt;/code&gt; parameters, we can list all the listening ports with process ID information and pipe that command to search for the specific port.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;netstat -noa | find &lt;span style=&#34;color:#a5d6ff&#34;&gt;&amp;#34;8082&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;TCP    0.0.0.0:8082           0.0.0.0:0              LISTENING       4
+TCP    [::]:8082              [::]:0                 LISTENING       4
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The process ID &lt;code&gt;4&lt;/code&gt; indicates that it’s a system process. Unfortunately, this doesn’t tell us which application is using the port, so we need another method.&lt;/p&gt;
+&lt;h3 id=&#34;finding-the-process-using-netsh&#34;&gt;Finding the Process Using &lt;code&gt;netsh&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Netsh&lt;/strong&gt;, short for &lt;strong&gt;Network Shell&lt;/strong&gt;, is a command-line utility that allows users to configure and manage network devices both locally and remotely. It’s particularly useful for tasks like changing IP addresses, resetting the TCP/IP stack, and managing wireless settings.&lt;/p&gt;
+&lt;p&gt;We can use &lt;code&gt;netsh&lt;/code&gt; to query the HTTP request and find out which process is using port &lt;code&gt;8082&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;netsh http show servicestate view=requestq
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Save the output of the above command to a file, open it using Notepad, and search for the port details:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;netsh http show servicestate view=requestq &amp;gt; results.log
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;notepad results.log
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Request queue name: Request queue is unnamed.
+    Version: 2.0
+    State: Active
+    Request queue 503 verbosity level: Basic
+    Max requests: 1000
+    Number of active processes attached: 1
+    Process IDs:
+        2312
+    URL groups:
+    URL group ID: BE00000340000001
+        State: Active
+        Request queue name: Request queue is unnamed.
+        Properties:
+            Max bandwidth: inherited
+            Max connections: inherited
+            Timeouts:
+                Timeout values inherited
+            Number of registered URLs: 1
+            Registered URLs:
+                HTTP://LOCALHOST:8082/
+        Server session ID: C000000320000001
+            Version: 2.0
+            State: Active
+            Properties:
+                Max bandwidth: 4294967295
+                Timeouts:
+                    Entity body timeout (secs): 120
+                    Drain entity body timeout (secs): 120
+                    Request queue timeout (secs): 120
+                    Idle connection timeout (secs): 120
+                    Header wait timeout (secs): 120
+                    Minimum send rate (bytes/sec): 150
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now you can see that port &lt;code&gt;8082&lt;/code&gt; is being used by process &lt;code&gt;2312&lt;/code&gt;. You can check Task Manager to see which process is associated with this PID, or use the following command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tasklist /FI &lt;span style=&#34;color:#a5d6ff&#34;&gt;&amp;#34;PID eq 2312&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Image Name                     PID Session Name        Session#    Mem Usage
+========================= ======== ================ =========== ============
+SQLServerReportingServices     2312 Services                   0     42,232 K
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;what-the-heck-&#34;&gt;What the Heck?! 😮&lt;/h2&gt;
+&lt;p&gt;How is this possible? We changed the reporting tool config file, yet &lt;code&gt;netsh&lt;/code&gt; still shows that port &lt;code&gt;8082&lt;/code&gt; is in use. Upon rechecking the reporting service logs, we confirmed that the application is indeed running on port &lt;code&gt;8083&lt;/code&gt;. 🤔&lt;/p&gt;
+&lt;p&gt;It turns out that the URL with port &lt;code&gt;8082&lt;/code&gt; was reserved by SQL Reporting Services with an Access Control List (ACL) during installation. Changing the config file alone wasn’t enough. To see the list of URL reservations for HTTP services, use this command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;netsh http show urlacl
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; Reserved URL            : https://*:8082/
+        User: NT SERVICE\SQLServerReportingServices
+            Listen: Yes
+            Delegate: No
+            SDDL: D:(A;;GX;;;BU)(A;;GX;;;LS)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To free up port &lt;code&gt;8082&lt;/code&gt; for our front-end application, we needed to delete this obsolete HTTP reservation:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;netsh http delete urlacl url=http://+:8082/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Deleted Successfully.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To confirm that the port is free and available for use, run:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;netstat -noa | find &lt;span style=&#34;color:#a5d6ff&#34;&gt;&amp;#34;8082&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The expected output should be blank! 😉&lt;/p&gt;
+&lt;p&gt;Finally, the port is free!&lt;/p&gt;
+- https://bookofdaniel.in/posts/port-not-available/ - 2023</description>
+        </item>
     
     
     
@@ -840,73 +930,6 @@ If you want to change the world, measure a person by the size of their heart, no
 &lt;p&gt;If you want to change the world, don’t ever, ever ring the bell.&lt;/p&gt;
 &lt;/blockquote&gt;
 - https://bookofdaniel.in/posts/make-your-bed-summary/ - 2023</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>15 Ways to Stay Fit While Sitting at Home</title>
-        <link>https://bookofdaniel.in/posts/15-ways-to-stay-fit-while-sitting-at-home/</link>
-        <pubDate>Wed, 20 Dec 2023 16:12:14 +0530</pubDate>
-        
-        <guid>https://bookofdaniel.in/posts/15-ways-to-stay-fit-while-sitting-at-home/</guid>
-        <description>🧑🏻‍💻 Book Of Daniel https://bookofdaniel.in/posts/15-ways-to-stay-fit-while-sitting-at-home/ -&lt;p&gt;In our current era of remote work and virtual learning, prioritizing physical and mental fitness is more crucial than ever. Luckily, there are numerous strategies you can incorporate into your daily routine without stepping outside your home. The following 15 ways, inspired by the insightful content from a YouTube video by &lt;a href=&#34;https://youtu.be/FKNRNY5ji_M?si=ueCpV5g2vEtG5bjS&#34;&gt;Warikoo&lt;/a&gt;, will guide you towards a healthier and more balanced lifestyle.&lt;/p&gt;
-&lt;h2 id=&#34;basic-fitness&#34;&gt;Basic Fitness&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Sit Straight&lt;/strong&gt;: Maintain a good posture while working or studying. Use a memory foam pillow or a similar support to keep your back straight and avoid slouching.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Maintain a Consistent Sleep Schedule&lt;/strong&gt;: Your body should know when to sleep and when to wake up. Aim for at least 6-7 hours of sleep every day to ensure you are mentally and physically rested.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Eat Properly&lt;/strong&gt;: Avoid eating out of boredom or for entertainment. Limit sugar and fried food, and try to eat three balanced meals a day. Stop eating three hours before sleeping and include as much protein as you can in your diet.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Stay Hydrated&lt;/strong&gt;: Drink at least five, ideally eight glasses of water a day to keep your body hydrated and to help it absorb nutrients.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Create a Morning Routine&lt;/strong&gt;: Start your day by dedicating time to yourself. This could include meditation, reading, exercising, or any other activity that you enjoy.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;physical-fitness&#34;&gt;Physical Fitness&lt;/h2&gt;
-&lt;ol start=&#34;6&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Body Weight Exercises&lt;/strong&gt;: These are exercises that you can do using your own body weight, such as push-ups, squats, tricep dips, and planks.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Resistance Band Exercises&lt;/strong&gt;: Resistance bands can be used to add difficulty to your workouts. They come in different weights and can be used for exercises like bicep curls and shoulder exercises.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Weights&lt;/strong&gt;: If you&amp;rsquo;re ready for a more challenging workout, consider buying weights. You can use them for exercises like shoulder lifts and bicep curls.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Ankle Weights&lt;/strong&gt;: Ankle weights can be used to add resistance to your normal activities, like walking up and down the stairs.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Pomodoro Technique&lt;/strong&gt;: This technique involves working for 25 minutes, then taking a 5-minute break. During your break, you could climb stairs or do other physical activities.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;mental-fitness&#34;&gt;Mental Fitness&lt;/h2&gt;
-&lt;ol start=&#34;11&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Meditation&lt;/strong&gt;: Meditation can help you become more aware of your thoughts. It involves focusing on your breath and observing your thoughts without trying to control them.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Journaling&lt;/strong&gt;: Writing about your emotions can help you understand them better. Try to write about any significant emotions you felt during the day and why you felt that way.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Gratitude Jar&lt;/strong&gt;: Keep a jar where you write down things you&amp;rsquo;re grateful for. On difficult days, you can read these notes to remind yourself of the positive aspects of your life.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Breathing Exercises&lt;/strong&gt;: Whenever you feel stressed or need a break, take a moment to focus on your breath. This can help slow down your heart rate and provide your body with oxygen.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Create a Personal Space&lt;/strong&gt;: Designate a space in your house where you can connect with yourself and your thoughts. This could be a chair, a corner, or a table.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Remember, staying fit at home doesn&amp;rsquo;t require expensive equipment or a gym membership. All you need is a little creativity and the determination to maintain a healthy lifestyle.&lt;/p&gt;
-- https://bookofdaniel.in/posts/15-ways-to-stay-fit-while-sitting-at-home/ - 2023</description>
         </item>
     
     

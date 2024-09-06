@@ -33,8 +33,6 @@
 
 
 
-<link rel="icon" href="https://bookofdaniel.in/images/favicon.png">
-
 
 
       <script src="/js/toc.js"></script>
@@ -82,27 +80,7 @@
                 
                 
                 <a class="a-block drawer-menu-item active" href="/posts">
-                    Archive
-                </a>
-                
-            
-                
-                
-                
-                
-                
-                <a class="a-block drawer-menu-item false" href="/categories">
-                    Categories
-                </a>
-                
-            
-                
-                
-                
-                
-                
-                <a class="a-block drawer-menu-item false" href="/tags">
-                    Tags
+                    Archives
                 </a>
                 
             
@@ -242,7 +220,7 @@
             </i>
         </button>
         <a id="navTitle" class="navbar-brand" href="http://localhost:1313/">
-            🧑🏻‍💻 Book Of Daniel
+            Book Of Daniel
         </a>
         
         <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
@@ -256,7 +234,7 @@
 <div class="single-column-header-container" id="pageHead"
      v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
     <a href="http://localhost:1313/">
-        <div class="single-column-header-title">🧑🏻‍💻 Book Of Daniel</div>
+        <div class="single-column-header-title">Book Of Daniel</div>
         
 
     </a>
@@ -340,30 +318,30 @@ The absence of a real-time dashboard has caused inefficiencies in tracking produ
 <h1 id="solutions">Solutions</h1>
 <p>I have slept on these challenges for a day and explored the Zoho documentation along with some Google search. It seemed like I could solve some of these issues using zoho&rsquo;s features, while others might require development.</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Challenge</th>
-          <th style="text-align: left">Solution</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">Large Team Management</td>
-          <td style="text-align: left">Proposed to split the team into multiple pods or pools. So that it can be managed by a senior / lead with minimal members and work can be monitored efficiently. <br> Pool segregation will be based on the number of clients.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Ticket Assignment Automation</td>
-          <td style="text-align: left">Since the team is arranged into multiple pools, based on the client hierarchy, whenever a ticket is raised for the specific client it should be allocated directly to the respecitve pool. Then the pool lead / member can assign and work accordingly. <br> To Automate this process Zoho Desk provides a feature called <a href="https://help.zoho.com/portal/en/kb/desk/automation/assignment-rules-notification/articles/creating-ticket-assignment-rules">Direct Assignment</a>. Create an assignment rule with client name and select respective pool account. Viola! The ticket will be assigned automatically on creation.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Timely Escalation</td>
-          <td style="text-align: left">Zoho provides a feature called <a href="https://help.zoho.com/portal/en/kb/desk/automation/escalate-sla/articles/creating-and-using-slas">SLAs</a> escalation. If an escalation occurs within x minutes it will be escalated to 2 levels. We chose to adopt it, so that the breached ticket will be esclated to the respective lead / manager of the pool within 30 mins.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Email Ticket with mandatory fields</td>
-          <td style="text-align: left">We created a <a href="https://help.zoho.com/portal/en/kb/desk/activities/articles/working-with-tasks-zoho-desk#Creating_Tasks">Zoho Task</a> to close the email ticket with an automated reply to fill the mandatory fields. So the tickets in which the mandatory fields are not filled will be closed automatically.</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th style="text-align:left">Challenge</th>
+<th style="text-align:left">Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Large Team Management</td>
+<td style="text-align:left">Proposed to split the team into multiple pods or pools. So that it can be managed by a senior / lead with minimal members and work can be monitored efficiently. <br> Pool segregation will be based on the number of clients.</td>
+</tr>
+<tr>
+<td style="text-align:left">Ticket Assignment Automation</td>
+<td style="text-align:left">Since the team is arranged into multiple pools, based on the client hierarchy, whenever a ticket is raised for the specific client it should be allocated directly to the respecitve pool. Then the pool lead / member can assign and work accordingly. <br> To Automate this process Zoho Desk provides a feature called <a href="https://help.zoho.com/portal/en/kb/desk/automation/assignment-rules-notification/articles/creating-ticket-assignment-rules">Direct Assignment</a>. Create an assignment rule with client name and select respective pool account. Viola! The ticket will be assigned automatically on creation.</td>
+</tr>
+<tr>
+<td style="text-align:left">Timely Escalation</td>
+<td style="text-align:left">Zoho provides a feature called <a href="https://help.zoho.com/portal/en/kb/desk/automation/escalate-sla/articles/creating-and-using-slas">SLAs</a> escalation. If an escalation occurs within x minutes it will be escalated to 2 levels. We chose to adopt it, so that the breached ticket will be esclated to the respective lead / manager of the pool within 30 mins.</td>
+</tr>
+<tr>
+<td style="text-align:left">Email Ticket with mandatory fields</td>
+<td style="text-align:left">We created a <a href="https://help.zoho.com/portal/en/kb/desk/activities/articles/working-with-tasks-zoho-desk#Creating_Tasks">Zoho Task</a> to close the email ticket with an automated reply to fill the mandatory fields. So the tickets in which the mandatory fields are not filled will be closed automatically.</td>
+</tr>
+</tbody>
 </table>
 <h2 id="real-time-monitoring--scoreboard">Real-Time Monitoring &amp; Scoreboard</h2>
 <p>Zoho analytics with additional license offers Dashboard experience but I needed something more interesting like a real-time dashboard to proactively act on tickets which does not require additional license.</p>
@@ -426,7 +404,7 @@ The absence of a real-time dashboard has caused inefficiencies in tracking produ
     <a class="a-block nav-head false" href="http://localhost:1313/">
     
         <div class="nav-title">
-            🧑🏻‍💻 Book Of Daniel
+            Book Of Daniel
         </div>
         
     </a>
@@ -442,27 +420,7 @@ The absence of a real-time dashboard has caused inefficiencies in tracking produ
             
             
             <a class="a-block nav-link-item active" href="/posts">
-                Archive
-            </a>
-            
-        
-            
-            
-            
-            
-            
-            <a class="a-block nav-link-item false" href="/categories">
-                Categories
-            </a>
-            
-        
-            
-            
-            
-            
-            
-            <a class="a-block nav-link-item false" href="/tags">
-                Tags
+                Archives
             </a>
             
         
@@ -474,7 +432,7 @@ The absence of a real-time dashboard has caused inefficiencies in tracking produ
         
 &copy;
 	
-	2023
+	2024
 	
 
     </div>
@@ -619,10 +577,10 @@ The absence of a real-time dashboard has caused inefficiencies in tracking produ
             </span>
         </a>
         
-
         
     </div>
 </div>
+            
             </div>
     
     <script src="/js/journal.js"></script></body>

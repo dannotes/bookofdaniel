@@ -33,8 +33,6 @@
 
 
 
-<link rel="icon" href="https://bookofdaniel.in/images/favicon.png">
-
 
 
       <script src="/js/toc.js"></script>
@@ -82,27 +80,7 @@
                 
                 
                 <a class="a-block drawer-menu-item active" href="/posts">
-                    Archive
-                </a>
-                
-            
-                
-                
-                
-                
-                
-                <a class="a-block drawer-menu-item false" href="/categories">
-                    Categories
-                </a>
-                
-            
-                
-                
-                
-                
-                
-                <a class="a-block drawer-menu-item false" href="/tags">
-                    Tags
+                    Archives
                 </a>
                 
             
@@ -760,7 +738,7 @@
             </i>
         </button>
         <a id="navTitle" class="navbar-brand" href="http://localhost:1313/">
-            🧑🏻‍💻 Book Of Daniel
+            Book Of Daniel
         </a>
         
         <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
@@ -774,7 +752,7 @@
 <div class="single-column-header-container" id="pageHead"
      v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
     <a href="http://localhost:1313/">
-        <div class="single-column-header-title">🧑🏻‍💻 Book Of Daniel</div>
+        <div class="single-column-header-title">Book Of Daniel</div>
         
 
     </a>
@@ -903,58 +881,58 @@
 <h1 id="3-basic-commands">3. Basic Commands</h1>
 <p>Batch files execute a series of Command Prompt commands. Here, we&rsquo;ll explore some fundamental commands that form the building blocks of batch scripting.</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Command</th>
-          <th style="text-align: left">Purpose</th>
-          <th style="text-align: left">Example</th>
-          <th style="text-align: left">Description</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">Echo</td>
-          <td style="text-align: left">Displays messages or turns command echoing on/off.</td>
-          <td style="text-align: left"><code>echo Hello, world!</code></td>
-          <td style="text-align: left">Displays &ldquo;Hello, world!&rdquo; in Command Prompt.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">REM</td>
-          <td style="text-align: left">Adds comments in the script for readability.</td>
-          <td style="text-align: left"><code>REM This is a comment</code></td>
-          <td style="text-align: left">Ignored during execution, used for notes.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">SET</td>
-          <td style="text-align: left">Creates or changes environment variables.</td>
-          <td style="text-align: left"><code>SET name=John</code></td>
-          <td style="text-align: left">Sets the value of <code>name</code> to &ldquo;John.&rdquo;</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">GOTO</td>
-          <td style="text-align: left">Directs the script to another section.</td>
-          <td style="text-align: left"><code>GOTO END</code></td>
-          <td style="text-align: left">Jumps to the label <code>:END</code> in the script.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Labels</td>
-          <td style="text-align: left">Marks a section of the script.</td>
-          <td style="text-align: left"><code>:END</code></td>
-          <td style="text-align: left">Used with <code>GOTO</code> to create script sections.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">PAUSE</td>
-          <td style="text-align: left">Pauses the script, waiting for a key press.</td>
-          <td style="text-align: left"><code>PAUSE</code></td>
-          <td style="text-align: left">Used for testing or script pauses.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">EXIT</td>
-          <td style="text-align: left">Exits the Command Prompt or a script.</td>
-          <td style="text-align: left"><code>EXIT</code></td>
-          <td style="text-align: left">Closes the Command Prompt window in a script.</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Echo</td>
+<td>Displays messages or turns command echoing on/off.</td>
+<td><code>echo Hello, world!</code></td>
+<td>Displays &ldquo;Hello, world!&rdquo; in Command Prompt.</td>
+</tr>
+<tr>
+<td>REM</td>
+<td>Adds comments in the script for readability.</td>
+<td><code>REM This is a comment</code></td>
+<td>Ignored during execution, used for notes.</td>
+</tr>
+<tr>
+<td>SET</td>
+<td>Creates or changes environment variables.</td>
+<td><code>SET name=John</code></td>
+<td>Sets the value of <code>name</code> to &ldquo;John.&rdquo;</td>
+</tr>
+<tr>
+<td>GOTO</td>
+<td>Directs the script to another section.</td>
+<td><code>GOTO END</code></td>
+<td>Jumps to the label <code>:END</code> in the script.</td>
+</tr>
+<tr>
+<td>Labels</td>
+<td>Marks a section of the script.</td>
+<td><code>:END</code></td>
+<td>Used with <code>GOTO</code> to create script sections.</td>
+</tr>
+<tr>
+<td>PAUSE</td>
+<td>Pauses the script, waiting for a key press.</td>
+<td><code>PAUSE</code></td>
+<td>Used for testing or script pauses.</td>
+</tr>
+<tr>
+<td>EXIT</td>
+<td>Exits the Command Prompt or a script.</td>
+<td><code>EXIT</code></td>
+<td>Closes the Command Prompt window in a script.</td>
+</tr>
+</tbody>
 </table>
 <h3 id="sample-batch-file">Sample Batch File</h3>
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span> @<span style="color:#ff7b72">ECHO</span> OFF
@@ -1159,148 +1137,148 @@ Sets the read-only attribute to <code>example.txt</code>.</li>
 <h1 id="5-cool-commands">5. Cool Commands</h1>
 <p>In addition to basic file operations and scripting techniques, batch programming offers a plethora of &ldquo;cool commands&rdquo; that can be used for a wide range of purposes, from system administration to advanced file manipulation. Let&rsquo;s explore some of these commands and their functionalities.</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Command</th>
-          <th style="text-align: left">Purpose</th>
-          <th style="text-align: left">Usage</th>
-          <th style="text-align: left">Reference Link</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">FC</td>
-          <td style="text-align: left">Compares two files and displays the differences.</td>
-          <td style="text-align: left"><code>FC file1 file2</code></td>
-          <td style="text-align: left"><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/fc">🔗</a></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">FORFILES</td>
-          <td style="text-align: left">Executes a command on each file in a set of files.</td>
-          <td style="text-align: left"><code>FORFILES /P directory /M searchmask /C cmd</code></td>
-          <td style="text-align: left"><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/forfiles">🔗</a></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">HELP</td>
-          <td style="text-align: left">Provides help information for batch commands.</td>
-          <td style="text-align: left"><code>HELP command</code></td>
-          <td style="text-align: left"><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/help">🔗</a></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">MSG</td>
-          <td style="text-align: left">Sends a message to a user or session.</td>
-          <td style="text-align: left"><code>MSG [username]</code></td>
-          <td style="text-align: left"><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/msg">🔗</a></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">PROMPT</td>
-          <td style="text-align: left">Changes the command prompt.</td>
-          <td style="text-align: left"><code>PROMPT [text]</code></td>
-          <td style="text-align: left"><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/prompt">🔗</a></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">QUERY</td>
-          <td style="text-align: left">Displays the status of a specified service/session.</td>
-          <td style="text-align: left"><code>QUERY session</code></td>
-          <td style="text-align: left"><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/query">🔗</a></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">REG</td>
-          <td style="text-align: left">Manages registry keys and values.</td>
-          <td style="text-align: left"><code>REG QUERY key</code></td>
-          <td style="text-align: left"><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/reg-query">🔗</a></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">RUNAS</td>
-          <td style="text-align: left">Executes a program under a different user account.</td>
-          <td style="text-align: left"><code>RUNAS /USER:user program</code></td>
-          <td style="text-align: left"><a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771525(v=ws.11)">🔗</a></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">SC</td>
-          <td style="text-align: left">Manages Windows services.</td>
-          <td style="text-align: left"><code>SC command service_name</code></td>
-          <td style="text-align: left"><a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc754599(v=ws.11)">🔗</a></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">SCHTASKS</td>
-          <td style="text-align: left">Schedules commands/programs to run periodically.</td>
-          <td style="text-align: left"><code>SCHTASKS /CREATE /SC schedule /TN task /TR run</code></td>
-          <td style="text-align: left"><a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc725744(v=ws.11)">🔗</a></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">SHORTCUT</td>
-          <td style="text-align: left">Creates a Windows shortcut.</td>
-          <td style="text-align: left"><code>SHORTCUT /F:filename /A:C /T:targetpath</code></td>
-          <td style="text-align: left"><a href="https://ss64.com/nt/shortcut.html">🔗</a></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">SHUTDOWN</td>
-          <td style="text-align: left">Shuts down or restarts a computer.</td>
-          <td style="text-align: left"><code>SHUTDOWN /s /t time</code></td>
-          <td style="text-align: left"><a href="https://ss64.com/nt/shutdown.html">🔗</a></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">SUBST</td>
-          <td style="text-align: left">Associates a path with a drive letter.</td>
-          <td style="text-align: left"><code>SUBST drive: path</code></td>
-          <td style="text-align: left"><a href="https://ss64.com/nt/subst.html">🔗</a></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">SYSTEMINFO</td>
-          <td style="text-align: left">Displays detailed system information.</td>
-          <td style="text-align: left"><code>SYSTEMINFO</code></td>
-          <td style="text-align: left"><a href="https://ss64.com/nt/systeminfo.html">🔗</a></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">TAKEOWN</td>
-          <td style="text-align: left">Takes ownership of a file or folder.</td>
-          <td style="text-align: left"><code>TAKEOWN /F file_or_folder</code></td>
-          <td style="text-align: left"><a href="https://ss64.com/nt/takeown.html">🔗</a></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">TASKKILL</td>
-          <td style="text-align: left">Ends tasks or processes.</td>
-          <td style="text-align: left"><code>TASKKILL /IM imagename</code></td>
-          <td style="text-align: left"><a href="https://ss64.com/nt/taskkill.html">🔗</a></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">TASKLIST</td>
-          <td style="text-align: left">Displays a list of currently running tasks.</td>
-          <td style="text-align: left"><code>TASKLIST</code></td>
-          <td style="text-align: left"><a href="https://ss64.com/nt/tasklist.html">🔗</a></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">TELNET</td>
-          <td style="text-align: left">Communicates using the Telnet protocol.</td>
-          <td style="text-align: left"><code>TELNET [host] [port]</code></td>
-          <td style="text-align: left"><a href="https://ss64.com/nt/telnet.html">🔗</a></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">TREE</td>
-          <td style="text-align: left">Graphically displays folder structure.</td>
-          <td style="text-align: left"><code>TREE path</code></td>
-          <td style="text-align: left"><a href="https://ss64.com/nt/tree.html">🔗</a></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">TSDISCON</td>
-          <td style="text-align: left">Disconnects a Terminal Services session.</td>
-          <td style="text-align: left"><code>TSDISCON sessionid</code></td>
-          <td style="text-align: left"><a href="https://ss64.com/nt/tsdiscon.html">🔗</a></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">WHERE</td>
-          <td style="text-align: left">Locates and displays file paths matching a pattern.</td>
-          <td style="text-align: left"><code>WHERE pattern</code></td>
-          <td style="text-align: left"><a href="https://ss64.com/nt/where.html">🔗</a></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">WHOAMI</td>
-          <td style="text-align: left">Displays user, group, and privilege information.</td>
-          <td style="text-align: left"><code>WHOAMI</code></td>
-          <td style="text-align: left"><a href="https://ss64.com/nt/whoami.html">🔗</a></td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+<th>Usage</th>
+<th>Reference Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FC</td>
+<td>Compares two files and displays the differences.</td>
+<td><code>FC file1 file2</code></td>
+<td><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/fc">🔗</a></td>
+</tr>
+<tr>
+<td>FORFILES</td>
+<td>Executes a command on each file in a set of files.</td>
+<td><code>FORFILES /P directory /M searchmask /C cmd</code></td>
+<td><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/forfiles">🔗</a></td>
+</tr>
+<tr>
+<td>HELP</td>
+<td>Provides help information for batch commands.</td>
+<td><code>HELP command</code></td>
+<td><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/help">🔗</a></td>
+</tr>
+<tr>
+<td>MSG</td>
+<td>Sends a message to a user or session.</td>
+<td><code>MSG [username]</code></td>
+<td><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/msg">🔗</a></td>
+</tr>
+<tr>
+<td>PROMPT</td>
+<td>Changes the command prompt.</td>
+<td><code>PROMPT [text]</code></td>
+<td><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/prompt">🔗</a></td>
+</tr>
+<tr>
+<td>QUERY</td>
+<td>Displays the status of a specified service/session.</td>
+<td><code>QUERY session</code></td>
+<td><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/query">🔗</a></td>
+</tr>
+<tr>
+<td>REG</td>
+<td>Manages registry keys and values.</td>
+<td><code>REG QUERY key</code></td>
+<td><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/reg-query">🔗</a></td>
+</tr>
+<tr>
+<td>RUNAS</td>
+<td>Executes a program under a different user account.</td>
+<td><code>RUNAS /USER:user program</code></td>
+<td><a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771525(v=ws.11)">🔗</a></td>
+</tr>
+<tr>
+<td>SC</td>
+<td>Manages Windows services.</td>
+<td><code>SC command service_name</code></td>
+<td><a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc754599(v=ws.11)">🔗</a></td>
+</tr>
+<tr>
+<td>SCHTASKS</td>
+<td>Schedules commands/programs to run periodically.</td>
+<td><code>SCHTASKS /CREATE /SC schedule /TN task /TR run</code></td>
+<td><a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc725744(v=ws.11)">🔗</a></td>
+</tr>
+<tr>
+<td>SHORTCUT</td>
+<td>Creates a Windows shortcut.</td>
+<td><code>SHORTCUT /F:filename /A:C /T:targetpath</code></td>
+<td><a href="https://ss64.com/nt/shortcut.html">🔗</a></td>
+</tr>
+<tr>
+<td>SHUTDOWN</td>
+<td>Shuts down or restarts a computer.</td>
+<td><code>SHUTDOWN /s /t time</code></td>
+<td><a href="https://ss64.com/nt/shutdown.html">🔗</a></td>
+</tr>
+<tr>
+<td>SUBST</td>
+<td>Associates a path with a drive letter.</td>
+<td><code>SUBST drive: path</code></td>
+<td><a href="https://ss64.com/nt/subst.html">🔗</a></td>
+</tr>
+<tr>
+<td>SYSTEMINFO</td>
+<td>Displays detailed system information.</td>
+<td><code>SYSTEMINFO</code></td>
+<td><a href="https://ss64.com/nt/systeminfo.html">🔗</a></td>
+</tr>
+<tr>
+<td>TAKEOWN</td>
+<td>Takes ownership of a file or folder.</td>
+<td><code>TAKEOWN /F file_or_folder</code></td>
+<td><a href="https://ss64.com/nt/takeown.html">🔗</a></td>
+</tr>
+<tr>
+<td>TASKKILL</td>
+<td>Ends tasks or processes.</td>
+<td><code>TASKKILL /IM imagename</code></td>
+<td><a href="https://ss64.com/nt/taskkill.html">🔗</a></td>
+</tr>
+<tr>
+<td>TASKLIST</td>
+<td>Displays a list of currently running tasks.</td>
+<td><code>TASKLIST</code></td>
+<td><a href="https://ss64.com/nt/tasklist.html">🔗</a></td>
+</tr>
+<tr>
+<td>TELNET</td>
+<td>Communicates using the Telnet protocol.</td>
+<td><code>TELNET [host] [port]</code></td>
+<td><a href="https://ss64.com/nt/telnet.html">🔗</a></td>
+</tr>
+<tr>
+<td>TREE</td>
+<td>Graphically displays folder structure.</td>
+<td><code>TREE path</code></td>
+<td><a href="https://ss64.com/nt/tree.html">🔗</a></td>
+</tr>
+<tr>
+<td>TSDISCON</td>
+<td>Disconnects a Terminal Services session.</td>
+<td><code>TSDISCON sessionid</code></td>
+<td><a href="https://ss64.com/nt/tsdiscon.html">🔗</a></td>
+</tr>
+<tr>
+<td>WHERE</td>
+<td>Locates and displays file paths matching a pattern.</td>
+<td><code>WHERE pattern</code></td>
+<td><a href="https://ss64.com/nt/where.html">🔗</a></td>
+</tr>
+<tr>
+<td>WHOAMI</td>
+<td>Displays user, group, and privilege information.</td>
+<td><code>WHOAMI</code></td>
+<td><a href="https://ss64.com/nt/whoami.html">🔗</a></td>
+</tr>
+</tbody>
 </table>
 <hr>
 <h1 id="references">References</h1>
@@ -1356,7 +1334,7 @@ Sets the read-only attribute to <code>example.txt</code>.</li>
     <a class="a-block nav-head false" href="http://localhost:1313/">
     
         <div class="nav-title">
-            🧑🏻‍💻 Book Of Daniel
+            Book Of Daniel
         </div>
         
     </a>
@@ -1372,27 +1350,7 @@ Sets the read-only attribute to <code>example.txt</code>.</li>
             
             
             <a class="a-block nav-link-item active" href="/posts">
-                Archive
-            </a>
-            
-        
-            
-            
-            
-            
-            
-            <a class="a-block nav-link-item false" href="/categories">
-                Categories
-            </a>
-            
-        
-            
-            
-            
-            
-            
-            <a class="a-block nav-link-item false" href="/tags">
-                Tags
+                Archives
             </a>
             
         
@@ -1404,7 +1362,7 @@ Sets the read-only attribute to <code>example.txt</code>.</li>
         
 &copy;
 	
-	2023
+	2024
 	
 
     </div>
@@ -2067,10 +2025,10 @@ Sets the read-only attribute to <code>example.txt</code>.</li>
             </span>
         </a>
         
-
         
     </div>
 </div>
+            
             </div>
     
     <script src="/js/journal.js"></script></body>

@@ -4,18 +4,59 @@
     <title>Categories on 🧑🏻‍💻 Book Of Daniel</title>
     <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on 🧑🏻‍💻 Book Of Daniel</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>2023</copyright>
-    <lastBuildDate>Sun, 09 Apr 2017 10:58:08 -0400</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Jul 2024 08:28:44 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Story</title>
-      <link>http://localhost:1313/categories/story/</link>
-      <pubDate>Sun, 09 Apr 2017 10:58:08 -0400</pubDate>
-      
-      <guid>http://localhost:1313/categories/story/</guid>
+      <title>K8s</title>
+      <link>http://localhost:1313/categories/k8s/</link>
+      <pubDate>Mon, 08 Jul 2024 08:28:44 +0530</pubDate>
+      <guid>http://localhost:1313/categories/k8s/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>Notes</title>
+      <link>http://localhost:1313/categories/notes/</link>
+      <pubDate>Fri, 05 Apr 2024 10:16:30 +0530</pubDate>
+      <guid>http://localhost:1313/categories/notes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docs</title>
+      <link>http://localhost:1313/categories/docs/</link>
+      <pubDate>Wed, 17 Jan 2024 22:45:09 +0530</pubDate>
+      <guid>http://localhost:1313/categories/docs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Books</title>
+      <link>http://localhost:1313/categories/books/</link>
+      <pubDate>Mon, 01 Jan 2024 16:26:56 +0530</pubDate>
+      <guid>http://localhost:1313/categories/books/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Life Journey</title>
+      <link>http://localhost:1313/categories/life-journey/</link>
+      <pubDate>Wed, 20 Dec 2023 16:12:14 +0530</pubDate>
+      <guid>http://localhost:1313/categories/life-journey/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Code</title>
+      <link>http://localhost:1313/categories/code/</link>
+      <pubDate>Wed, 13 Dec 2023 09:39:37 +0530</pubDate>
+      <guid>http://localhost:1313/categories/code/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Case Study</title>
+      <link>http://localhost:1313/categories/case-study/</link>
+      <pubDate>Mon, 02 Oct 2023 17:40:05 +0530</pubDate>
+      <guid>http://localhost:1313/categories/case-study/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

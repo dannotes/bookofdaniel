@@ -312,7 +312,7 @@ If you want to change the world, measure a person by the size of their heart, no
 &lt;blockquote&gt;
 &lt;p&gt;&amp;ldquo;The digital revolution is not about technology; it&amp;rsquo;s about people.&amp;rdquo; - &lt;strong&gt;Howard Rheingold&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;img title=&#34;The Rise of NOSTR and the Renaissance of Social Media&#34; alt=&#34;The Rise of NOSTR and the Renaissance of Social Media&#34; src=&#34;https://bookofdaniel.in/images/The Rise of NOSTR and the Renaissance of Social Media.png&#34;&gt;
+&lt;img title=&#34;The Rise of NOSTR and the Renaissance of Social Media&#34; alt=&#34;The Rise of NOSTR and the Renaissance of Social Media&#34; src=&#34;https://bookofdaniel.in/images/The Rise of NOSTR and the Renaissance of Social Media.webp&#34;&gt;
 &lt;h2 id=&#34;the-problem-addiction-and-control-&#34;&gt;The Problem: Addiction and Control 🕹️&lt;/h2&gt;
 &lt;p&gt;The primary business model of social media companies pivoted to advertising, fostering designs that promote addiction - the infinite scroll, tailored feeds, etc. This change led to a significant shift in how content is delivered and consumed, prioritizing user retention over quality content. Moreover, this centralization led to concerns about censorship and data privacy, as these platforms gained control over what content is visible and who gets to see it.&lt;/p&gt;
 &lt;h2 id=&#34;enter-nostr-a-glimpse-of-hope-&#34;&gt;Enter NOSTR: A Glimpse of Hope ✨&lt;/h2&gt;
@@ -484,7 +484,7 @@ The absence of a real-time dashboard has caused inefficiencies in tracking produ
 &lt;p&gt;The Webhook listener is developed using a simple java script. The json payload recieved will be deserialized and stored in a relational database like SQL Server.&lt;/p&gt;
 &lt;p&gt;Then I created a Grafana Dashboard to pull the details from the database.&lt;/p&gt;
 &lt;h3 id=&#34;architecture-diagram&#34;&gt;Architecture Diagram&lt;/h3&gt;
-&lt;img title=&#34;Zoho Real-Time Grafana Dashbord&#34; alt=&#34;Zoho Real-Time Dashboard Solution&#34; src=&#34;https://bookofdaniel.in/images/Zoho Desk Real Time Monitoring.png&#34;&gt;
+&lt;img title=&#34;Zoho Real-Time Grafana Dashbord&#34; alt=&#34;Zoho Real-Time Dashboard Solution&#34; src=&#34;https://bookofdaniel.in/images/Zoho Desk Real Time Monitoring.webp&#34;&gt;
 &lt;h3 id=&#34;final-results&#34;&gt;Final Results&lt;/h3&gt;
 &lt;img title=&#34;Zoho Real-Time Grafana Dashbord&#34; alt=&#34;Zoho Real-Time Dashboard Solution on TV&#34; src=&#34;https://bookofdaniel.in/images/Zoho Desk Real Time Monitoring on TV.jpg&#34;&gt;
 &lt;p&gt;By incorporating real-time monitoring for Zoho tickets, my team&amp;rsquo;s productivity and efficiency increased tenfold. This enhancement not only bolstered accountability but also motivated everyone to aim higher and soar!&lt;/p&gt;

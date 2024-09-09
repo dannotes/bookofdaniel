@@ -581,7 +581,7 @@
                             
                             14 min
                             
-                            3 s.
+                            4 s.
                         
                     </div>
                 </div>
@@ -816,7 +816,7 @@
 <h1 id="initializing-the-kubernetes-cluster-with-kubeadm">Initializing the Kubernetes Cluster with Kubeadm</h1>
 <p>With <strong>kubeadm</strong>, <strong>kubelet</strong>, and <strong>kubectl</strong> installed on your master and worker nodes, it’s time to initialize the Kubernetes cluster.</p>
 <blockquote>
-<p>This step should only be executed on the master node, as it sets up the control plane that will manage the cluster.</p>
+<p>ℹ️ This step should only be executed on the master node, as it sets up the control plane that will manage the cluster.</p>
 </blockquote>
 <p>To begin, use the following command on your <strong>master node</strong> to initialize the cluster:</p>
 <div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo kubeadm init <span style="color:#79c0ff">\
@@ -922,7 +922,7 @@ Then you can join any number of worker nodes by running the following on each as
 kubeadm join k8s-master.local:6443 --token daii9y.g4dq24u6irkz4pt0 \
         --discovery-token-ca-cert-hash sha256:58b9cc96ed57a5797fddea653756dbda830efbff55b720a10cffb3948d489148
 </code></pre><blockquote>
-<p>Now, As shown in the output execute below command in master node.</p>
+<p>ℹ️ Now, As shown in the output execute below command in master node.</p>
 </blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p <span style="color:#79c0ff">$HOME</span>/.kube
 </span></span><span style="display:flex;"><span>sudo cp -i /etc/kubernetes/admin.conf <span style="color:#79c0ff">$HOME</span>/.kube/config
@@ -944,7 +944,7 @@ kubeadm join k8s-master.local:6443 --token daii9y.g4dq24u6irkz4pt0 \
 <h1 id="adding-worker-nodes-to-the-kubernetes-cluster">Adding Worker Nodes to the Kubernetes Cluster</h1>
 <p>After initializing the Kubernetes cluster on the master node, it&rsquo;s time to add your worker nodes to the cluster. This will allow the control plane to distribute workloads across the nodes and manage them.</p>
 <blockquote>
-<p>To add a worker node, you need to execute the kubeadm join command in worker nodes.</p>
+<p>ℹ️ To add a worker node, you need to execute the kubeadm join command in worker nodes.</p>
 </blockquote>
 <p>This command securely connects the worker node to the control plane. the command typically looks something like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubeadm join k8s-master.local:6443 --token daii9y.g4dq24u6irkz4pt0 <span style="color:#79c0ff">\

@@ -244,7 +244,7 @@
 &lt;h1 id=&#34;initializing-the-kubernetes-cluster-with-kubeadm&#34;&gt;Initializing the Kubernetes Cluster with Kubeadm&lt;/h1&gt;
 &lt;p&gt;With &lt;strong&gt;kubeadm&lt;/strong&gt;, &lt;strong&gt;kubelet&lt;/strong&gt;, and &lt;strong&gt;kubectl&lt;/strong&gt; installed on your master and worker nodes, it’s time to initialize the Kubernetes cluster.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;This step should only be executed on the master node, as it sets up the control plane that will manage the cluster.&lt;/p&gt;
+&lt;p&gt;ℹ️ This step should only be executed on the master node, as it sets up the control plane that will manage the cluster.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;To begin, use the following command on your &lt;strong&gt;master node&lt;/strong&gt; to initialize the cluster:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo kubeadm init &lt;span style=&#34;color:#79c0ff&#34;&gt;\
@@ -350,7 +350,7 @@ Then you can join any number of worker nodes by running the following on each as
 kubeadm join k8s-master.local:6443 --token daii9y.g4dq24u6irkz4pt0 \
         --discovery-token-ca-cert-hash sha256:58b9cc96ed57a5797fddea653756dbda830efbff55b720a10cffb3948d489148
 &lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;p&gt;Now, As shown in the output execute below command in master node.&lt;/p&gt;
+&lt;p&gt;ℹ️ Now, As shown in the output execute below command in master node.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkdir -p &lt;span style=&#34;color:#79c0ff&#34;&gt;$HOME&lt;/span&gt;/.kube
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo cp -i /etc/kubernetes/admin.conf &lt;span style=&#34;color:#79c0ff&#34;&gt;$HOME&lt;/span&gt;/.kube/config
@@ -372,7 +372,7 @@ kubeadm join k8s-master.local:6443 --token daii9y.g4dq24u6irkz4pt0 \
 &lt;h1 id=&#34;adding-worker-nodes-to-the-kubernetes-cluster&#34;&gt;Adding Worker Nodes to the Kubernetes Cluster&lt;/h1&gt;
 &lt;p&gt;After initializing the Kubernetes cluster on the master node, it&amp;rsquo;s time to add your worker nodes to the cluster. This will allow the control plane to distribute workloads across the nodes and manage them.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;To add a worker node, you need to execute the kubeadm join command in worker nodes.&lt;/p&gt;
+&lt;p&gt;ℹ️ To add a worker node, you need to execute the kubeadm join command in worker nodes.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;This command securely connects the worker node to the control plane. the command typically looks something like this:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubeadm join k8s-master.local:6443 --token daii9y.g4dq24u6irkz4pt0 &lt;span style=&#34;color:#79c0ff&#34;&gt;\
@@ -570,7 +570,7 @@ SQLServerReportingServices     2312 Services                   0     42,232 K
 &lt;li&gt;&lt;strong&gt;Worker Nodes (Cargo Ships)&lt;/strong&gt;: These ships carry the actual load—in Kubernetes, this translates to running your containerized applications.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Master Nodes (Control Ships)&lt;/strong&gt;: These ships oversee and manage the cargo ships, ensuring everything runs smoothly.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img title=&#34;Kubernetes Architecture Explained: the Ship Analogy of KodeKloud&#34; alt=&#34;Kubernetes Architecture Explained: the Ship Analogy of KodeKloud&#34; src=&#34;https://bookofdaniel.in/images/k8s-ship-analogy-kodekloud.png&#34;&gt;
+&lt;img title=&#34;Kubernetes Architecture Explained: the Ship Analogy of KodeKloud&#34; alt=&#34;Kubernetes Architecture Explained: the Ship Analogy of KodeKloud&#34; src=&#34;https://bookofdaniel.in/images/k8s-ship-analogy-kodekloud.webp&#34;&gt;
 &lt;h3 id=&#34;master-nodes-the-control-ships&#34;&gt;Master Nodes: The Control Ships&lt;/h3&gt;
 &lt;p&gt;Master nodes are the brain of the Kubernetes cluster, managing the state and operations of the entire system. They contain several key components, collectively known as the control plane:&lt;/p&gt;
 &lt;ol&gt;
@@ -622,7 +622,7 @@ SQLServerReportingServices     2312 Services                   0     42,232 K
         <description>Book Of Daniel https://bookofdaniel.in/posts/the-5-minute-death-journal-method/ -&lt;p&gt;In the hustle and bustle of our daily lives, it&amp;rsquo;s easy to let moments slip by without much thought. The idea of journaling, while appealing in theory, often feels daunting in practice. After a long day, the last thing many of us want to do is reflect on our experiences and plan for the next. But what if I told you there&amp;rsquo;s a way to reap the benefits of journaling in just five minutes a day? Enter the 5-Minute Death Journal.&lt;/p&gt;
 &lt;p&gt;Inspired by positive psychology research, this journaling method is designed to help you remember more, increase productivity, and foster happiness—all in just five minutes. It may sound too good to be true, but after incorporating it into my daily routine for the past month, I can attest to its transformative power.&lt;/p&gt;
 &lt;p&gt;The 5-Minute Death Journal method was introduced to me by &lt;a href=&#34;https://www.youtube.com/@spoonfedstudy&#34;&gt;SpoonFedStudy&lt;/a&gt;, whose insightful YouTube video served as the catalyst for my journey. In his video titled &amp;ldquo;&lt;a href=&#34;https://youtu.be/w_gohJgxBlU&#34;&gt;the most important book in your entire life&lt;/a&gt;,&amp;rdquo; eloquently outlines the principles and exercises of the journal, offering practical tips for implementation.&lt;/p&gt;
-&lt;p&gt;&lt;img title=&#34;The 5-Minute Death Journal Method&#34; alt=&#34;The 5-Minute Death Journal Method&#34; src=&#34;https://bookofdaniel.in/images/The 5-Minute Death Journal Method.png&#34;&gt; &lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img title=&#34;The 5-Minute Death Journal Method&#34; alt=&#34;The 5-Minute Death Journal Method&#34; src=&#34;https://bookofdaniel.in/images/The 5-Minute Death Journal Method.webp&#34;&gt; &lt;br&gt;&lt;/p&gt;
 &lt;p&gt;The journal consists of five simple exercises, each taking just one minute to complete. The first exercise, &amp;ldquo;&lt;strong&gt;The Deathbed Time Machine Tour of Today&lt;/strong&gt;,&amp;rdquo; prompts you to imagine yourself at the end of your life, looking back on the day. What are the top three moments you want your older self to cherish? This exercise encourages you to find meaning in the seemingly mundane and appreciate the small joys that make life rich.&lt;/p&gt;
 &lt;p&gt;Next, &amp;ldquo;&lt;strong&gt;The Wise Old Man Who Teaches You Stuff&lt;/strong&gt;&amp;rdquo; challenges you to identify the lessons learned throughout the day. Whether it&amp;rsquo;s a profound realization or a subtle insight, there&amp;rsquo;s always something to be gained from each experience.&lt;/p&gt;
 &lt;p&gt;Then comes &amp;ldquo;&lt;strong&gt;The Evil Serial Kidnapper&lt;/strong&gt;,&amp;rdquo; a whimsical yet effective exercise in productivity. Imagine a villain holding your beloved hamster hostage, demanding three concrete tasks for the following day. By setting clear goals, you not only prioritize your time but also gain clarity and focus.&lt;/p&gt;

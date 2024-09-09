@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>2024</copyright>
-    <lastBuildDate>Fri, 06 Sep 2024 12:07:09 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 09 Sep 2024 13:14:18 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Installing Kafka and Kafka Connect on Seperate Servers</title>
+      <link>http://localhost:1313/posts/installing-kafka-and-kafka-connect-on-seperate-servers/</link>
+      <pubDate>Mon, 09 Sep 2024 13:14:18 +0530</pubDate>
+      <guid>http://localhost:1313/posts/installing-kafka-and-kafka-connect-on-seperate-servers/</guid>
+      <description>Installing Kafka and Kafka Connect on separate servers allows for better resource management, especially in production environments where Kafka brokers and Connectors may need dedicated hardware. This guide will walk you through the steps to set up Kafka and Kafka Connect on separate Linux servers, using Ubuntu 24.04.&#xA;Prerequisites Two Linux machines (Ubuntu 24.04) Inbound ports opened on both servers: Kafka broker ports: 9092, 9093 Kafka Connect REST port: 8083 Java 11 (OpenJDK) installed on both servers Step 1: Set Up Kafka on the First Server Set the hostname for the Kafka server:</description>
+    </item>
     <item>
       <title>How to Setup Kubernetes in Azure Virtual Machines</title>
       <link>http://localhost:1313/posts/how-to-setup-kubernetes-in-azure-virtual-machines/</link>
@@ -127,13 +134,6 @@
       <pubDate>Thu, 09 Nov 2023 22:59:28 +0530</pubDate>
       <guid>http://localhost:1313/posts/the-ultimate-productive-system/</guid>
       <description>In the high-speed hustle of modern professional life, we often find ourselves chasing time, trying to grasp every fleeting minute. Productivity isn&amp;rsquo;t just a buzzword; it&amp;rsquo;s a lifeline that keeps us afloat in a sea of deadlines, meetings, and endless tasks. If you&amp;rsquo;re like me, a busy professional always on the lookout for the best way to streamline your day, you know that most productivity systems seem to add more to our plates rather than taking off the load.</description>
-    </item>
-    <item>
-      <title>How I Started a YouTube Channel and Got 100K Subscribers in 6 Months (Even Though I Got Copyright Strikes)</title>
-      <link>http://localhost:1313/posts/how-i-started-a-youtube-channel/</link>
-      <pubDate>Sun, 05 Nov 2023 08:54:22 +0530</pubDate>
-      <guid>http://localhost:1313/posts/how-i-started-a-youtube-channel/</guid>
-      <description>During the COVID-19 lockdown, people had differing views: some felt it could be the end, while others saw it as an opportunity to start something new. One common thread was that everyone was glued to their smartphones. YouTube trends during the pandemic showed skyrocketing watch times since everyone was either watching videos or sleeping.&#xA;YouTube Shorts started gaining more traction over time, particularly those related to motivation. Everyone needed motivation because those were the tough times.</description>
     </item>
     <item>
       <title>Push your team to be Good to Great: Integration of Zoho Desk and Grafana</title>

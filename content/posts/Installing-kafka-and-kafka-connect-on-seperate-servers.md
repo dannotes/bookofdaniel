@@ -229,7 +229,7 @@ If you want to set up Debezium for change data capture (CDC), follow these steps
    curl -s localhost:8083/connector-plugins | jq
    ```
 
-### **Commands for TroubleShooting**
+### Commands for TroubleShooting
 #### Kafka
 ```bash
 

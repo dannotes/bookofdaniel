@@ -3,7 +3,7 @@ DefaultContentLanguage: "en" # Theme's display language, supports: en, fr, zh, z
 languageCode: "en-us"
 title: "Book Of Daniel"
 copyright: "2024"
-theme: "Diary"
+theme: "diary"
 
 params:
   enableReadingTime: true

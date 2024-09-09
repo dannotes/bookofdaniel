@@ -1,7 +1,7 @@
 ---
 date : 2024-09-09T13:14:18+05:30
 title : 'Installing Kafka and Kafka Connect on Seperate Servers'
-draft : true
+draft : false
 
 ---
 Installing Kafka and Kafka Connect on separate servers allows for better resource management, especially in production environments where Kafka brokers and Connectors may need dedicated hardware. This guide will walk you through the steps to set up Kafka and Kafka Connect on separate Linux servers, using Ubuntu 24.04.

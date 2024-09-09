@@ -229,8 +229,8 @@ If you want to set up Debezium for change data capture (CDC), follow these steps
    curl -s localhost:8083/connector-plugins | jq
    ```
 
-### Troubleshoot commands
-#### Kafka Commands
+### **Commands for TroubleShooting**
+#### Kafka
 ```bash
 
 # List all the topics
@@ -257,7 +257,7 @@ bin/kafka-topics.sh --delete --topic first-topic --bootstrap-server localhost:90
 
 ```
 
-#### Kafka connect commands
+#### Kafka Connect
 ```bash
 
 # List all connectors

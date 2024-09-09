@@ -4,3 +4,6 @@
 [submodule "themes/PaperMod"]
 	path = themes/PaperMod
 	url = https://github.com/adityatelange/hugo-PaperMod.git
+[submodule "hugo-theme-diary"]
+	path = hugo-theme-diary
+	url = https://github.com/AmazingRise/hugo-theme-diary.git

@@ -229,6 +229,55 @@ If you want to set up Debezium for change data capture (CDC), follow these steps
    curl -s localhost:8083/connector-plugins | jq
    ```
 
+### Troubleshoot commands
+#### Kafka Commands
+```bash
+
+# List all the topics
+$KAFKA_HOME/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list
+
+# Creating new topic
+$KAFKA_HOME/bin/kafka-topics.sh --create --topic first-topic --bootstrap-server localhost:9092
+
+# Get information about the topic
+$KAFKA_HOME/bin/kafka-topics.sh --describe --topic first-topic --bootstrap-server localhost:9092
+
+# Read the messages from the topics
+$KAFKA_HOME/bin/kafka-console-consumer.sh --topic first-topic --bootstrap-server localhost:9092
+
+# Read the message before the consumer
+$KAFKA_HOME/bin/kafka-console-consumer.sh --topic first-topic --from-beginning --bootstrap-server localhost:9092
+
+# Delete topic
+bin/kafka-topics.sh --delete --topic first-topic --bootstrap-server localhost:9092
+
+
+# Example codes
+/opt/kafka_2.13-3.8.0/bin/kafka-console-consumer.sh --bootstrap-server <SQL SERVER>:9092 --topic crewing.vessel.fake.crew --from-beginning | jq '.payload | { operation: .op, before: .before.crew_id , after: .after.crew_id ,first_name: .after.first_name, last_name: .after.last_name, change_lsn: .source.change_lsn, commit_lsn: .source.commit_lsn, transaction: .transaction.id }'
+
+```
+
+#### Kafka connect commands
+```bash
+
+# List all connectors
+curl -X GET http://localhost:8083/connectors
+
+# Get status of the connectors
+curl -X GET http://localhost:8083/connectors/my-connector/status
+
+# Delete a connector
+curl -X DELETE http://localhost:8083/connectors/my-connector
+
+# Update a connector
+curl -X PUT -H "Content-Type: application/json" -d @updated-connector-config.json http://localhost:8083/connectors/connector_name/config
+
+# Verifying the update of the connector
+curl -X GET http://localhost:8083/connectors/connector_name/config
+
+```
+
+
 ### Conclusion
 
 You have successfully installed Kafka and Kafka Connect on separate servers, ensuring that both services are set up for distributed, scalable processing. This setup is optimal for large-scale deployments and is ready for further configuration, such as integrating Debezium or other Kafka Connect plugins.

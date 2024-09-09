@@ -206,8 +206,8 @@ WantedBy=multi-user.target
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -s localhost:8083/connector-plugins | jq
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;troubleshoot-commands&#34;&gt;Troubleshoot commands&lt;/h3&gt;
-&lt;h4 id=&#34;kafka-commands&#34;&gt;Kafka Commands&lt;/h4&gt;
+&lt;h3 id=&#34;commands-for-troubleshooting&#34;&gt;&lt;strong&gt;Commands for TroubleShooting&lt;/strong&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;kafka&#34;&gt;Kafka&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;# List all the topics&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;$KAFKA_HOME&lt;/span&gt;/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list
@@ -230,7 +230,7 @@ WantedBy=multi-user.target
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;# Example codes&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/opt/kafka_2.13-3.8.0/bin/kafka-console-consumer.sh --bootstrap-server &amp;lt;SQL SERVER&amp;gt;:9092 --topic crewing.vessel.fake.crew --from-beginning | jq &lt;span style=&#34;color:#a5d6ff&#34;&gt;&amp;#39;.payload | { operation: .op, before: .before.crew_id , after: .after.crew_id ,first_name: .after.first_name, last_name: .after.last_name, change_lsn: .source.change_lsn, commit_lsn: .source.commit_lsn, transaction: .transaction.id }&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;kafka-connect-commands&#34;&gt;Kafka connect commands&lt;/h4&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;kafka-connect&#34;&gt;Kafka Connect&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;# List all connectors&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -X GET http://localhost:8083/connectors

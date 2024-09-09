@@ -1,7 +1,7 @@
 ---
 date : 2023-11-18T23:03:52+05:30
 title : 'Reclaiming Our Digital Space: The Rise of NOSTR and the Renaissance of Social Media 💪🏻'
-featured_image: "/images/The Rise of NOSTR and the Renaissance of Social Media-Cover.png"
+featured_image: "/images/The Rise of NOSTR and the Renaissance of Social Media-Cover.webp"
 categories: "Notes"
 draft : false
 ---
@@ -13,7 +13,7 @@ However, as platforms like Facebook, Twitter, and Google grew, they started orga
 
 > "The digital revolution is not about technology; it's about people." - **Howard Rheingold**
 
-<img title="The Rise of NOSTR and the Renaissance of Social Media" alt="The Rise of NOSTR and the Renaissance of Social Media" src="/images/The Rise of NOSTR and the Renaissance of Social Media.png">
+<img title="The Rise of NOSTR and the Renaissance of Social Media" alt="The Rise of NOSTR and the Renaissance of Social Media" src="/images/The Rise of NOSTR and the Renaissance of Social Media.webp">
 
 ## The Problem: Addiction and Control 🕹️
 

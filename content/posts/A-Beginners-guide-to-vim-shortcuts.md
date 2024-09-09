@@ -1,7 +1,7 @@
 ---
 date : 2023-12-13T09:39:37+05:30
 title : 'A Beginners Guide to Vim Shortcuts'
-featured_image: "/images/A Beginners Guide to Vim Shortcuts.png"
+featured_image: "/images/A Beginners Guide to Vim Shortcuts.webp"
 categories: "Code"
 draft : false
 ---

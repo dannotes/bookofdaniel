@@ -2,7 +2,7 @@
 date : 2024-01-01T16:26:56+05:30
 title : 'From Messy Sheets to Mountain Everest: Navigating Life with Lessons from a Navy SEAL'
 draft : false
-featured_image: "/images/make-your-bed.png"
+featured_image: "/images/make-your-bed.webp"
 categories: "Books"
 ---
 

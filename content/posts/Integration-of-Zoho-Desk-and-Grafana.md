@@ -1,7 +1,7 @@
 ---
 date : 2023-10-02T17:40:05+05:30
 title : "Push your team to be Good to Great: Integration of Zoho Desk and Grafana"
-featured_image: "/images/Push your team to be Good to Great Integration of Zoho Desk and Grafana.png"
+featured_image: "/images/Push your team to be Good to Great Integration of Zoho Desk and Grafana.webp"
 categories: "Case Study"
 draft : false    
 ---
@@ -61,7 +61,7 @@ The Webhook listener is developed using a simple java script. The json payload r
 Then I created a Grafana Dashboard to pull the details from the database. 
 
 ### Architecture Diagram
-<img title="Zoho Real-Time Grafana Dashbord" alt="Zoho Real-Time Dashboard Solution" src="/images/Zoho Desk Real Time Monitoring.png">
+<img title="Zoho Real-Time Grafana Dashbord" alt="Zoho Real-Time Dashboard Solution" src="/images/Zoho Desk Real Time Monitoring.webp">
 
 
 

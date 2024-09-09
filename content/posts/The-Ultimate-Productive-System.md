@@ -1,7 +1,7 @@
 ---
 date : 2023-11-09T22:59:28+05:30
 title : 'The Ultimate Productivity System: Get Things Done Effortlessly! 🚀'
-featured_image: "/images/The Ultimate Productivity System-Featured Image.png"
+featured_image: "/images/The Ultimate Productivity System-Featured Image.webp"
 categories: "Notes"
 draft : false
 ---

@@ -2,7 +2,7 @@
 date : 2024-01-05T09:19:15+05:30
 title : "Lessons Learned from a Former WhatsApp Engineer: Influence, Passion, and Prioritization in the Tech Industry 🌟"
 draft : false
-featured_image: "/images/Lessons Learned from a Former WhatsApp Engineer.png"
+featured_image: "/images/Lessons Learned from a Former WhatsApp Engineer.webp"
 categories: "Notes"
 ---
 

@@ -1,7 +1,7 @@
 ---
 date : 2024-04-05T10:16:30+05:30
 title : 'The 5 Minute Death Journal Method'
-featured_image: "/images/The 5 Minute Death Journal Cover.png"
+featured_image: "/images/The 5 Minute Death Journal Cover.webp"
 categories: "Notes"
 draft : false
 ---
@@ -12,7 +12,7 @@ Inspired by positive psychology research, this journaling method is designed to 
 
 The 5-Minute Death Journal method was introduced to me by [SpoonFedStudy](https://www.youtube.com/@spoonfedstudy), whose insightful YouTube video served as the catalyst for my journey. In his video titled "[the most important book in your entire life](https://youtu.be/w_gohJgxBlU)," eloquently outlines the principles and exercises of the journal, offering practical tips for implementation.
 
-<img title="The 5-Minute Death Journal Method" alt="The 5-Minute Death Journal Method" src="/images/The 5-Minute Death Journal Method.png"> <br>
+<img title="The 5-Minute Death Journal Method" alt="The 5-Minute Death Journal Method" src="/images/The 5-Minute Death Journal Method.webp"> <br>
 
 The journal consists of five simple exercises, each taking just one minute to complete. The first exercise, "**The Deathbed Time Machine Tour of Today**," prompts you to imagine yourself at the end of your life, looking back on the day. What are the top three moments you want your older self to cherish? This exercise encourages you to find meaning in the seemingly mundane and appreciate the small joys that make life rich.
 

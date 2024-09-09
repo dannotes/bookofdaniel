@@ -1,7 +1,7 @@
 ---
 date : 2023-11-05T08:54:22+05:30
 title : "How I Started a YouTube Channel and Got 100K Subscribers in 6 Months (Even Though I Got Copyright Strikes)"
-featured_image: "/images/How I Started a YouTube Channel and Got 100K Subscribers in 6 Months.png"
+featured_image: "/images/How I Started a YouTube Channel and Got 100K Subscribers in 6 Months.webp"
 categories: "Life Journey"
 draft : true
 ---
@@ -19,7 +19,7 @@ I've long been a fan of Jay Shetty and a regular viewer of his [Jay Shetty Podca
 
 Since Jay Shetty is a popular motivational speaker, the channel was a hit. It attracted a lot of attention from both haters and supporters, which helped increase views and comments 😊.
 
-<img title="Jay Shetty Fan Channel" alt="Jay Shetty Fan Channel" src="/images/Jay Shetty Fan Channel.png">
+<img title="Jay Shetty Fan Channel" alt="Jay Shetty Fan Channel" src="/images/Jay Shetty Fan Channel.webp">
 
 # The Grind of Consistency 💪🏻
 Before starting the YouTube channel, I thought it was easy money—people post videos and earn millions, like a money-printing machine.

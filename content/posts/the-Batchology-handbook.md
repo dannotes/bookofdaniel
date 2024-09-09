@@ -1,7 +1,7 @@
 ---
 date : 2024-01-17T22:45:09+05:30
 title : 'The Batchology Handbook: Mastering the Art of Batch Scripting in Windows'
-featured_image: "/images/The Batchology Handbook.png"
+featured_image: "/images/The Batchology Handbook.webp"
 categories: "Docs"
 draft : false
 ---

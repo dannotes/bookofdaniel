@@ -1,7 +1,7 @@
 ---
 date : 2023-12-20T16:12:14+05:30
 title : "15 Ways to Stay Fit While Sitting at Home"
-featured_image: "/images/15-ways-to-stay-fit-while-sitting-at-Home.png"
+featured_image: "/images/15-ways-to-stay-fit-while-sitting-at-Home.webp"
 categories: "Life Journey"
 draft : false
 ---

@@ -1,7 +1,7 @@
 ---
 date : 2024-07-08T08:28:44+05:30
 title : 'Kubernetes Architecture Explained: the Ship Analogy of KodeKloud'
-featured_image: "/images/k8s-ship-analogy-kodekloud.png"
+featured_image: "/images/k8s-ship-analogy-kodekloud.webp"
 categories: "K8s"
 draft : false
 ---
@@ -15,7 +15,7 @@ At its core, a Kubernetes cluster comprises two types of nodes: worker nodes and
 - **Worker Nodes (Cargo Ships)**: These ships carry the actual load—in Kubernetes, this translates to running your containerized applications.
 - **Master Nodes (Control Ships)**: These ships oversee and manage the cargo ships, ensuring everything runs smoothly. 
 
-<img title="Kubernetes Architecture Explained: the Ship Analogy of KodeKloud" alt="Kubernetes Architecture Explained: the Ship Analogy of KodeKloud" src="/images/k8s-ship-analogy-kodekloud.png">
+<img title="Kubernetes Architecture Explained: the Ship Analogy of KodeKloud" alt="Kubernetes Architecture Explained: the Ship Analogy of KodeKloud" src="/images/k8s-ship-analogy-kodekloud.webp">
 
 ### Master Nodes: The Control Ships
 

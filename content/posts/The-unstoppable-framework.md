@@ -1,7 +1,7 @@
 ---
 date : 2024-01-11T08:04:16+05:30
 title : 'The Unstoppable Framework: A Step-by-Step Guide to Achieving Your Goals'
-featured_image: "/images/The Unstoppable Framework.png"
+featured_image: "/images/The Unstoppable Framework.webp"
 categories: "Notes"
 draft : false
 ---

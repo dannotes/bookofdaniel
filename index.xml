@@ -1,15 +1,469 @@
 <?xml-stylesheet href="/rss.xsl" type="text/xsl"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>🧑🏻‍💻 Book Of Daniel</title>
+    <title>Book Of Daniel</title>
     <link>https://bookofdaniel.in/</link>
-    <description>Recent content on 🧑🏻‍💻 Book Of Daniel</description>
+    <description>Recent content on Book Of Daniel</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>2023</copyright>
-    <lastBuildDate>Sat, 10 Aug 2024 12:53:44 +0530</lastBuildDate>
+    <copyright>2024</copyright>
+    <lastBuildDate>Fri, 06 Sep 2024 12:07:09 +0530</lastBuildDate>
     
         <atom:link href="https://bookofdaniel.in/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>How to Setup Kubernetes in Azure Virtual Machines</title>
+        <link>https://bookofdaniel.in/posts/how-to-setup-kubernetes-in-azure-virtual-machines/</link>
+        <pubDate>Fri, 06 Sep 2024 12:07:09 +0530</pubDate>
+        
+        <guid>https://bookofdaniel.in/posts/how-to-setup-kubernetes-in-azure-virtual-machines/</guid>
+        <description>Book Of Daniel https://bookofdaniel.in/posts/how-to-setup-kubernetes-in-azure-virtual-machines/ -&lt;p&gt;Welcome to the hard way of installing Kubernetes in Azure Virtual Machines. The instructions will be moreover same for On-prem. For many developers, using managed Kubernetes services like GKE, EKS, or AKS can be convenient, but they often abstract away the intricate details of how a cluster operates under the hood.&lt;/p&gt;
+&lt;h1 id=&#34;requirements&#34;&gt;Requirements&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NODES&lt;/th&gt;
+&lt;th&gt;IP&lt;/th&gt;
+&lt;th&gt;HOSTNAME&lt;/th&gt;
+&lt;th&gt;MACHINE TYPE&lt;/th&gt;
+&lt;th&gt;OPERATING SYSTEM&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;master&lt;/td&gt;
+&lt;td&gt;172.16.39.14&lt;/td&gt;
+&lt;td&gt;k8s-master.local&lt;/td&gt;
+&lt;td&gt;Standard B2ms&lt;/td&gt;
+&lt;td&gt;Ubuntu 24.04&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;k8s-worker1&lt;/td&gt;
+&lt;td&gt;172.16.39.23&lt;/td&gt;
+&lt;td&gt;k8s-worker1.local&lt;/td&gt;
+&lt;td&gt;Standard B4ms&lt;/td&gt;
+&lt;td&gt;Ubuntu 24.04&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;provisioning-the-servers-in-azure&#34;&gt;Provisioning the Servers in Azure&lt;/h1&gt;
+&lt;p&gt;To provision two Linux virtual machines (VMs) in Azure with the specified details, you can use the Azure CLI (az) to achieve this. Here’s how you can provision both machines using az vm create commands.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;# 1. Set common variables&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#79c0ff&#34;&gt;RESOURCE_GROUP&lt;/span&gt;&lt;span style=&#34;color:#ff7b72;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a5d6ff&#34;&gt;&amp;#34;k8s-cluster&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#79c0ff&#34;&gt;LOCATION&lt;/span&gt;&lt;span style=&#34;color:#ff7b72;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a5d6ff&#34;&gt;&amp;#34;eastus&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#79c0ff&#34;&gt;MASTER_VM_NAME&lt;/span&gt;&lt;span style=&#34;color:#ff7b72;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a5d6ff&#34;&gt;&amp;#34;k8s-master&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#79c0ff&#34;&gt;WORKER_VM_NAME&lt;/span&gt;&lt;span style=&#34;color:#ff7b72;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a5d6ff&#34;&gt;&amp;#34;k8s-worker1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#79c0ff&#34;&gt;MASTER_IP&lt;/span&gt;&lt;span style=&#34;color:#ff7b72;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a5d6ff&#34;&gt;&amp;#34;172.16.39.14&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#79c0ff&#34;&gt;WORKER_IP&lt;/span&gt;&lt;span style=&#34;color:#ff7b72;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a5d6ff&#34;&gt;&amp;#34;172.16.39.23&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#79c0ff&#34;&gt;VNET_NAME&lt;/span&gt;&lt;span style=&#34;color:#ff7b72;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a5d6ff&#34;&gt;&amp;#34;k8s-vnet&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#79c0ff&#34;&gt;SUBNET_NAME&lt;/span&gt;&lt;span style=&#34;color:#ff7b72;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a5d6ff&#34;&gt;&amp;#34;k8s-subnet&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#79c0ff&#34;&gt;MASTER_HOSTNAME&lt;/span&gt;&lt;span style=&#34;color:#ff7b72;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a5d6ff&#34;&gt;&amp;#34;k8s-master.local&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#79c0ff&#34;&gt;WORKER_HOSTNAME&lt;/span&gt;&lt;span style=&#34;color:#ff7b72;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a5d6ff&#34;&gt;&amp;#34;k8s-worker1.local&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;# 2. Resource group creation&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    az group create --name &lt;span style=&#34;color:#79c0ff&#34;&gt;$RESOURCE_GROUP&lt;/span&gt; --location &lt;span style=&#34;color:#79c0ff&#34;&gt;$LOCATION&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;# 3. Create a virtual network (VNet)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    az network vnet create &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;    --resource-group &lt;span style=&#34;color:#79c0ff&#34;&gt;$RESOURCE_GROUP&lt;/span&gt; &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;    --name &lt;span style=&#34;color:#79c0ff&#34;&gt;$VNET_NAME&lt;/span&gt; &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;    --address-prefix 172.16.0.0/16 &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;    --subnet-name &lt;span style=&#34;color:#79c0ff&#34;&gt;$SUBNET_NAME&lt;/span&gt; &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;    --subnet-prefix 172.16.39.0/24
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;# 4. Create static IP addresses&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;# Create public IPs&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    az network public-ip create --resource-group &lt;span style=&#34;color:#79c0ff&#34;&gt;$RESOURCE_GROUP&lt;/span&gt; --name masterPublicIP --allocation-method Static --sku Standard
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    az network public-ip create --resource-group &lt;span style=&#34;color:#79c0ff&#34;&gt;$RESOURCE_GROUP&lt;/span&gt; --name worker1PublicIP --allocation-method Static --sku Standard
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;# Create NIC for the master node&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    az network nic create &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;        --resource-group &lt;span style=&#34;color:#79c0ff&#34;&gt;$RESOURCE_GROUP&lt;/span&gt; &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;        --name masterNIC &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;        --vnet-name &lt;span style=&#34;color:#79c0ff&#34;&gt;$VNET_NAME&lt;/span&gt; &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;        --subnet &lt;span style=&#34;color:#79c0ff&#34;&gt;$SUBNET_NAME&lt;/span&gt; &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;        --private-ip-address &lt;span style=&#34;color:#79c0ff&#34;&gt;$MASTER_IP&lt;/span&gt; &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;        --public-ip-address masterPublicIP
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;# Create NIC for the worker node&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    az network nic create &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;        --resource-group &lt;span style=&#34;color:#79c0ff&#34;&gt;$RESOURCE_GROUP&lt;/span&gt; &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;        --name worker1NIC &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;        --vnet-name &lt;span style=&#34;color:#79c0ff&#34;&gt;$VNET_NAME&lt;/span&gt; &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;        --subnet &lt;span style=&#34;color:#79c0ff&#34;&gt;$SUBNET_NAME&lt;/span&gt; &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;        --private-ip-address &lt;span style=&#34;color:#79c0ff&#34;&gt;$WORKER_IP&lt;/span&gt; &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;        --public-ip-address worker1PublicIP
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;# 5. Provision the master node&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    az vm create &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;    --resource-group &lt;span style=&#34;color:#79c0ff&#34;&gt;$RESOURCE_GROUP&lt;/span&gt; &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;    --name &lt;span style=&#34;color:#79c0ff&#34;&gt;$MASTER_VM_NAME&lt;/span&gt; &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;    --size Standard_B2ms &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;    --nics masterNIC &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;    --image Canonical:0001-com-ubuntu-server-jammy:24_04-lts:latest &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;    --admin-username azureuser &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;    --generate-ssh-keys &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;    --custom-data cloud-init.yaml &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;    --host-name &lt;span style=&#34;color:#79c0ff&#34;&gt;$MASTER_HOSTNAME&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;# 6. Provision the worker node&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    az vm create &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;    --resource-group &lt;span style=&#34;color:#79c0ff&#34;&gt;$RESOURCE_GROUP&lt;/span&gt; &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;    --name &lt;span style=&#34;color:#79c0ff&#34;&gt;$WORKER_VM_NAME&lt;/span&gt; &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;    --size Standard_B4ms &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;    --nics worker1NIC &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;    --image Canonical:0001-com-ubuntu-server-jammy:24_04-lts:latest &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;    --admin-username azureuser &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;    --generate-ssh-keys &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;    --custom-data cloud-init.yaml &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;    --host-name &lt;span style=&#34;color:#79c0ff&#34;&gt;$WORKER_HOSTNAME&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;# 7. Verification&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    az vm list --resource-group &lt;span style=&#34;color:#79c0ff&#34;&gt;$RESOURCE_GROUP&lt;/span&gt; -o table
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This will show you the VMs with their details. You should see &lt;code&gt;k8s-master&lt;/code&gt; and &lt;code&gt;k8s-worker1&lt;/code&gt; with the correct IP addresses and machine types.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;system-preparation-for-kubernetes-installation&#34;&gt;System Preparation for Kubernetes Installation&lt;/h1&gt;
+&lt;p&gt;Before diving into the installation of Kubernetes, it&amp;rsquo;s essential to prepare your system for optimal performance and stability. This section outlines the necessary steps to get both the master and worker nodes ready for Kubernetes.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ℹ️ Execute the following commands on both master and worker nodes.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;1-update-the-os&#34;&gt;1. Update the OS&lt;/h2&gt;
+&lt;p&gt;First, ensure your system is up-to-date by running the following commands to update and upgrade all installed packages:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt upgrade -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After the upgrade completes, reboot the system to apply all changes:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo reboot
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;2-set-hostname&#34;&gt;2. Set Hostname&lt;/h2&gt;
+&lt;p&gt;Assign meaningful hostnames to both your master and worker nodes. This makes it easier to identify and manage the nodes in your cluster.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Master Node&lt;/strong&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo hostnamectl set-hostname &lt;span style=&#34;color:#a5d6ff&#34;&gt;&amp;#34;k8s-master.local&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Worker Node&lt;/strong&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo hostnamectl set-hostname &lt;span style=&#34;color:#a5d6ff&#34;&gt;&amp;#34;k8s-worker1.local&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Next, update the &lt;code&gt;/etc/hosts&lt;/code&gt; file on both nodes to map the hostnames to their corresponding IP addresses. Add the following lines to the file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;172.16.39.14 k8s-master.local
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;172.16.39.23 k8s-worker1.local
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;3-disable-swap&#34;&gt;3. Disable Swap&lt;/h2&gt;
+&lt;p&gt;Kubernetes requires swap to be disabled to function properly. This is crucial because the &lt;strong&gt;Kubelet&lt;/strong&gt;, the primary Kubernetes agent running on each node, does not handle memory swapping well. Enabling swap can lead to performance degradation and unpredictable behavior in your cluster.&lt;/p&gt;
+&lt;p&gt;Disable swap immediately with the following commands:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo swapoff -a
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo sed -i &lt;span style=&#34;color:#a5d6ff&#34;&gt;&amp;#39;/ swap / s/^/#/&amp;#39;&lt;/span&gt; /etc/fstab
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo mount -a
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;By commenting out the swap entry in &lt;code&gt;/etc/fstab&lt;/code&gt;, this ensures swap remains disabled after a reboot. Verify swap is disabled with:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;free -h
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The output should indicate that swap is set to 0:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;               total        used        free      shared  buff/cache   available
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Mem:           7.8Gi       1.4Gi       4.9Gi       5.0Mi       1.7Gi       6.3Gi
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Swap:             0B          0B          0B
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;4-update-kernel-and-configure-modules&#34;&gt;4. Update Kernel and Configure Modules&lt;/h2&gt;
+&lt;p&gt;For Kubernetes to run efficiently, specific kernel modules and network parameters need to be configured.&lt;/p&gt;
+&lt;p&gt;First, create a configuration file for kernel modules:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo tee /etc/modules-load.d/containerd.conf &lt;span style=&#34;color:#a5d6ff&#34;&gt;&amp;lt;&amp;lt;EOF
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a5d6ff&#34;&gt;overlay
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a5d6ff&#34;&gt;br_netfilter
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a5d6ff&#34;&gt;EOF&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;overlay&lt;/code&gt;: Used for overlay filesystems, which are essential for container storage.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;br_netfilter&lt;/code&gt;: Enables Kubernetes to manage network traffic between containers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Next, load the required kernel modules:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo modprobe overlay
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo modprobe br_netfilter
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Set the necessary kernel parameters for Kubernetes by creating a configuration file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo tee /etc/sysctl.d/kubernetes.conf &lt;span style=&#34;color:#a5d6ff&#34;&gt;&amp;lt;&amp;lt;EOF
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a5d6ff&#34;&gt;net.bridge.bridge-nf-call-ip6tables = 1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a5d6ff&#34;&gt;net.bridge.bridge-nf-call-iptables = 1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a5d6ff&#34;&gt;net.ipv4.ip_forward = 1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a5d6ff&#34;&gt;EOF&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally, reload the sysctl configuration to apply the new parameters:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo sysctl --system
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;These steps ensure your system is properly prepared for the Kubernetes installation, providing a stable foundation for the cluster to run efficiently.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;installing-containerd-runtime-on-all-nodes&#34;&gt;Installing Containerd Runtime on All Nodes&lt;/h1&gt;
+&lt;p&gt;A critical component of any Kubernetes cluster is the &lt;strong&gt;container runtime&lt;/strong&gt;, which is responsible for running containers on each node. &lt;strong&gt;Containerd&lt;/strong&gt; is a lightweight and powerful runtime that provides essential container lifecycle management, including image transfer, storage, and execution. Originally developed as part of Docker, it is now a key part of the Cloud Native Computing Foundation (CNCF) and is favored for Kubernetes environments due to its simplicity and performance.&lt;/p&gt;
+&lt;p&gt;To install &lt;strong&gt;containerd&lt;/strong&gt; on all nodes in your Kubernetes cluster, follow these steps:&lt;/p&gt;
+&lt;p&gt;First, ensure that the necessary packages and dependencies are installed:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install -y curl gnupg2 software-properties-common apt-transport-https ca-certificates
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Add Docker’s official GPG key and Docker’s repository to your system:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/docker.gpg
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo add-apt-repository &lt;span style=&#34;color:#a5d6ff&#34;&gt;&amp;#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu &lt;/span&gt;&lt;span style=&#34;color:#ff7b72&#34;&gt;$(&lt;/span&gt;lsb_release -cs&lt;span style=&#34;color:#ff7b72&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#a5d6ff&#34;&gt; stable&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Update your package lists to include the newly added Docker repository, and install &lt;strong&gt;containerd&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install -y containerd.io
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once &lt;strong&gt;containerd&lt;/strong&gt; is installed, you need to configure it to work with &lt;strong&gt;Kubernetes&lt;/strong&gt;. Generate the default configuration file and enable &lt;strong&gt;SystemdCgroup&lt;/strong&gt;, which ensures that &lt;strong&gt;containerd&lt;/strong&gt; integrates smoothly with Kubernetes, particularly when using systemd for process management:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;containerd config default | sudo tee /etc/containerd/config.toml &amp;gt;/dev/null 2&amp;gt;&amp;amp;&lt;span style=&#34;color:#a5d6ff&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo sed -i &lt;span style=&#34;color:#a5d6ff&#34;&gt;&amp;#39;s/SystemdCgroup = false/SystemdCgroup = true/g&amp;#39;&lt;/span&gt; /etc/containerd/config.toml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally, restart and enable the &lt;strong&gt;containerd&lt;/strong&gt; service so that it starts automatically on system boot:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo systemctl restart containerd
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo systemctl enable containerd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;By following these steps, you’ll have a robust and efficient container runtime in place, ready for Kubernetes. Repeat this process on each node to ensure consistency across the cluster.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;installing-kubeadm-kubelet-and-kubectl&#34;&gt;Installing Kubeadm, Kubelet, and Kubectl&lt;/h1&gt;
+&lt;p&gt;Now that your system is prepared, it&amp;rsquo;s time to install the essential Kubernetes components on all of your machines: &lt;strong&gt;kubeadm&lt;/strong&gt;, &lt;strong&gt;kubelet&lt;/strong&gt;, and &lt;strong&gt;kubectl&lt;/strong&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;kubeadm&lt;/strong&gt;: This tool helps bootstrap the Kubernetes cluster.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;kubelet&lt;/strong&gt;: The agent that runs on all nodes in the cluster, responsible for running pods and containers.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;kubectl&lt;/strong&gt;: A command-line utility that lets you interact with the Kubernetes cluster.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It&amp;rsquo;s important to note that &lt;strong&gt;kubeadm&lt;/strong&gt; will not manage or install &lt;strong&gt;kubelet&lt;/strong&gt; or &lt;strong&gt;kubectl&lt;/strong&gt; for you, so you must ensure that all these tools are on the correct version. Mismatches between &lt;strong&gt;kubeadm&lt;/strong&gt;, &lt;strong&gt;kubelet&lt;/strong&gt;, and &lt;strong&gt;kubectl&lt;/strong&gt; versions can result in instability. Kubernetes does allow a one-minor-version difference between the &lt;strong&gt;kubelet&lt;/strong&gt; and the control plane, but the &lt;strong&gt;kubelet&lt;/strong&gt; version should never exceed the API server version. For example, &lt;strong&gt;kubelet&lt;/strong&gt; v1.7.0 can work with an API server running v1.8.0, but not the other way around.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Additionally, as of &lt;strong&gt;September 13, 2023&lt;/strong&gt;, Kubernetes has moved to a new package repository hosted at &lt;strong&gt;pkgs.k8s.io&lt;/strong&gt;, which you must use to install any Kubernetes versions after v1.24. The legacy repositories (apt.kubernetes.io) are deprecated and may be removed without notice.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Follow the steps below to install these packages for Kubernetes v1.31:&lt;/p&gt;
+&lt;h2 id=&#34;1-update-package-index-and-install-dependencies&#34;&gt;1. Update Package Index and Install Dependencies&lt;/h2&gt;
+&lt;p&gt;Start by updating the system’s package index and installing the necessary dependencies:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get install -y apt-transport-https ca-certificates curl gpg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;2-add-the-kubernetes-signing-key&#34;&gt;2. Add the Kubernetes Signing Key&lt;/h2&gt;
+&lt;p&gt;Download the Kubernetes signing key for the package repositories. If the directory &lt;code&gt;/etc/apt/keyrings&lt;/code&gt; doesn&amp;rsquo;t exist, create it before running the following command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This ensures that you are installing authentic Kubernetes packages.&lt;/p&gt;
+&lt;h2 id=&#34;3-add-the-kubernetes-v131-repository&#34;&gt;3. Add the Kubernetes v1.31 Repository&lt;/h2&gt;
+&lt;p&gt;Add the Kubernetes v1.31 repository to your system’s sources list. If you need a different version, modify the version number in the URL accordingly:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#a5d6ff&#34;&gt;&amp;#39;deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /&amp;#39;&lt;/span&gt; | sudo tee /etc/apt/sources.list.d/kubernetes.list
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;4-install-kubelet-kubeadm-and-kubectl&#34;&gt;4. Install Kubelet, Kubeadm, and Kubectl&lt;/h2&gt;
+&lt;p&gt;Once the repository is added, update your package list and install &lt;strong&gt;kubeadm&lt;/strong&gt;, &lt;strong&gt;kubelet&lt;/strong&gt;, and &lt;strong&gt;kubectl&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get install -y kubelet kubeadm kubectl
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-mark hold kubelet kubeadm kubectl
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Marking the packages with &lt;code&gt;apt-mark hold&lt;/code&gt; ensures they won&amp;rsquo;t be accidentally updated during system upgrades, which is important for maintaining version stability across your cluster.&lt;/p&gt;
+&lt;h2 id=&#34;5-enable-the-kubelet-service-optional&#34;&gt;5. Enable the Kubelet Service (Optional)&lt;/h2&gt;
+&lt;p&gt;Before you bootstrap the Kubernetes cluster with &lt;strong&gt;kubeadm&lt;/strong&gt;, you can enable the &lt;strong&gt;kubelet&lt;/strong&gt; service to start automatically on boot:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo systemctl enable --now kubelet
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;These steps install the core tools required for setting up and managing your Kubernetes cluster. Make sure to follow them carefully on both your master and worker nodes.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Here’s the blog paragraph based on your snippet:&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;initializing-the-kubernetes-cluster-with-kubeadm&#34;&gt;Initializing the Kubernetes Cluster with Kubeadm&lt;/h1&gt;
+&lt;p&gt;With &lt;strong&gt;kubeadm&lt;/strong&gt;, &lt;strong&gt;kubelet&lt;/strong&gt;, and &lt;strong&gt;kubectl&lt;/strong&gt; installed on your master and worker nodes, it’s time to initialize the Kubernetes cluster.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This step should only be executed on the master node, as it sets up the control plane that will manage the cluster.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;To begin, use the following command on your &lt;strong&gt;master node&lt;/strong&gt; to initialize the cluster:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo kubeadm init &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;  --pod-network-cidr&lt;span style=&#34;color:#ff7b72;font-weight:bold&#34;&gt;=&lt;/span&gt;10.10.0.0/16 &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;  --control-plane-endpoint&lt;span style=&#34;color:#ff7b72;font-weight:bold&#34;&gt;=&lt;/span&gt;k8s-master.local
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ndash;pod-network-cidr=10.10.0.0/16&lt;/strong&gt;: This specifies the CIDR range for the pod network. You can modify this value based on your network architecture.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ndash;control-plane-endpoint=k8s-master.local&lt;/strong&gt;: This is the DNS or IP address of your control plane (master node). Ensure that the DNS or IP is resolvable by all worker nodes in your cluster.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;After running this command, kubeadm will perform the following tasks:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Download and install the necessary control plane components such as &lt;strong&gt;etcd&lt;/strong&gt;, &lt;strong&gt;kube-apiserver&lt;/strong&gt;, &lt;strong&gt;kube-scheduler&lt;/strong&gt;, and &lt;strong&gt;kube-controller-manager&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Set up your cluster according to the parameters provided.&lt;/li&gt;
+&lt;li&gt;Generate a join token that worker nodes can use to join the cluster.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Once the initialization is complete, kubeadm will output instructions to finish setting up &lt;strong&gt;kubectl&lt;/strong&gt; on the master node and provide the join command for your worker nodes.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notes:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;code&gt;--pod-network-cidr&lt;/code&gt; value must align with the configuration of the pod network solution (e.g., Calico, Flannel) you plan to deploy.&lt;/li&gt;
+&lt;li&gt;Make sure that the control plane endpoint (&lt;code&gt;k8s-master.local&lt;/code&gt;) is properly configured in your DNS or &lt;code&gt;/etc/hosts&lt;/code&gt; file so that all nodes can resolve it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;At this point, the control plane will be ready, and the next step will be to install a network add-on to allow pod-to-pod communication within the cluster.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Output&lt;/strong&gt;:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;azureuser@k8s-master:~$ sudo kubeadm init \
+  --pod-network-cidr=10.10.0.0/16 \
+  --control-plane-endpoint=k8s-master.local
+[init] Using Kubernetes version: v1.26.1
+[preflight] Running pre-flight checks
+[preflight] Pulling images required for setting up a Kubernetes cluster
+[preflight] This might take a minute or two, depending on the speed of your internet connection
+[preflight] You can also perform this action in beforehand using &amp;#39;kubeadm config images pull&amp;#39;
+[certs] Using certificateDir folder &amp;#34;/etc/kubernetes/pki&amp;#34;
+[certs] Generating &amp;#34;ca&amp;#34; certificate and key
+[certs] Generating &amp;#34;apiserver&amp;#34; certificate and key
+[certs] apiserver serving cert is signed for DNS names [k8s-master.local kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.1.10]
+[certs] Generating &amp;#34;apiserver-kubelet-client&amp;#34; certificate and key
+[certs] Generating &amp;#34;front-proxy-ca&amp;#34; certificate and key
+[certs] Generating &amp;#34;front-proxy-client&amp;#34; certificate and key
+[certs] Generating &amp;#34;etcd/ca&amp;#34; certificate and key
+[certs] Generating &amp;#34;etcd/server&amp;#34; certificate and key
+[certs] etcd/server serving cert is signed for DNS names [k8s-master.local localhost] and IPs [192.168.1.10 127.0.0.1 ::1]
+[certs] Generating &amp;#34;etcd/peer&amp;#34; certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [k8s-master.local localhost] and IPs [192.168.1.10 127.0.0.1 ::1]
+[certs] Generating &amp;#34;etcd/healthcheck-client&amp;#34; certificate and key
+[certs] Generating &amp;#34;apiserver-etcd-client&amp;#34; certificate and key
+[certs] Generating &amp;#34;sa&amp;#34; key and public key
+[kubeconfig] Using kubeconfig folder &amp;#34;/etc/kubernetes&amp;#34;
+[kubeconfig] Writing &amp;#34;admin.conf&amp;#34; kubeconfig file
+[kubeconfig] Writing &amp;#34;kubelet.conf&amp;#34; kubeconfig file
+[kubeconfig] Writing &amp;#34;controller-manager.conf&amp;#34; kubeconfig file
+[kubeconfig] Writing &amp;#34;scheduler.conf&amp;#34; kubeconfig file
+[kubelet-start] Writing kubelet environment file with flags to file &amp;#34;/var/lib/kubelet/kubeadm-flags.env&amp;#34;
+[kubelet-start] Writing kubelet configuration to file &amp;#34;/var/lib/kubelet/config.yaml&amp;#34;
+[kubelet-start] Starting the kubelet
+[control-plane] Using manifest folder &amp;#34;/etc/kubernetes/manifests&amp;#34;
+[control-plane] Creating static Pod manifest for &amp;#34;kube-apiserver&amp;#34;
+[control-plane] Creating static Pod manifest for &amp;#34;kube-controller-manager&amp;#34;
+[control-plane] Creating static Pod manifest for &amp;#34;kube-scheduler&amp;#34;
+[etcd] Creating static Pod manifest for local etcd in &amp;#34;/etc/kubernetes/manifests&amp;#34;
+[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory &amp;#34;/etc/kubernetes/manifests&amp;#34;. This can take up to 4m0s
+[apiclient] All control plane components are healthy after 7.503422 seconds
+[upload-config] Storing the configuration used in ConfigMap &amp;#34;kubeadm-config&amp;#34; in the &amp;#34;kube-system&amp;#34; Namespace
+[kubelet] Creating a ConfigMap &amp;#34;kubelet-config&amp;#34; in namespace kube-system with the configuration for the kubelets in the cluster
+[upload-certs] Skipping phase. Please see --upload-certs
+[mark-control-plane] Marking the node k8s-master.local as control-plane by adding the labels: [node-role.kubernetes.io/control-plane node.kubernetes.io/exclude-from-external-load-balancers]
+[mark-control-plane] Marking the node k8s-master.local as control-plane by adding the taints [node-role.kubernetes.io/control-plane:NoSchedule]
+[bootstrap-token] Using token: daii9y.g4dq24u6irkz4pt0
+[bootstrap-token] Configuring bootstrap tokens, cluster-info ConfigMap,RBAC Roles
+[bootstrap-token] Configured RBAC rules to allow Node Bootstrap tokens to get nodes
+[bootstrap-token] Configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials
+[bootstrap-token] Configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
+[bootstrap-token] Configured RBAC rules to allow certificate rotation for all node client certificates in the cluster
+[bootstrap-token] Creating the &amp;#34;cluster-info&amp;#34; ConfigMap in the &amp;#34;kube-public&amp;#34; namespace
+[kubelet-finalize] Updating &amp;#34;/etc/kubernetes/kubelet.conf&amp;#34; to point to a rotatable kubelet client certificate and key
+[addons] Applied essential addon: CoreDNS
+[addons] Applied essential addon: kube-proxy
+
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regularuser:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config==
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run &amp;#34;kubectl apply -f [podnetwork].yaml&amp;#34; with one of the options listedat:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+You can now join any number of control-plane nodes by copying certificate authorities
+and service account keys on each node and then running the following asroot:
+
+  kubeadm join k8s-master.local:6443 --token daii9y.g4dq24u6irkz4pt0 \
+        --discovery-token-ca-cert-hash sha256:58b9cc96ed57a5797fddea653756dbda830efbff55b720a10cffb3948d489148 \
+        --control-plane
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join k8s-master.local:6443 --token daii9y.g4dq24u6irkz4pt0 \
+        --discovery-token-ca-cert-hash sha256:58b9cc96ed57a5797fddea653756dbda830efbff55b720a10cffb3948d489148
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;Now, As shown in the output execute below command in master node.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkdir -p &lt;span style=&#34;color:#79c0ff&#34;&gt;$HOME&lt;/span&gt;/.kube
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo cp -i /etc/kubernetes/admin.conf &lt;span style=&#34;color:#79c0ff&#34;&gt;$HOME&lt;/span&gt;/.kube/config
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo chown &lt;span style=&#34;color:#ff7b72&#34;&gt;$(&lt;/span&gt;id -u&lt;span style=&#34;color:#ff7b72&#34;&gt;)&lt;/span&gt;:&lt;span style=&#34;color:#ff7b72&#34;&gt;$(&lt;/span&gt;id -g&lt;span style=&#34;color:#ff7b72&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#79c0ff&#34;&gt;$HOME&lt;/span&gt;/.kube/config
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Verify the cluster status:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl cluster-info
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl get nodes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Output&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;azureuser@k8s-master:~$ kubectl cluster-info
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Kubernetes control plane is running at https://k8s-master.local:6443
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CoreDNS is running at https://k8s-master.local:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;To further debug and diagnose cluster problems, use &lt;span style=&#34;color:#a5d6ff&#34;&gt;&amp;#39;kubectl cluster-info dump&amp;#39;&lt;/span&gt;.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;azureuser@k8s-master:~$ kubectl get nodes
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;NAME                    STATUS   ROLES           AGE    VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;k8s-master.local        Ready    control-plane   3d3h   v1.30.4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It seems the control plane is running, we will proceed to add worker nodes to this cluster.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;adding-worker-nodes-to-the-kubernetes-cluster&#34;&gt;Adding Worker Nodes to the Kubernetes Cluster&lt;/h1&gt;
+&lt;p&gt;After initializing the Kubernetes cluster on the master node, it&amp;rsquo;s time to add your worker nodes to the cluster. This will allow the control plane to distribute workloads across the nodes and manage them.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To add a worker node, you need to execute the kubeadm join command in worker nodes.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This command securely connects the worker node to the control plane. the command typically looks something like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubeadm join k8s-master.local:6443 --token daii9y.g4dq24u6irkz4pt0 &lt;span style=&#34;color:#79c0ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#79c0ff&#34;&gt;&lt;/span&gt;  --discovery-token-ca-cert-hash sha256:58b9cc96ed57a5797fddea653756dbda830efbff55b720a10cffb3948d489148
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;k8s-master.local:6443&lt;/strong&gt;: This is the control plane endpoint (master node&amp;rsquo;s address).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ndash;token&lt;/strong&gt;: The token generated during the kubeadm init process, which allows the worker node to authenticate with the control plane.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ndash;discovery-token-ca-cert-hash&lt;/strong&gt;: A hash that ensures the worker node securely discovers the control plane’s certificate authority.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once this command completes successfully, the worker node will be part of the Kubernetes cluster, ready to run workloads distributed by the control plane. You can verify that the node has joined the cluster by running the following command on the master node:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl get nodes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Output&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;azureuser@k8s-master:~$ kubectl get nodes
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;NAME                    STATUS   ROLES           AGE    VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;k8s-master.local        Ready    control-plane   3d3h   v1.30.4
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;k8s-worker1.local       Ready    &amp;lt;none&amp;gt;          3d3h   v1.30.4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This will list all nodes, including the newly added workers, along with their status in the cluster.&lt;/p&gt;
+&lt;p&gt;Repeat the process for each worker node to ensure that all machines are part of the cluster.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Here’s the updated blog paragraph with the &lt;code&gt;sed&lt;/code&gt; command for editing the Calico manifest:&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;installing-calico-v3281-pod-network-for-the-kubernetes-cluster&#34;&gt;Installing Calico (v3.28.1) Pod Network for the Kubernetes Cluster&lt;/h1&gt;
+&lt;p&gt;In order to allow communication between the pods in your cluster, you&amp;rsquo;ll need to install a network add-on. One of the most popular options is &lt;strong&gt;Calico&lt;/strong&gt;, which provides networking and network security capabilities for Kubernetes. Below, we&amp;rsquo;ll walk through how to install &lt;strong&gt;Calico&lt;/strong&gt; on your Kubernetes cluster.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ℹ️ These commands should be run only on the &lt;strong&gt;master node&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;1-download-the-calico-manifest-file&#34;&gt;1. Download the Calico Manifest File&lt;/h2&gt;
+&lt;p&gt;To begin, download the Calico manifest file, which is pre-configured for clusters with fewer than 50 nodes:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/calico.yaml -O
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This file contains all the necessary configuration to deploy Calico on your Kubernetes cluster.&lt;/p&gt;
+&lt;h2 id=&#34;2-edit-the-calico-manifest-using-sed&#34;&gt;2. Edit the Calico Manifest Using &lt;code&gt;sed&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;To streamline the process of modifying the &lt;strong&gt;CALICO_IPV4POOL_CIDR&lt;/strong&gt; in the &lt;strong&gt;calico.yaml&lt;/strong&gt; file, you can use the following &lt;code&gt;sed&lt;/code&gt; command. This automatically updates the pod network CIDR without manually opening the file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sed -i &lt;span style=&#34;color:#a5d6ff&#34;&gt;&amp;#39;s/value: &amp;#34;192.168.0.0\/16&amp;#34;/value: &amp;#34;10.10.0.0\/16&amp;#34;/&amp;#39;&lt;/span&gt; calico.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This command ensures that the pod network CIDR matches the one you specified during cluster initialization (&lt;code&gt;10.10.0.0/16&lt;/code&gt;).&lt;/p&gt;
+&lt;h2 id=&#34;3-apply-the-calico-manifest&#34;&gt;3. Apply the Calico Manifest&lt;/h2&gt;
+&lt;p&gt;Once the manifest is updated, install Calico by applying the configuration using &lt;strong&gt;kubectl&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl apply -f calico.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Calico will be deployed on your cluster, enabling pod-to-pod communication and enforcing network policies.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Output&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;azureuser@k8s-master:~$ kubectl apply -f calico.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;poddisruptionbudget.policy/calico-kube-controllers created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;serviceaccount/calico-kube-controllers created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;serviceaccount/calico-node created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;configmap/calico-config created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;customresourcedefinition.apiextensions.k8s.io/bgpconfigurations.crd.projectcalico.org created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;customresourcedefinition.apiextensions.k8s.io/bgppeers.crd.projectcalico.org created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;customresourcedefinition.apiextensions.k8s.io/blockaffinities.crd.projectcalico.org created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;customresourcedefinition.apiextensions.k8s.io/caliconodestatuses.crd.projectcalico.org created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;customresourcedefinition.apiextensions.k8s.io/clusterinformations.crd.projectcalico.org created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;customresourcedefinition.apiextensions.k8s.io/felixconfigurations.crd.projectcalico.org created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;customresourcedefinition.apiextensions.k8s.io/globalnetworkpolicies.crd.projectcalico.org created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;customresourcedefinition.apiextensions.k8s.io/globalnetworksets.crd.projectcalico.org created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;customresourcedefinition.apiextensions.k8s.io/hostendpoints.crd.projectcalico.org created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;customresourcedefinition.apiextensions.k8s.io/ipamblocks.crd.projectcalico.org created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;customresourcedefinition.apiextensions.k8s.io/ipamconfigs.crd.projectcalico.org created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;customresourcedefinition.apiextensions.k8s.io/ipamhandles.crd.projectcalico.org created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;customresourcedefinition.apiextensions.k8s.io/ippools.crd.projectcalico.org created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;customresourcedefinition.apiextensions.k8s.io/ipreservations.crd.projectcalico.org created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;customresourcedefinition.apiextensions.k8s.io/kubecontrollersconfigurations.crd.projectcalico.org created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;customresourcedefinition.apiextensions.k8s.io/networkpolicies.crd.projectcalico.org created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;customresourcedefinition.apiextensions.k8s.io/networksets.crd.projectcalico.org created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;clusterrole.rbac.authorization.k8s.io/calico-kube-controllers created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;clusterrole.rbac.authorization.k8s.io/calico-node created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;clusterrolebinding.rbac.authorization.k8s.io/calico-kube-controllers created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;clusterrolebinding.rbac.authorization.k8s.io/calico-node created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;daemonset.apps/calico-node created
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;deployment.apps/calico-kube-controllers created
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;verifying-the-k8s-installation&#34;&gt;Verifying the K8s Installation&lt;/h1&gt;
+&lt;p&gt;You can verify that Calico is running correctly by checking the status of the pods in the &lt;code&gt;kube-system&lt;/code&gt; namespace:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl get pods -n kube-system
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Output&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;azureuser@k8s-master:~$ kubectl get pods -n kube-system
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;NAME                                           READY   STATUS    RESTARTS        AGE
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;calico-kube-controllers-77d59654f4-25crd       1/1     Running   &lt;span style=&#34;color:#a5d6ff&#34;&gt;5&lt;/span&gt; &lt;span style=&#34;color:#ff7b72;font-weight:bold&#34;&gt;(&lt;/span&gt;3h59m ago&lt;span style=&#34;color:#ff7b72;font-weight:bold&#34;&gt;)&lt;/span&gt;   3d3h
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;calico-node-hqf82                              1/1     Running   &lt;span style=&#34;color:#a5d6ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#ff7b72;font-weight:bold&#34;&gt;(&lt;/span&gt;3h59m ago&lt;span style=&#34;color:#ff7b72;font-weight:bold&#34;&gt;)&lt;/span&gt;   3d3h
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;calico-node-jxwbm                              1/1     Running   &lt;span style=&#34;color:#a5d6ff&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color:#ff7b72;font-weight:bold&#34;&gt;(&lt;/span&gt;3h55m ago&lt;span style=&#34;color:#ff7b72;font-weight:bold&#34;&gt;)&lt;/span&gt;   3d3h
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;coredns-7db6d8ff4d-6f9cn                       1/1     Running   &lt;span style=&#34;color:#a5d6ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#ff7b72;font-weight:bold&#34;&gt;(&lt;/span&gt;3h59m ago&lt;span style=&#34;color:#ff7b72;font-weight:bold&#34;&gt;)&lt;/span&gt;   3d4h
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;coredns-7db6d8ff4d-dnzq2                       1/1     Running   &lt;span style=&#34;color:#a5d6ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#ff7b72;font-weight:bold&#34;&gt;(&lt;/span&gt;3h59m ago&lt;span style=&#34;color:#ff7b72;font-weight:bold&#34;&gt;)&lt;/span&gt;   3d4h
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You should see Calico components such as &lt;code&gt;calico-node&lt;/code&gt; and &lt;code&gt;calico-kube-controllers&lt;/code&gt; running successfully.&lt;/p&gt;
+&lt;p&gt;With Calico installed, your Kubernetes cluster is now fully networked, allowing pods to communicate across nodes as necessary. You can also configure Calico for advanced network security features if needed.&lt;/p&gt;
+&lt;p&gt;Now if we check the status of the nodes, the status will be Ready.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl get nodes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Output&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;azureuser@k8s-master:~$ kubectl get nodes
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;NAME                    STATUS   ROLES           AGE    VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;k8s-master.local    Ready    control-plane   3d4h   v1.30.4
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;k8s-worker1.local   Ready    &amp;lt;none&amp;gt;          3d4h   v1.30.4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;p&gt;Congrats, if you reach till the end 😊. You are a soldier 🪖.&lt;/p&gt;
+- https://bookofdaniel.in/posts/how-to-setup-kubernetes-in-azure-virtual-machines/ - 2024</description>
+        </item>
     
     
     
@@ -19,7 +473,7 @@
         <pubDate>Sat, 10 Aug 2024 12:53:44 +0530</pubDate>
         
         <guid>https://bookofdaniel.in/posts/port-not-available/</guid>
-        <description>🧑🏻‍💻 Book Of Daniel https://bookofdaniel.in/posts/port-not-available/ -&lt;p&gt;&lt;strong&gt;Yes, you read that right.&lt;/strong&gt; The port you’re trying to use is already occupied by another application. If you’re a system or network administrator, you’ve likely encountered this frustrating message more times than you care to remember. It’s challenging to pinpoint which application is hogging the port (though it’s not as hard as it seems, as I’ll show you 😉). These ghost messages can leave you in quite a pickle.&lt;/p&gt;
+        <description>Book Of Daniel https://bookofdaniel.in/posts/port-not-available/ -&lt;p&gt;&lt;strong&gt;Yes, you read that right.&lt;/strong&gt; The port you’re trying to use is already occupied by another application. If you’re a system or network administrator, you’ve likely encountered this frustrating message more times than you care to remember. It’s challenging to pinpoint which application is hogging the port (though it’s not as hard as it seems, as I’ll show you 😉). These ghost messages can leave you in quite a pickle.&lt;/p&gt;
 &lt;p&gt;Just yesterday, we faced this exact issue and wasted two hours troubleshooting so that you don’t have to!&lt;/p&gt;
 &lt;p&gt;Our situation was this: We had installed SQL Server 2019 Reporting Services on one of our development servers, and the default port it selected for installation was &lt;code&gt;8082&lt;/code&gt;. Unfortunately, this port was already in use by our front-facing application, so we needed to free it up.&lt;/p&gt;
 &lt;img title=&#34;Port Not Available&#34; alt=&#34;Port Not Available&#34; src=&#34;https://bookofdaniel.in/images/not listening.gif&#34;&gt;
@@ -98,7 +552,7 @@ SQLServerReportingServices     2312 Services                   0     42,232 K
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;netstat -noa | find &lt;span style=&#34;color:#a5d6ff&#34;&gt;&amp;#34;8082&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The expected output should be blank! 😉&lt;/p&gt;
 &lt;p&gt;Finally, the port is free!&lt;/p&gt;
-- https://bookofdaniel.in/posts/port-not-available/ - 2023</description>
+- https://bookofdaniel.in/posts/port-not-available/ - 2024</description>
         </item>
     
     
@@ -109,7 +563,7 @@ SQLServerReportingServices     2312 Services                   0     42,232 K
         <pubDate>Mon, 08 Jul 2024 08:28:44 +0530</pubDate>
         
         <guid>https://bookofdaniel.in/posts/kubernetes-architecture-explained-the-ship-analogy-of-kodekloud/</guid>
-        <description>🧑🏻‍💻 Book Of Daniel https://bookofdaniel.in/posts/kubernetes-architecture-explained-the-ship-analogy-of-kodekloud/ -&lt;p&gt;Welcome to our exploration of Kubernetes architecture! Kubernetes, often abbreviated as K8s, is a powerful tool designed to manage containerized applications in a scalable and automated fashion. This blog post aims to provide a high-level understanding of Kubernetes architecture using an analogy of ships, which simplifies the complex interplay between its components. Special thanks to KodeKloud for their insightful lecture, which inspired this overview.&lt;/p&gt;
+        <description>Book Of Daniel https://bookofdaniel.in/posts/kubernetes-architecture-explained-the-ship-analogy-of-kodekloud/ -&lt;p&gt;Welcome to our exploration of Kubernetes architecture! Kubernetes, often abbreviated as K8s, is a powerful tool designed to manage containerized applications in a scalable and automated fashion. This blog post aims to provide a high-level understanding of Kubernetes architecture using an analogy of ships, which simplifies the complex interplay between its components. Special thanks to KodeKloud for their insightful lecture, which inspired this overview.&lt;/p&gt;
 &lt;h3 id=&#34;the-kubernetes-cluster-ships-at-sea&#34;&gt;The Kubernetes Cluster: Ships at Sea&lt;/h3&gt;
 &lt;p&gt;At its core, a Kubernetes cluster comprises two types of nodes: worker nodes and master nodes. To understand their roles, let&amp;rsquo;s imagine a fleet of ships:&lt;/p&gt;
 &lt;ul&gt;
@@ -154,7 +608,7 @@ SQLServerReportingServices     2312 Services                   0     42,232 K
 &lt;p&gt;In upcoming posts, we will delve deeper into each component, exploring their configurations and roles in greater detail. Stay tuned as we continue to navigate the fascinating world of Kubernetes!&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;em&gt;Credit: This content is inspired by a lecture from KodeKloud.&lt;/em&gt;&lt;/p&gt;
-- https://bookofdaniel.in/posts/kubernetes-architecture-explained-the-ship-analogy-of-kodekloud/ - 2023</description>
+- https://bookofdaniel.in/posts/kubernetes-architecture-explained-the-ship-analogy-of-kodekloud/ - 2024</description>
         </item>
     
     
@@ -165,7 +619,7 @@ SQLServerReportingServices     2312 Services                   0     42,232 K
         <pubDate>Fri, 05 Apr 2024 10:16:30 +0530</pubDate>
         
         <guid>https://bookofdaniel.in/posts/the-5-minute-death-journal-method/</guid>
-        <description>🧑🏻‍💻 Book Of Daniel https://bookofdaniel.in/posts/the-5-minute-death-journal-method/ -&lt;p&gt;In the hustle and bustle of our daily lives, it&amp;rsquo;s easy to let moments slip by without much thought. The idea of journaling, while appealing in theory, often feels daunting in practice. After a long day, the last thing many of us want to do is reflect on our experiences and plan for the next. But what if I told you there&amp;rsquo;s a way to reap the benefits of journaling in just five minutes a day? Enter the 5-Minute Death Journal.&lt;/p&gt;
+        <description>Book Of Daniel https://bookofdaniel.in/posts/the-5-minute-death-journal-method/ -&lt;p&gt;In the hustle and bustle of our daily lives, it&amp;rsquo;s easy to let moments slip by without much thought. The idea of journaling, while appealing in theory, often feels daunting in practice. After a long day, the last thing many of us want to do is reflect on our experiences and plan for the next. But what if I told you there&amp;rsquo;s a way to reap the benefits of journaling in just five minutes a day? Enter the 5-Minute Death Journal.&lt;/p&gt;
 &lt;p&gt;Inspired by positive psychology research, this journaling method is designed to help you remember more, increase productivity, and foster happiness—all in just five minutes. It may sound too good to be true, but after incorporating it into my daily routine for the past month, I can attest to its transformative power.&lt;/p&gt;
 &lt;p&gt;The 5-Minute Death Journal method was introduced to me by &lt;a href=&#34;https://www.youtube.com/@spoonfedstudy&#34;&gt;SpoonFedStudy&lt;/a&gt;, whose insightful YouTube video served as the catalyst for my journey. In his video titled &amp;ldquo;&lt;a href=&#34;https://youtu.be/w_gohJgxBlU&#34;&gt;the most important book in your entire life&lt;/a&gt;,&amp;rdquo; eloquently outlines the principles and exercises of the journal, offering practical tips for implementation.&lt;/p&gt;
 &lt;p&gt;&lt;img title=&#34;The 5-Minute Death Journal Method&#34; alt=&#34;The 5-Minute Death Journal Method&#34; src=&#34;https://bookofdaniel.in/images/The 5-Minute Death Journal Method.png&#34;&gt; &lt;br&gt;&lt;/p&gt;
@@ -176,7 +630,7 @@ SQLServerReportingServices     2312 Services                   0     42,232 K
 &lt;p&gt;Finally, &amp;ldquo;&lt;strong&gt;The Internal Springs of Never-Ending Gratitude&lt;/strong&gt;&amp;rdquo; invites you to express gratitude for the day&amp;rsquo;s blessings. Research has shown that cultivating gratitude leads to increased happiness and overall well-being, making this exercise a crucial component of the journaling process.&lt;/p&gt;
 &lt;p&gt;By dedicating just five minutes to these exercises each day, you&amp;rsquo;ll develop a deeper appreciation for life&amp;rsquo;s moments and cultivate a mindset of gratitude and purpose. Each day becomes a cherished friend, worthy of celebration and remembrance.&lt;/p&gt;
 &lt;p&gt;So why wait? Start your own journey with the 5-Minute Death Journal today, inspired by &lt;a href=&#34;https://www.youtube.com/@spoonfedstudy&#34;&gt;SpoonFedStudy&lt;/a&gt; insightful guidance. After all, every moment is precious—let&amp;rsquo;s make the most of them together.&lt;/p&gt;
-- https://bookofdaniel.in/posts/the-5-minute-death-journal-method/ - 2023</description>
+- https://bookofdaniel.in/posts/the-5-minute-death-journal-method/ - 2024</description>
         </item>
     
     
@@ -187,7 +641,7 @@ SQLServerReportingServices     2312 Services                   0     42,232 K
         <pubDate>Wed, 03 Apr 2024 14:44:37 +0530</pubDate>
         
         <guid>https://bookofdaniel.in/posts/a-daily-plan-for-success/</guid>
-        <description>🧑🏻‍💻 Book Of Daniel https://bookofdaniel.in/posts/a-daily-plan-for-success/ -&lt;p&gt;Are you struggling to stay focused and accomplish your goals amidst a sea of distractions? Do you find yourself procrastinating more often than not? If so, you&amp;rsquo;re not alone. Many of us face similar challenges in our daily lives, especially when working from home or in a busy environment. But fear not, because today I want to share with you a simple yet powerful daily plan inspired by insights from Cal Newport&amp;rsquo;s book &amp;ldquo;Deep Work.&amp;rdquo;&lt;/p&gt;
+        <description>Book Of Daniel https://bookofdaniel.in/posts/a-daily-plan-for-success/ -&lt;p&gt;Are you struggling to stay focused and accomplish your goals amidst a sea of distractions? Do you find yourself procrastinating more often than not? If so, you&amp;rsquo;re not alone. Many of us face similar challenges in our daily lives, especially when working from home or in a busy environment. But fear not, because today I want to share with you a simple yet powerful daily plan inspired by insights from Cal Newport&amp;rsquo;s book &amp;ldquo;Deep Work.&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Understanding Deep Work&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Before we dive into the daily plan, let&amp;rsquo;s understand the concept of deep work. Deep work refers to focused, uninterrupted work that demands your full cognitive abilities. It&amp;rsquo;s the kind of work that moves the needle and brings you closer to your goals. Newport emphasizes the importance of scheduling dedicated time for deep work every day, ideally around 4 hours, to achieve meaningful progress. &lt;br&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;The Four Key Stages of the Daily Plan&lt;/strong&gt;&lt;/p&gt;
@@ -219,7 +673,7 @@ SQLServerReportingServices     2312 Services                   0     42,232 K
 &lt;p&gt;I highly recommend delving into Cal Newport&amp;rsquo;s book for more insights and strategies on focused success in a distracted world.&lt;/p&gt;
 &lt;p&gt;Thank you for reading, and I hope this simple yet effective daily plan helps you unlock your full potential and achieve your goals. If you found this post valuable, don&amp;rsquo;t forget to subscribe for more content. Here&amp;rsquo;s to a focused and successful journey ahead!  &lt;br&gt;
 Cheers! 🎉&lt;/p&gt;
-- https://bookofdaniel.in/posts/a-daily-plan-for-success/ - 2023</description>
+- https://bookofdaniel.in/posts/a-daily-plan-for-success/ - 2024</description>
         </item>
     
     
@@ -230,7 +684,7 @@ Cheers! 🎉&lt;/p&gt;
         <pubDate>Sun, 03 Mar 2024 22:24:59 +0530</pubDate>
         
         <guid>https://bookofdaniel.in/posts/how-programmers-can-become-10x-more-effective/</guid>
-        <description>🧑🏻‍💻 Book Of Daniel https://bookofdaniel.in/posts/how-programmers-can-become-10x-more-effective/ -&lt;p&gt;In a world where technology is ever-evolving, programmers are constantly seeking ways to enhance their skills and productivity. A treasure trove of wisdom that is often overlooked in the tech community is Stephen Covey&amp;rsquo;s iconic book, &amp;ldquo;7 Habits of Highly Effective People.&amp;rdquo; Sahil, a YouTuber, sheds light on how this book can be a game-changer for programmers aspiring to amplify their effectiveness tenfold.&lt;/p&gt;
+        <description>Book Of Daniel https://bookofdaniel.in/posts/how-programmers-can-become-10x-more-effective/ -&lt;p&gt;In a world where technology is ever-evolving, programmers are constantly seeking ways to enhance their skills and productivity. A treasure trove of wisdom that is often overlooked in the tech community is Stephen Covey&amp;rsquo;s iconic book, &amp;ldquo;7 Habits of Highly Effective People.&amp;rdquo; Sahil, a YouTuber, sheds light on how this book can be a game-changer for programmers aspiring to amplify their effectiveness tenfold.&lt;/p&gt;
 &lt;h4 id=&#34;1-the-essence-of-proactivity-in-programming&#34;&gt;1. The Essence of Proactivity in Programming&lt;/h4&gt;
 &lt;p&gt;Covey distinguishes between reactive and proactive individuals, drawing a parallel with programmers. Reactive programmers might wait for a life-changing tutorial or a list of interview questions to boost their career. In contrast, proactive programmers take ownership of their growth. They invest time in understanding the fundamentals, practicing coding, and building projects. This mindset shift from dependency to self-reliance is crucial for any programmer aiming for excellence.&lt;/p&gt;
 &lt;h4 id=&#34;2-start-with-the-end-in-mind&#34;&gt;2. Start with the End in Mind&lt;/h4&gt;
@@ -248,7 +702,7 @@ Cheers! 🎉&lt;/p&gt;
 &lt;h4 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h4&gt;
 &lt;p&gt;Sahil&amp;rsquo;s insightful application of &amp;ldquo;7 Habits of Highly Effective People&amp;rdquo; to programming is a testament to the book&amp;rsquo;s universal relevance. By embracing these habits, programmers can enhance their effectiveness, foster meaningful collaborations, and navigate their careers with confidence and agility. For those looking to delve deeper into building consistent programming habits, Sahil also recommends &amp;ldquo;Atomic Habits&amp;rdquo; by James Clear, further enriching the toolkit for personal and professional development.&lt;/p&gt;
 &lt;p&gt;Watch Sahil&amp;rsquo;s &lt;a href=&#34;https://youtu.be/aXiBFDDtPNM&#34;&gt;video&lt;/a&gt; to explore these concepts in detail and join him in the journey toward becoming a 10X programmer.&lt;/p&gt;
-- https://bookofdaniel.in/posts/how-programmers-can-become-10x-more-effective/ - 2023</description>
+- https://bookofdaniel.in/posts/how-programmers-can-become-10x-more-effective/ - 2024</description>
         </item>
     
     
@@ -259,7 +713,7 @@ Cheers! 🎉&lt;/p&gt;
         <pubDate>Fri, 01 Mar 2024 22:58:46 +0530</pubDate>
         
         <guid>https://bookofdaniel.in/posts/issue-faced-on-wsfc-configuration-for-sql-server-alwayson-setup/</guid>
-        <description>🧑🏻‍💻 Book Of Daniel https://bookofdaniel.in/posts/issue-faced-on-wsfc-configuration-for-sql-server-alwayson-setup/ -&lt;p&gt;I&amp;rsquo;ve had the privilege of navigating through a wide array of technical landscapes. Yet, the recent endeavor of configuring a Windows Server Failover Cluster (WSFC) for SQL Server AlwaysOn presented a learning curve that was both steep and enriching. In this piece, I hope to share my experiences, the challenges encountered, and the lessons learned, with a spirit of humility and the intention of contributing to our collective knowledge base.&lt;/p&gt;
+        <description>Book Of Daniel https://bookofdaniel.in/posts/issue-faced-on-wsfc-configuration-for-sql-server-alwayson-setup/ -&lt;p&gt;I&amp;rsquo;ve had the privilege of navigating through a wide array of technical landscapes. Yet, the recent endeavor of configuring a Windows Server Failover Cluster (WSFC) for SQL Server AlwaysOn presented a learning curve that was both steep and enriching. In this piece, I hope to share my experiences, the challenges encountered, and the lessons learned, with a spirit of humility and the intention of contributing to our collective knowledge base.&lt;/p&gt;
 &lt;h2 id=&#34;encountering-the-first-major-challenge-adding-a-cloud-witness&#34;&gt;Encountering the First Major Challenge: Adding a Cloud Witness&lt;/h2&gt;
 &lt;p&gt;The journey began with an attempt to integrate a cloud witness into our WSFC configuration, a task that quickly unfolded into a series of troubleshooting steps. The primary node&amp;rsquo;s refusal to fail over automatically, sticking instead in a &amp;ldquo;resolving&amp;rdquo; state, was our first major roadblock. The error message pointed towards an authentication and network recognition issue:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -290,7 +744,7 @@ Cheers! 🎉&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;final-thoughts&#34;&gt;Final Thoughts&lt;/h2&gt;
 &lt;p&gt;The process of configuring WSFC for SQL Server AlwaysOn is a complex one, filled with potential pitfalls but also opportunities for growth and learning. My hope is that by sharing my journey, I can help others navigate similar challenges more smoothly. In the ever-evolving field of cloud and database architecture, each new project is a chance to expand our horizons and deepen our understanding.&lt;/p&gt;
-- https://bookofdaniel.in/posts/issue-faced-on-wsfc-configuration-for-sql-server-alwayson-setup/ - 2023</description>
+- https://bookofdaniel.in/posts/issue-faced-on-wsfc-configuration-for-sql-server-alwayson-setup/ - 2024</description>
         </item>
     
     
@@ -301,7 +755,7 @@ Cheers! 🎉&lt;/p&gt;
         <pubDate>Wed, 17 Jan 2024 22:45:09 +0530</pubDate>
         
         <guid>https://bookofdaniel.in/posts/the-batchology-handbook/</guid>
-        <description>🧑🏻‍💻 Book Of Daniel https://bookofdaniel.in/posts/the-batchology-handbook/ -&lt;p&gt;Hello there! If you&amp;rsquo;ve ever wondered how to make your computer tasks faster and more efficient, you&amp;rsquo;re in the right place. This blog post is all about Batch scripting - a simple yet powerful way to automate tasks in Windows.&lt;/p&gt;
+        <description>Book Of Daniel https://bookofdaniel.in/posts/the-batchology-handbook/ -&lt;p&gt;Hello there! If you&amp;rsquo;ve ever wondered how to make your computer tasks faster and more efficient, you&amp;rsquo;re in the right place. This blog post is all about Batch scripting - a simple yet powerful way to automate tasks in Windows.&lt;/p&gt;
 &lt;p&gt;Whether you&amp;rsquo;re new to programming or have some experience, &amp;ldquo;The Batchology Handbook&amp;rdquo; is designed to be easy to follow and understand. We&amp;rsquo;ll start with the basics, like setting up your workspace, and gradually move into more exciting stuff, like automating file management and using cool commands you might not know about.&lt;/p&gt;
 &lt;p&gt;Batch scripting might sound a bit technical, but I promise to keep things light and straightforward. You&amp;rsquo;ll find practical examples that you can try out yourself, and I&amp;rsquo;ll explain everything step by step. By the end of this guide, you&amp;rsquo;ll be amazed at how much you can do with just a few simple commands.&lt;/p&gt;
 &lt;p&gt;So, let&amp;rsquo;s get started and explore the world of Batch scripting together!&lt;/p&gt;
@@ -773,7 +1227,7 @@ Sets the read-only attribute to &lt;code&gt;example.txt&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://ss64.com/nt/syntax.html&#34;&gt;Windows CMD Command Syntax - SS64.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://ss64.com/nt/&#34;&gt;An A-Z Index of Windows CMD commands - SS64.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-- https://bookofdaniel.in/posts/the-batchology-handbook/ - 2023</description>
+- https://bookofdaniel.in/posts/the-batchology-handbook/ - 2024</description>
         </item>
     
     
@@ -784,7 +1238,7 @@ Sets the read-only attribute to &lt;code&gt;example.txt&lt;/code&gt;.&lt;/li&gt;
         <pubDate>Thu, 11 Jan 2024 08:04:16 +0530</pubDate>
         
         <guid>https://bookofdaniel.in/posts/the-unstoppable-framework/</guid>
-        <description>🧑🏻‍💻 Book Of Daniel https://bookofdaniel.in/posts/the-unstoppable-framework/ -&lt;p&gt;We all aspire to be better, stronger, smarter, and healthier, yet many struggle to stick with their goals. In this post, we&amp;rsquo;ll explore a practical framework that addresses this common issue, allowing you to effortlessly surpass your goals. This system has been successfully used to develop the discipline needed to hold a 15-minute plank every day. Join me on this journey, and let&amp;rsquo;s unlock your raw power together.&lt;/p&gt;
+        <description>Book Of Daniel https://bookofdaniel.in/posts/the-unstoppable-framework/ -&lt;p&gt;We all aspire to be better, stronger, smarter, and healthier, yet many struggle to stick with their goals. In this post, we&amp;rsquo;ll explore a practical framework that addresses this common issue, allowing you to effortlessly surpass your goals. This system has been successfully used to develop the discipline needed to hold a 15-minute plank every day. Join me on this journey, and let&amp;rsquo;s unlock your raw power together.&lt;/p&gt;
 &lt;h2 id=&#34;step-1-action-oriented-goals&#34;&gt;Step 1: Action-Oriented Goals&lt;/h2&gt;
 &lt;p&gt;Instead of setting vague and impractical goals, focus on specific actions within a defined time frame. For instance, rather than aiming to lose 20 pounds, set a goal to complete 10,000 push-ups by the end of the year. Break down the goal into actionable steps, visualize each step, and establish a non-negotiable daily minimum to make progress.&lt;/p&gt;
 &lt;p&gt;Examples:&lt;/p&gt;
@@ -825,7 +1279,7 @@ Action: Make 100 videos packed with value&lt;/li&gt;
 &lt;h2 id=&#34;conclusion&#34;&gt;Conclusion:&lt;/h2&gt;
 &lt;p&gt;By following this step-by-step framework, you can transform your life and become unstoppable in achieving your goals. &lt;strong&gt;The key is consistency, creativity, and a commitment&lt;/strong&gt; to building a skyscraper of positive habits that elevate you to new heights. Start today, and watch as the compounding power of these habits propels you towards a &lt;strong&gt;limitless future&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Source&lt;/strong&gt;: &lt;a href=&#34;https://youtu.be/fesslaSxdqs?si=40VEBURtZr6X9yJf&#34;&gt;https://youtu.be/fesslaSxdqs?si=40VEBURtZr6X9yJf&lt;/a&gt;&lt;/p&gt;
-- https://bookofdaniel.in/posts/the-unstoppable-framework/ - 2023</description>
+- https://bookofdaniel.in/posts/the-unstoppable-framework/ - 2024</description>
         </item>
     
     
@@ -836,7 +1290,7 @@ Action: Make 100 videos packed with value&lt;/li&gt;
         <pubDate>Fri, 05 Jan 2024 09:19:15 +0530</pubDate>
         
         <guid>https://bookofdaniel.in/posts/lessons-learned-from-a-former-whatsapp-engineer/</guid>
-        <description>🧑🏻‍💻 Book Of Daniel https://bookofdaniel.in/posts/lessons-learned-from-a-former-whatsapp-engineer/ -&lt;p&gt;In a recent YouTube video, a former WhatsApp engineer shared his insights on success in the tech industry and the key lessons he learned during his time at the company. Here are the main takeaways from his experience, formatted with lists and paragraphs:&lt;/p&gt;
+        <description>Book Of Daniel https://bookofdaniel.in/posts/lessons-learned-from-a-former-whatsapp-engineer/ -&lt;p&gt;In a recent YouTube video, a former WhatsApp engineer shared his insights on success in the tech industry and the key lessons he learned during his time at the company. Here are the main takeaways from his experience, formatted with lists and paragraphs:&lt;/p&gt;
 &lt;h3 id=&#34;key-lessons-learned&#34;&gt;Key Lessons Learned&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -865,71 +1319,7 @@ Action: Make 100 videos packed with value&lt;/li&gt;
 &lt;h3 id=&#34;channel-credit&#34;&gt;Channel Credit&lt;/h3&gt;
 &lt;p&gt;Don&amp;rsquo;t forget to subscribe this channel that shared this valuable content: &lt;a href=&#34;https://youtu.be/2JmfDKOyQcI&#34;&gt;Entrepreneurship Opportunities&lt;/a&gt;. 👏&lt;/p&gt;
 &lt;p&gt;In conclusion, success in the tech industry requires a combination of influence, passion, simplicity, and prioritization. By focusing on these principles and learning from the experiences of others, you can increase your chances of success and create a meaningful career for yourself in the technology sector.&lt;/p&gt;
-- https://bookofdaniel.in/posts/lessons-learned-from-a-former-whatsapp-engineer/ - 2023</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>From Messy Sheets to Mountain Everest: Navigating Life with Lessons from a Navy SEAL</title>
-        <link>https://bookofdaniel.in/posts/make-your-bed-summary/</link>
-        <pubDate>Mon, 01 Jan 2024 16:26:56 +0530</pubDate>
-        
-        <guid>https://bookofdaniel.in/posts/make-your-bed-summary/</guid>
-        <description>🧑🏻‍💻 Book Of Daniel https://bookofdaniel.in/posts/make-your-bed-summary/ -&lt;p&gt;Picture it: your bed, a chaotic landscape of tangled limbs and rogue pillows, mirroring the state of your life. Enter &lt;a href=&#34;https://en.wikipedia.org/wiki/William_H._McRaven&#34;&gt;Admiral William McRaven&amp;rsquo;s&lt;/a&gt; &amp;ldquo;&lt;a href=&#34;https://www.amazon.in/Make-Your-Bed-William-McRaven/dp/0718188861&#34;&gt;Make Your Bed&lt;/a&gt;,&amp;rdquo; a book that&amp;rsquo;s anything but your average fluff-and-fold self-help manual. Think less feng shui, more forging a battle cry in the crucible of Navy SEAL training. This ain&amp;rsquo;t about smoothing out your duvet; it&amp;rsquo;s about scaling metaphorical Mount Everest, one messy pillowcase at a time.&lt;/p&gt;
-&lt;p&gt;McRaven throws down ten life lessons that sting with truth and resonate with anyone who&amp;rsquo;s ever wrestled with life&amp;rsquo;s tangled sheets.&lt;/p&gt;
-&lt;h2 id=&#34;lesson-1-start-small-conquer-big&#34;&gt;Lesson 1: Start small, conquer big.&lt;/h2&gt;
-&lt;p&gt;Making your bed is a tiny triumph, but it sends a ripple of accomplishment through your day. It whispers, &amp;ldquo;I can do this,&amp;rdquo; a mantra that empowers you to tackle seemingly insurmountable obstacles. You know, like that presentation that feels like climbing Everest in stilettos. One sheet at a time, you&amp;rsquo;ll conquer it.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;If you want to change the world, start off by making your bed.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;lesson-2-teamwork-makes-the-dream-and-boat-work&#34;&gt;Lesson 2: Teamwork makes the dream (and boat) work.&lt;/h2&gt;
-&lt;p&gt;No SEAL goes solo. They rely on their squad, their cheerleaders with flippers, their &amp;ldquo;band of brothers&amp;rdquo; who navigate the choppy waters together. This translates to life as well. Find your tribe, those who&amp;rsquo;ll high-five your victories and hold your paddle when the current gets rough. Remember, even the mightiest battleship needs an anchor.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;If you want to change the world, find someone to help you paddle.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;lesson-3-size-doesnt-matter-heart-does&#34;&gt;Lesson 3: Size doesn&amp;rsquo;t matter, heart does.&lt;/h2&gt;
-&lt;p&gt;Forget judging people by their bank accounts or biceps. McRaven reminds us that true strength lies in character, resilience, and the size of your (figurative) heart. A kind word from the smallest person can change the world, so spread kindness like confetti. Remember, even the tiniest pebble can create the biggest ripples.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;If you want to change the world, find someone to help you paddle.
-If you want to change the world, measure a person by the size of their heart, not the size of their flippers.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;lesson-4-life-is-a-sugar-cookie-crumble-and-thats-okay&#34;&gt;Lesson 4: Life is a sugar cookie crumble (and that&amp;rsquo;s okay).&lt;/h2&gt;
-&lt;p&gt;Sometimes, no matter how hard you bake, your life cookie crumbles. You bomb a presentation, trip in public, or stub your toe on the existential dread of the universe. It happens. The key is to dust yourself off, lick the icing sugar tears, and keep baking. Remember, even the most perfectly decorated cookies sometimes fall apart.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;If you want to change the world, get over being a sugar cookie and keep moving.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;lesson-5-embrace-the-circus-of-failure&#34;&gt;Lesson 5: Embrace the circus (of failure).&lt;/h2&gt;
-&lt;p&gt;Life is a three-ring spectacle of awkward moments, missed opportunities, and flat tires. Don&amp;rsquo;t let fear of failure paralyze you. Embrace the stumbles, learn from the clowns, and remember, even the most graceful tightrope walkers wobble sometimes. So stumble gracefully, laugh at your mishaps, and remember, falling down is just another way of flying (sort of).&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;If you want to change the world, don’t be afraid of the Circuses.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;lesson-6-sometimes-headfirst-is-best&#34;&gt;Lesson 6: Sometimes, headfirst is best.&lt;/h2&gt;
-&lt;p&gt;Take risks, challenge the status quo, and don&amp;rsquo;t be afraid to slide headfirst down the metaphorical rope of life. You might surprise yourself, break a record, and land with a grin on your face (and maybe a few scrapes). Remember, playing it safe won&amp;rsquo;t get you to the trapeze, so swing boldly, even if it means a few bumps on the way.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;If you want to change the world, sometimes you have to slide down the obstacle headfirst.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;lesson-7-sharks-are-inevitable-but-you-can-swim-with-them&#34;&gt;Lesson 7: Sharks are inevitable (but you can swim with them).&lt;/h2&gt;
-&lt;p&gt;The world is full of metaphorical sharks: bullies, doubters, and negativity. You can&amp;rsquo;t avoid them, but you can learn to navigate their waters. Stand your ground, be your best self, and remember, sometimes the best way to disarm a shark is with a confident smile and a well-placed tuna sandwich. Just like dolphins, swim with the sharks, but don&amp;rsquo;t become one.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;If you want to change the world, don’t back down from the sharks.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;lesson-8-be-your-lighthouse-in-the-storm&#34;&gt;Lesson 8: Be your lighthouse in the storm.&lt;/h2&gt;
-&lt;p&gt;When darkness descends, don&amp;rsquo;t let it extinguish your inner light. Stay calm, draw on your inner strength, and remember, even the faintest glimmer can guide others through the roughest seas. Be the beacon in the storm, the lighthouse in the fog, the reminder that even when the waves crash, hope keeps us afloat.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;If you want to change the world, you must be your very best in the darkest moment.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;lesson-9-sing-in-the-mud-it-helps&#34;&gt;Lesson 9: Sing in the mud (it helps).&lt;/h2&gt;
-&lt;p&gt;Hope is a powerful weapon. When you&amp;rsquo;re neck-deep in life&amp;rsquo;s muck, find a reason to sing. Share your light, inspire others, and remember, even a muddy chorus can change the world. So hum a tune, even if it&amp;rsquo;s off-key, because sometimes the only way to rise above the mud is to sing through it.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;If you want to change the world, start singing when you’re up to your neck in mud.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;lesson-10-never-ring-the-bell-unless-its-for-tea&#34;&gt;Lesson 10: Never ring the bell (unless it&amp;rsquo;s for tea).&lt;/h2&gt;
-&lt;p&gt;Life throws challenges, but quitting is not an option. Push through the discomfort, persevere through the pain, and remember, the bell is always there, but the satisfaction of overcoming your fears is far sweeter than any escape. So keep climbing, keep fighting, keep singing in the mud, because the view from the top of the mountain is worth&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;If you want to change the world, don’t ever, ever ring the bell.&lt;/p&gt;
-&lt;/blockquote&gt;
-- https://bookofdaniel.in/posts/make-your-bed-summary/ - 2023</description>
+- https://bookofdaniel.in/posts/lessons-learned-from-a-former-whatsapp-engineer/ - 2024</description>
         </item>
     
     

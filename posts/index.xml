@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 🧑🏻‍💻 Book Of Daniel</title>
+    <title>Posts on Book Of Daniel</title>
     <link>https://bookofdaniel.in/posts/</link>
-    <description>Recent content in Posts on 🧑🏻‍💻 Book Of Daniel</description>
+    <description>Recent content in Posts on Book Of Daniel</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>2023</copyright>
-    <lastBuildDate>Sat, 10 Aug 2024 12:53:44 +0530</lastBuildDate><atom:link href="https://bookofdaniel.in/posts/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>2024</copyright>
+    <lastBuildDate>Fri, 06 Sep 2024 12:07:09 +0530</lastBuildDate><atom:link href="https://bookofdaniel.in/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Setup Kubernetes in Azure Virtual Machines</title>
+      <link>https://bookofdaniel.in/posts/how-to-setup-kubernetes-in-azure-virtual-machines/</link>
+      <pubDate>Fri, 06 Sep 2024 12:07:09 +0530</pubDate>
+      
+      <guid>https://bookofdaniel.in/posts/how-to-setup-kubernetes-in-azure-virtual-machines/</guid>
+      <description>Welcome to the hard way of installing Kubernetes in Azure Virtual Machines. The instructions will be moreover same for On-prem. For many developers, using managed Kubernetes services like GKE, EKS, or AKS can be convenient, but they often abstract away the intricate details of how a cluster operates under the hood.
+Requirements NODES IP HOSTNAME MACHINE TYPE OPERATING SYSTEM master 172.16.39.14 k8s-master.local Standard B2ms Ubuntu 24.04 k8s-worker1 172.16.39.23 k8s-worker1.local Standard B4ms Ubuntu 24.</description>
+    </item>
+    
     <item>
       <title>Port Not Available: 503 Server Unavailable</title>
       <link>https://bookofdaniel.in/posts/port-not-available/</link>

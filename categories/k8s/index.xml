@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>K8s on 🧑🏻‍💻 Book Of Daniel</title>
+    <title>K8s on Book Of Daniel</title>
     <link>https://bookofdaniel.in/categories/k8s/</link>
-    <description>Recent content in K8s on 🧑🏻‍💻 Book Of Daniel</description>
+    <description>Recent content in K8s on Book Of Daniel</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>2023</copyright>
+    <copyright>2024</copyright>
     <lastBuildDate>Mon, 08 Jul 2024 08:28:44 +0530</lastBuildDate><atom:link href="https://bookofdaniel.in/categories/k8s/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kubernetes Architecture Explained: the Ship Analogy of KodeKloud</title>

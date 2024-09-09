@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html><head>
+<title>Installing Kafka and Kafka Connect on Seperate Servers</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.ff0aac816f46e60f7fa3eff2233a3a7afab2864b4571de3a7bad7adaba84c3cb.css" integrity="sha256-/wqsgW9G5g9/o&#43;/yIzo6evqyhktFcd46e6162rqEw8s=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    Archives
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#prerequisites" class="nav-prerequisites">
+									Prerequisites
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step-1-set-up-kafka-on-the-first-server" class="nav-step-1-set-up-kafka-on-the-first-server">
+									Step 1: Set Up Kafka on the First Server
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step-2-set-up-kafka-connect-on-the-second-server" class="nav-step-2-set-up-kafka-connect-on-the-second-server">
+									Step 2: Set Up Kafka Connect on the Second Server
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step-3-verify-the-installation" class="nav-step-3-verify-the-installation">
+									Step 3: Verify the Installation
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step-4-install-and-configure-debezium-optional" class="nav-step-4-install-and-configure-debezium-optional">
+									Step 4: Install and Configure Debezium (Optional)
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#conclusion" class="nav-conclusion">
+									Conclusion
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://bookofdaniel.in/">
+            Book Of Daniel
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://bookofdaniel.in/">
+        <div class="single-column-header-title">Book Of Daniel</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Installing Kafka and Kafka Connect on Seperate Servers
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2024-09-09 13:14
+                        </time>
+                        
+
+                        
+
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            2 min
+                            
+                            57 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p>Installing Kafka and Kafka Connect on separate servers allows for better resource management, especially in production environments where Kafka brokers and Connectors may need dedicated hardware. This guide will walk you through the steps to set up Kafka and Kafka Connect on separate Linux servers, using Ubuntu 24.04.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li><strong>Two Linux machines</strong> (Ubuntu 24.04)</li>
+<li><strong>Inbound ports opened</strong> on both servers:
+<ul>
+<li>Kafka broker ports: 9092, 9093</li>
+<li>Kafka Connect REST port: 8083</li>
+</ul>
+</li>
+<li><strong>Java 11 (OpenJDK)</strong> installed on both servers</li>
+</ul>
+<h3 id="step-1-set-up-kafka-on-the-first-server">Step 1: Set Up Kafka on the First Server</h3>
+<ol>
+<li>
+<p><strong>Set the hostname</strong> for the Kafka server:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo hostnamectl set-hostname kafka-server
+</span></span><span style="display:flex;"><span>sudo nano /etc/hosts
+</span></span></code></pre></div><p>Replace <code>127.0.1.1</code> with your new hostname.</p>
+</li>
+<li>
+<p><strong>Install necessary updates</strong>:
+Update and upgrade your server with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update <span style="color:#ff7b72;font-weight:bold">&amp;&amp;</span> sudo apt upgrade
+</span></span></code></pre></div><p>Reboot the server to apply changes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo reboot
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Install OpenJDK</strong>:
+Kafka requires Java to run. Install OpenJDK 11:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install openjdk-11-jdk -y
+</span></span></code></pre></div><p>Verify the installation:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>java -version
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Download and Extract Kafka</strong>:
+Download Kafka from the official site:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://dlcdn.apache.org/kafka/3.8.0/kafka_2.13-3.8.0.tgz
+</span></span><span style="display:flex;"><span>tar -xzf kafka_2.13-3.8.0.tgz
+</span></span><span style="display:flex;"><span>sudo mv kafka_2.13-3.8.0 /opt/kafka
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Create a Kafka User and Group</strong>:
+For better management, create a dedicated service account:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo groupadd kafka
+</span></span><span style="display:flex;"><span>sudo useradd -r -g kafka -d /opt/kafka -s /bin/false kafka
+</span></span><span style="display:flex;"><span>sudo chown -R kafka:kafka /opt/kafka
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Configure Kafka</strong>:
+Kafka stores logs in <code>/tmp</code> by default. To make management easier, move the logs to <code>/var/log/kafka</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mkdir -p /var/log/kafka
+</span></span><span style="display:flex;"><span>sudo chown -R kafka:kafka /var/log/kafka
+</span></span><span style="display:flex;"><span>sudo chmod -R <span style="color:#a5d6ff">755</span> /var/log/kafka
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Edit the Kafka Configuration</strong>:
+Update the <code>server.properties</code> file to listen on all interfaces:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano /opt/kafka/config/kraft/server.properties
+</span></span></code></pre></div><p>Add the following lines:</p>
+<pre tabindex="0"><code>listeners=PLAINTEXT://0.0.0.0:9092
+advertised.listeners=PLAINTEXT://&lt;Kafka_Server_IP&gt;:9092
+log.dirs=/var/log/kafka
+</code></pre></li>
+<li>
+<p><strong>Format the Log Directory</strong>: Change directory to Kafka folder and
+format the storage with a unique cluster ID:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#79c0ff">KAFKA_CLUSTER_ID</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;</span><span style="color:#ff7b72">$(</span>bin/kafka-storage.sh random-uuid<span style="color:#ff7b72">)</span><span style="color:#a5d6ff">&#34;</span>
+</span></span><span style="display:flex;"><span>sudo -u kafka bin/kafka-storage.sh format -t <span style="color:#79c0ff">$KAFKA_CLUSTER_ID</span> -c config/kraft/server.properties
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Set Up Kafka as a Systemd Service</strong>:
+Create a service file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano /etc/systemd/system/kafka.service
+</span></span></code></pre></div><p>Add the following content:</p>
+<pre tabindex="0"><code>[Unit]
+Description=Apache Kafka Server (KRaft Mode)
+After=network.target
+
+[Service]
+User=kafka
+Group=kafka
+ExecStart=/opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/kraft/server.properties
+ExecStop=/opt/kafka/bin/kafka-server-stop.sh
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+</code></pre><p>Enable and start the Kafka service:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl daemon-reload
+</span></span><span style="display:flex;"><span>sudo systemctl start kafka
+</span></span><span style="display:flex;"><span>sudo systemctl enable kafka
+</span></span><span style="display:flex;"><span>sudo systemctl status kafka
+</span></span></code></pre></div></li>
+</ol>
+<h3 id="step-2-set-up-kafka-connect-on-the-second-server">Step 2: Set Up Kafka Connect on the Second Server</h3>
+<ol>
+<li>
+<p><strong>Install necessary updates</strong>:
+Update and upgrade your server with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update <span style="color:#ff7b72;font-weight:bold">&amp;&amp;</span> sudo apt upgrade
+</span></span></code></pre></div><p>Reboot the server to apply changes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo reboot
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Install Java on Kafka Connect Server</strong>:
+Just like with the Kafka server, install Java:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install openjdk-11-jdk -y
+</span></span><span style="display:flex;"><span>java -version
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Download and Extract Kafka Connect</strong>:
+Kafka Connect is part of the Kafka package, so download Kafka here too:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://dlcdn.apache.org/kafka/3.8.0/kafka_2.13-3.8.0.tgz
+</span></span><span style="display:flex;"><span>tar -xzf kafka_2.13-3.8.0.tgz
+</span></span><span style="display:flex;"><span>sudo mv kafka_2.13-3.8.0 /opt/kafka
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Configure Kafka Connect</strong>:
+Edit the <code>connect-distributed.properties</code> file to configure Kafka Connect:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano /opt/kafka/config/connect-distributed.properties
+</span></span></code></pre></div><p>Update the plugin path:</p>
+<pre tabindex="0"><code>plugin.path=/opt/kafka/connectors
+bootstrap.servers=&lt;Kafka_Server_IP&gt;:9092
+</code></pre></li>
+<li>
+<p><strong>Create a Connectors Directory</strong>:
+Create a directory for Kafka Connect plugins:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mkdir /opt/kafka/connectors
+</span></span><span style="display:flex;"><span>sudo chown kafka:kafka /opt/kafka/connectors
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Set Up Kafka Connect as a Systemd Service</strong>:
+Create a service file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano /etc/systemd/system/kafka-connect.service
+</span></span></code></pre></div><p>Add the following content:</p>
+<pre tabindex="0"><code>[Unit]
+Description=Kafka Connect Distributed Mode Service
+After=network.target
+
+[Service]
+User=kafka
+Group=kafka
+ExecStart=/opt/kafka/bin/connect-distributed.sh /opt/kafka/config/connect-distributed.properties
+Restart=on-failure
+RestartSec=10
+Environment=&#34;KAFKA_HEAP_OPTS=-Xmx1G -Xms1G&#34;
+
+[Install]
+WantedBy=multi-user.target
+</code></pre><p>Enable and start the Kafka Connect service:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl daemon-reload
+</span></span><span style="display:flex;"><span>sudo systemctl start kafka-connect
+</span></span><span style="display:flex;"><span>sudo systemctl enable kafka-connect
+</span></span><span style="display:flex;"><span>sudo systemctl status kafka-connect
+</span></span></code></pre></div></li>
+</ol>
+<h3 id="step-3-verify-the-installation">Step 3: Verify the Installation</h3>
+<ul>
+<li>
+<p>On the Kafka server, check the Kafka logs:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo journalctl -u kafka
+</span></span></code></pre></div></li>
+<li>
+<p>On the Kafka Connect server, check the Kafka Connect logs:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo journalctl -u kafka-connect
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="step-4-install-and-configure-debezium-optional">Step 4: Install and Configure Debezium (Optional)</h3>
+<p>If you want to set up Debezium for change data capture (CDC), follow these steps:</p>
+<ol>
+<li>
+<p><strong>Download Debezium SQL Server Connector</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://repo1.maven.org/maven2/io/debezium/debezium-connector-sqlserver/2.7.1.Final/debezium-connector-sqlserver-2.7.1.Final-plugin.tar.gz
+</span></span><span style="display:flex;"><span>sudo tar -xzf debezium-connector-sqlserver-2.7.1.Final-plugin.tar.gz -C /opt/kafka/connectors/
+</span></span><span style="display:flex;"><span>sudo chown -R kafka:kafka /opt/kafka/connectors/debezium-connector-sqlserver
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Restart Kafka Connect</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl restart kafka-connect
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Verify the Plugin</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -s localhost:8083/connector-plugins | jq
+</span></span></code></pre></div></li>
+</ol>
+<h3 id="conclusion">Conclusion</h3>
+<p>You have successfully installed Kafka and Kafka Connect on separate servers, ensuring that both services are set up for distributed, scalable processing. This setup is optimal for large-scale deployments and is ready for further configuration, such as integrating Debezium or other Kafka Connect plugins.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">Last modified on 2024-09-09</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts">
+			Next<br>No newer posts.
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/how-to-setup-kubernetes-in-azure-virtual-machines/">
+			Previous<br>How to Setup Kubernetes in Azure Virtual Machines
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://bookofdaniel.in/">
+    
+        <div class="nav-title">
+            Book Of Daniel
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                Archives
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+&copy;
+	
+	2024
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#prerequisites" class="nav-prerequisites">
+									Prerequisites
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step-1-set-up-kafka-on-the-first-server" class="nav-step-1-set-up-kafka-on-the-first-server">
+									Step 1: Set Up Kafka on the First Server
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step-2-set-up-kafka-connect-on-the-second-server" class="nav-step-2-set-up-kafka-connect-on-the-second-server">
+									Step 2: Set Up Kafka Connect on the Second Server
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step-3-verify-the-installation" class="nav-step-3-verify-the-installation">
+									Step 3: Verify the Installation
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step-4-install-and-configure-debezium-optional" class="nav-step-4-install-and-configure-debezium-optional">
+									Step 4: Install and Configure Debezium (Optional)
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#conclusion" class="nav-conclusion">
+									Conclusion
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+
+<div id="single-column-footer">
+&copy;
+	
+	2024
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

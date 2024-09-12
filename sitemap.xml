@@ -2,97 +2,93 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://bookofdaniel.in/</loc>
-    <lastmod>2024-09-11T12:59:07+05:30</lastmod>
+    <loc>https://example.org/</loc>
+    <lastmod>2024-09-12T14:07:01+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/posts/</loc>
-    <lastmod>2024-09-11T12:59:07+05:30</lastmod>
+    <loc>https://example.org/categories/</loc>
+    <lastmod>2024-09-12T14:07:01+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/posts/installing-kafka-and-kafka-connect-on-seperate-servers/</loc>
-    <lastmod>2024-09-09T13:14:18+05:30</lastmod>
+    <loc>https://example.org/categories/life/</loc>
+    <lastmod>2024-09-12T14:07:01+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/posts/how-to-setup-kubernetes-in-azure-virtual-machines/</loc>
-    <lastmod>2024-09-06T12:07:09+05:30</lastmod>
+    <loc>https://example.org/posts/</loc>
+    <lastmod>2024-09-12T14:07:01+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/posts/port-not-available/</loc>
-    <lastmod>2024-08-10T12:53:44+05:30</lastmod>
+    <loc>https://example.org/posts/why-am-wearing-same-outfit-everyday/</loc>
+    <lastmod>2024-09-12T14:07:01+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/categories/</loc>
-    <lastmod>2024-07-08T08:28:44+05:30</lastmod>
+    <loc>https://example.org/posts/the-unstoppable-framework/</loc>
+    <lastmod>2024-09-12T14:06:03+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/categories/k8s/</loc>
-    <lastmod>2024-07-08T08:28:44+05:30</lastmod>
+    <loc>https://example.org/posts/the-ultimate-productive-system/</loc>
+    <lastmod>2024-09-12T14:02:21+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/posts/kubernetes-architecture-explained-the-ship-analogy-of-kodekloud/</loc>
-    <lastmod>2024-07-08T08:28:44+05:30</lastmod>
+    <loc>https://example.org/posts/the-rise-of-nostr-and-the-renaissance-of-social-media/</loc>
+    <lastmod>2024-09-12T14:00:29+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/categories/notes/</loc>
-    <lastmod>2024-04-05T10:16:30+05:30</lastmod>
+    <loc>https://example.org/categories/tech/</loc>
+    <lastmod>2024-09-12T13:59:37+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/posts/the-5-minute-death-journal-method/</loc>
-    <lastmod>2024-04-05T10:16:30+05:30</lastmod>
+    <loc>https://example.org/posts/the-batchology-handbook/</loc>
+    <lastmod>2024-09-12T13:59:37+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/posts/a-daily-plan-for-success/</loc>
-    <lastmod>2024-04-03T14:44:37+05:30</lastmod>
+    <loc>https://example.org/posts/the-5-minute-death-journal-method/</loc>
+    <lastmod>2024-09-12T13:57:59+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/posts/how-programmers-can-become-10x-more-effective/</loc>
-    <lastmod>2024-03-03T22:24:59+05:30</lastmod>
+    <loc>https://example.org/posts/port-not-available/</loc>
+    <lastmod>2024-09-12T13:56:19+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/posts/issue-faced-on-wsfc-configuration-for-sql-server-alwayson-setup/</loc>
-    <lastmod>2024-03-01T22:58:46+05:30</lastmod>
+    <loc>https://example.org/posts/make-your-bed-summary/</loc>
+    <lastmod>2024-09-12T13:55:31+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/categories/docs/</loc>
-    <lastmod>2024-01-17T22:45:09+05:30</lastmod>
+    <loc>https://example.org/posts/lessons-learned-from-a-former-whatsapp-engineer/</loc>
+    <lastmod>2024-09-12T13:54:45+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/posts/the-batchology-handbook/</loc>
-    <lastmod>2024-01-17T22:45:09+05:30</lastmod>
+    <loc>https://example.org/tags/k8s/</loc>
+    <lastmod>2024-09-12T13:52:32+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/posts/the-unstoppable-framework/</loc>
-    <lastmod>2024-01-11T08:04:16+05:30</lastmod>
+    <loc>https://example.org/posts/kubernetes-architecture-explained-the-ship-analogy-of-kodekloud/</loc>
+    <lastmod>2024-09-12T13:52:32+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/posts/lessons-learned-from-a-former-whatsapp-engineer/</loc>
-    <lastmod>2024-01-05T09:19:15+05:30</lastmod>
+    <loc>https://example.org/tags/</loc>
+    <lastmod>2024-09-12T13:52:32+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/categories/books/</loc>
-    <lastmod>2024-01-01T16:26:56+05:30</lastmod>
+    <loc>https://example.org/posts/key-principles-of-any-cloud-environments/</loc>
+    <lastmod>2024-09-12T13:51:56+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/posts/make-your-bed-summary/</loc>
-    <lastmod>2024-01-01T16:26:56+05:30</lastmod>
+    <loc>https://example.org/posts/issue-faced-on-wsfc-configuration-for-sql-server-alwayson-setup/</loc>
+    <lastmod>2024-09-12T13:51:16+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/posts/15-ways-to-stay-fit-while-sitting-at-home/</loc>
-    <lastmod>2023-12-20T16:12:14+05:30</lastmod>
+    <loc>https://example.org/posts/integration-of-zoho-desk-and-grafana/</loc>
+    <lastmod>2024-09-12T13:47:21+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/categories/life-journey/</loc>
-    <lastmod>2023-12-20T16:12:14+05:30</lastmod>
+    <loc>https://example.org/posts/installing-kafka-and-kafka-connect-on-seperate-servers/</loc>
+    <lastmod>2024-09-12T13:46:20+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/posts/a-beginners-guide-to-vim-shortcuts/</loc>
-    <lastmod>2023-12-13T09:39:37+05:30</lastmod>
+    <loc>https://example.org/posts/how-to-supercharge-your-focus-a-revolutionar-approach/</loc>
+    <lastmod>2024-09-12T13:45:22+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/categories/code/</loc>
-    <lastmod>2023-12-13T09:39:37+05:30</lastmod>
+    <loc>https://example.org/posts/how-to-setup-kubernetes-in-azure-virtual-machines/</loc>
+    <lastmod>2024-09-12T13:44:27+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/posts/key-principles-of-any-cloud-environments/</loc>
-    <lastmod>2023-11-20T08:49:43+05:30</lastmod>
+    <loc>https://example.org/posts/how-programmers-can-become-10x-more-effective/</loc>
+    <lastmod>2024-09-12T13:43:07+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/posts/the-rise-of-nostr-and-the-renaissance-of-social-media/</loc>
-    <lastmod>2023-11-18T23:03:52+05:30</lastmod>
+    <loc>https://example.org/posts/how-i-started-a-youtube-channel/</loc>
+    <lastmod>2024-09-12T13:35:02+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/posts/why-am-wearing-same-outfit-everyday/</loc>
-    <lastmod>2023-11-11T09:18:36+05:30</lastmod>
+    <loc>https://example.org/posts/how-does-tls-works-under-the-hood/</loc>
+    <lastmod>2024-09-12T13:34:23+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/posts/the-ultimate-productive-system/</loc>
-    <lastmod>2023-11-09T22:59:28+05:30</lastmod>
+    <loc>https://example.org/posts/a-daily-plan-for-success/</loc>
+    <lastmod>2024-09-12T13:33:14+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/categories/case-study/</loc>
-    <lastmod>2023-10-02T17:40:05+05:30</lastmod>
+    <loc>https://example.org/posts/a-beginners-guide-to-vim-shortcuts/</loc>
+    <lastmod>2024-09-12T13:31:52+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/posts/integration-of-zoho-desk-and-grafana/</loc>
-    <lastmod>2023-10-02T17:40:05+05:30</lastmod>
+    <loc>https://example.org/posts/15-ways-to-stay-fit-while-sitting-at-home/</loc>
+    <lastmod>2024-09-12T13:17:11+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/page/</loc>
-  </url><url>
-    <loc>https://bookofdaniel.in/search/</loc>
-  </url><url>
-    <loc>https://bookofdaniel.in/tags/</loc>
+    <loc>https://example.org/search/</loc>
   </url>
 </urlset>

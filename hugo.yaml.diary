@@ -1,0 +1,43 @@
+baseURL: "https://bookofdaniel.in/"
+DefaultContentLanguage: "en" # Theme's display language, supports: en, fr, zh, zh-hant
+languageCode: "en-us"
+title: "Book Of Daniel"
+copyright: "2024"
+theme: "Diary"
+
+params:
+  enableReadingTime: true
+  title: "Book of Daniel" # will set 'og:site_name'
+  description: "Personal blog"  # will set 'og:description'
+  enableAutoDarkMode: true
+
+menu:
+  main:
+    - url: "/posts"
+      name: "Archives"
+      weight: 1
+    # Uncomment the following for additional menu items
+    # - url: "/categories"
+    #   name: "Categories"
+    #   weight: 2
+    # - url: "/tags"
+    #   name: "Tags"
+    #   weight: 3
+    # - url: "/page/about"
+    #   name: "About"
+    #   weight: 4
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: '' 
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    style: "github-dark"
+    tabWidth: 4

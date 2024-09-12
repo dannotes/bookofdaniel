@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2024</copyright>
-    <lastBuildDate>Mon, 09 Sep 2024 13:14:18 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 11 Sep 2024 12:59:07 +0530</lastBuildDate>
     
         <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
@@ -493,30 +493,30 @@ The absence of a real-time dashboard has caused inefficiencies in tracking produ
 &lt;h1 id=&#34;solutions&#34;&gt;Solutions&lt;/h1&gt;
 &lt;p&gt;I have slept on these challenges for a day and explored the Zoho documentation along with some Google search. It seemed like I could solve some of these issues using zoho&amp;rsquo;s features, while others might require development.&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Challenge&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Solution&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Large Team Management&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Proposed to split the team into multiple pods or pools. So that it can be managed by a senior / lead with minimal members and work can be monitored efficiently. &lt;br&gt; Pool segregation will be based on the number of clients.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Ticket Assignment Automation&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Since the team is arranged into multiple pools, based on the client hierarchy, whenever a ticket is raised for the specific client it should be allocated directly to the respecitve pool. Then the pool lead / member can assign and work accordingly. &lt;br&gt; To Automate this process Zoho Desk provides a feature called &lt;a href=&#34;https://help.zoho.com/portal/en/kb/desk/automation/assignment-rules-notification/articles/creating-ticket-assignment-rules&#34;&gt;Direct Assignment&lt;/a&gt;. Create an assignment rule with client name and select respective pool account. Viola! The ticket will be assigned automatically on creation.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Timely Escalation&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Zoho provides a feature called &lt;a href=&#34;https://help.zoho.com/portal/en/kb/desk/automation/escalate-sla/articles/creating-and-using-slas&#34;&gt;SLAs&lt;/a&gt; escalation. If an escalation occurs within x minutes it will be escalated to 2 levels. We chose to adopt it, so that the breached ticket will be esclated to the respective lead / manager of the pool within 30 mins.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Email Ticket with mandatory fields&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;We created a &lt;a href=&#34;https://help.zoho.com/portal/en/kb/desk/activities/articles/working-with-tasks-zoho-desk#Creating_Tasks&#34;&gt;Zoho Task&lt;/a&gt; to close the email ticket with an automated reply to fill the mandatory fields. So the tickets in which the mandatory fields are not filled will be closed automatically.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Challenge&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Solution&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Large Team Management&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Proposed to split the team into multiple pods or pools. So that it can be managed by a senior / lead with minimal members and work can be monitored efficiently. &lt;br&gt; Pool segregation will be based on the number of clients.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Ticket Assignment Automation&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Since the team is arranged into multiple pools, based on the client hierarchy, whenever a ticket is raised for the specific client it should be allocated directly to the respecitve pool. Then the pool lead / member can assign and work accordingly. &lt;br&gt; To Automate this process Zoho Desk provides a feature called &lt;a href=&#34;https://help.zoho.com/portal/en/kb/desk/automation/assignment-rules-notification/articles/creating-ticket-assignment-rules&#34;&gt;Direct Assignment&lt;/a&gt;. Create an assignment rule with client name and select respective pool account. Viola! The ticket will be assigned automatically on creation.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Timely Escalation&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Zoho provides a feature called &lt;a href=&#34;https://help.zoho.com/portal/en/kb/desk/automation/escalate-sla/articles/creating-and-using-slas&#34;&gt;SLAs&lt;/a&gt; escalation. If an escalation occurs within x minutes it will be escalated to 2 levels. We chose to adopt it, so that the breached ticket will be esclated to the respective lead / manager of the pool within 30 mins.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Email Ticket with mandatory fields&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;We created a &lt;a href=&#34;https://help.zoho.com/portal/en/kb/desk/activities/articles/working-with-tasks-zoho-desk#Creating_Tasks&#34;&gt;Zoho Task&lt;/a&gt; to close the email ticket with an automated reply to fill the mandatory fields. So the tickets in which the mandatory fields are not filled will be closed automatically.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;real-time-monitoring--scoreboard&#34;&gt;Real-Time Monitoring &amp;amp; Scoreboard&lt;/h2&gt;
 &lt;p&gt;Zoho analytics with additional license offers Dashboard experience but I needed something more interesting like a real-time dashboard to proactively act on tickets which does not require additional license.&lt;/p&gt;

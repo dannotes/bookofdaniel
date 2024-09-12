@@ -73,4 +73,8 @@ Finally, the **certificate** acts as a **digital signature**, ensuring the messa
 
 The vault may be fictional, but the principles behind it now protect millions of sensitive communications every day.
 
+> **Note**: If you catch all the plot holes, you’re officially a genius! 😆 So don’t miss out on the detailed article about [Understanding Public Key Infrastructure](https://bookofdaniel.in/posts/understanding-public-key-infrastructure-and-tls-certificates/).
+
+
+
 ---

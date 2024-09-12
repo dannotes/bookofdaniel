@@ -1,5 +1,5 @@
 ---
-title: "How to Supercharge Your Focus a Revolutionar Approach"
+title: "How to Supercharge Your Focus a Revolutionary Approach"
 date: 2024-09-12T13:45:22+05:30
 lastmod: 2024-09-12T13:45:22+05:30
 author: ["Dan"]

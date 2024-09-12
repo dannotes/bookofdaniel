@@ -69,7 +69,7 @@ The operation proceeded flawlessly. Major Weber’s unit executed the attack wit
 
 > Although this story of Operation Valkyrie is a fictional account, the methods it describes are very real. The **Commander’s Key** represents the **public key** used to lock (encrypt) information, while the **General’s Cipher** is the **private key** used to unlock (decrypt) it. The **Symmetric Key** is the shared key used to encrypt and decrypt the actual message, ensuring that both sender and receiver understand the contents.
 
-Finally, the **certificate** acts as a **digital signature**, ensuring the message hasn’t been tampered with and confirming its authenticity. These are the foundational concepts of **Public Key Infrastructure (PKI)**, the system that secures everything from your bank transactions to your emails in today’s digital world.
+Finally, the **certificate** acts as a **digital signature**, ensuring the message hasn’t been tampered with and confirming its authenticity. These are the foundational concepts of [**Public Key Infrastructure (PKI)**](https://bookofdaniel.in/posts/understanding-public-key-infrastructure-and-tls-certificates/), the system that secures everything from your bank transactions to your emails in today’s digital world.
 
 The vault may be fictional, but the principles behind it now protect millions of sensitive communications every day.
 

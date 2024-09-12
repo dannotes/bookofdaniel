@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tech on Book of Daniel</title>
+    <link>http://localhost:62620/categories/tech/</link>
+    <description>Recent content in Tech on Book of Daniel</description>
+    <image>
+      <title>Book of Daniel</title>
+      <url>http://localhost:62620/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:62620/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.131.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 12 Sep 2024 13:59:37 +0530</lastBuildDate>
+    <atom:link href="http://localhost:62620/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Batchology Handbook</title>
+      <link>http://localhost:62620/posts/the-batchology-handbook/</link>
+      <pubDate>Thu, 12 Sep 2024 13:59:37 +0530</pubDate>
+      <guid>http://localhost:62620/posts/the-batchology-handbook/</guid>
+      <description>Hello there! If you&amp;rsquo;ve ever wondered how to make your computer tasks faster and more efficient, you&amp;rsquo;re in the right place. This blog post is all about Batch scripting - a simple yet powerful way to automate tasks in Windows.
+Whether you&amp;rsquo;re new to programming or have some experience, &amp;ldquo;The Batchology Handbook&amp;rdquo; is designed to be easy to follow and understand. We&amp;rsquo;ll start with the basics, like setting up your workspace, and gradually move into more exciting stuff, like automating file management and using cool commands you might not know about.</description>
+    </item>
+    <item>
+      <title>Kubernetes Architecture Explained the Ship Analogy of KodeKloud</title>
+      <link>http://localhost:62620/posts/kubernetes-architecture-explained-the-ship-analogy-of-kodekloud/</link>
+      <pubDate>Thu, 12 Sep 2024 13:52:32 +0530</pubDate>
+      <guid>http://localhost:62620/posts/kubernetes-architecture-explained-the-ship-analogy-of-kodekloud/</guid>
+      <description>Welcome to our exploration of Kubernetes architecture! Kubernetes, often abbreviated as K8s, is a powerful tool designed to manage containerized applications in a scalable and automated fashion. This blog post aims to provide a high-level understanding of Kubernetes architecture using an analogy of ships, which simplifies the complex interplay between its components. Special thanks to KodeKloud for their insightful lecture, which inspired this overview.
+The Kubernetes Cluster: Ships at Sea At its core, a Kubernetes cluster comprises two types of nodes: worker nodes and master nodes.</description>
+    </item>
+    <item>
+      <title>Key Principles of Any Cloud Environments</title>
+      <link>http://localhost:62620/posts/key-principles-of-any-cloud-environments/</link>
+      <pubDate>Thu, 12 Sep 2024 13:51:56 +0530</pubDate>
+      <guid>http://localhost:62620/posts/key-principles-of-any-cloud-environments/</guid>
+      <description>Original Post : https://cloud.google.com/blog/products/application-development/5-principles-for-cloud-native-architecture-what-it-is-and-how-to-master-it
+In the dynamic world of cloud computing, the term &amp;lsquo;cloud-native architecture&amp;rsquo; is often synonymous with innovation and efficiency. This article, inspired by a Google Cloud blog post, expands the concept to encompass universal principles applicable across all cloud platforms, be it Amazon Web Services (AWS), Microsoft Azure, or Google Cloud Platform (GCP). 🌦️🏗️
+Understanding Cloud-Native Architecture Cloud-native architecture is about leveraging the unique capabilities of cloud environments.</description>
+    </item>
+    <item>
+      <title>Issue Faced on WSFC Configuration for SQL Server AlwaysOn Setup</title>
+      <link>http://localhost:62620/posts/issue-faced-on-wsfc-configuration-for-sql-server-alwayson-setup/</link>
+      <pubDate>Thu, 12 Sep 2024 13:51:16 +0530</pubDate>
+      <guid>http://localhost:62620/posts/issue-faced-on-wsfc-configuration-for-sql-server-alwayson-setup/</guid>
+      <description>I&amp;rsquo;ve had the privilege of navigating through a wide array of technical landscapes. Yet, the recent endeavor of configuring a Windows Server Failover Cluster (WSFC) for SQL Server AlwaysOn presented a learning curve that was both steep and enriching. In this piece, I hope to share my experiences, the challenges encountered, and the lessons learned, with a spirit of humility and the intention of contributing to our collective knowledge base.</description>
+    </item>
+    <item>
+      <title>Integration of Zoho Desk and Grafana</title>
+      <link>http://localhost:62620/posts/integration-of-zoho-desk-and-grafana/</link>
+      <pubDate>Thu, 12 Sep 2024 13:47:21 +0530</pubDate>
+      <guid>http://localhost:62620/posts/integration-of-zoho-desk-and-grafana/</guid>
+      <description>Have you ever been a part of a hardworking team that, despite their efforts, ends up shouldering blame? If yes, our situation in operations might resonate with you. On any given day, our Zoho Desk is inundated with approximately 300 tickets, each falling under various classifications and priorities. Many of these tickets are complex and time-consuming to resolve, causing them to carry over to the next day and become overdue.</description>
+    </item>
+    <item>
+      <title>Installing Kafka and Kafka Connect on Seperate Servers</title>
+      <link>http://localhost:62620/posts/installing-kafka-and-kafka-connect-on-seperate-servers/</link>
+      <pubDate>Thu, 12 Sep 2024 13:46:20 +0530</pubDate>
+      <guid>http://localhost:62620/posts/installing-kafka-and-kafka-connect-on-seperate-servers/</guid>
+      <description>Installing Kafka and Kafka Connect on separate servers allows for better resource management, especially in production environments where Kafka brokers and Connectors may need dedicated hardware. This guide will walk you through the steps to set up Kafka and Kafka Connect on separate Linux servers, using Ubuntu 24.04.
+Prerequisites Two Linux machines (Ubuntu 24.04) Inbound ports opened on both servers: Kafka broker ports: 9092, 9093 Kafka Connect REST port: 8083 Java 11 (OpenJDK) installed on both servers Step 1: Set Up Kafka on the First Server Set the hostname for the Kafka server:</description>
+    </item>
+    <item>
+      <title>How to Setup Kubernetes in Azure Virtual Machines</title>
+      <link>http://localhost:62620/posts/how-to-setup-kubernetes-in-azure-virtual-machines/</link>
+      <pubDate>Thu, 12 Sep 2024 13:44:27 +0530</pubDate>
+      <guid>http://localhost:62620/posts/how-to-setup-kubernetes-in-azure-virtual-machines/</guid>
+      <description>Welcome to the hard way of installing Kubernetes in Azure Virtual Machines. The instructions will be moreover same for On-prem. For many developers, using managed Kubernetes services like GKE, EKS, or AKS can be convenient, but they often abstract away the intricate details of how a cluster operates under the hood.
+Requirements NODES IP HOSTNAME MACHINE TYPE OPERATING SYSTEM master 172.16.39.14 k8s-master.local Standard B2ms Ubuntu 24.04 k8s-worker1 172.16.39.23 k8s-worker1.local Standard B4ms Ubuntu 24.</description>
+    </item>
+    <item>
+      <title>How Programmers Can Become 10X More Effective</title>
+      <link>http://localhost:62620/posts/how-programmers-can-become-10x-more-effective/</link>
+      <pubDate>Thu, 12 Sep 2024 13:43:07 +0530</pubDate>
+      <guid>http://localhost:62620/posts/how-programmers-can-become-10x-more-effective/</guid>
+      <description>In a world where technology is ever-evolving, programmers are constantly seeking ways to enhance their skills and productivity. A treasure trove of wisdom that is often overlooked in the tech community is Stephen Covey&amp;rsquo;s iconic book, &amp;ldquo;7 Habits of Highly Effective People.&amp;rdquo; Sahil, a YouTuber, sheds light on how this book can be a game-changer for programmers aspiring to amplify their effectiveness tenfold.
+1. The Essence of Proactivity in Programming Covey distinguishes between reactive and proactive individuals, drawing a parallel with programmers.</description>
+    </item>
+    <item>
+      <title>How Does TLS Works Under the Hood</title>
+      <link>http://localhost:62620/posts/how-does-tls-works-under-the-hood/</link>
+      <pubDate>Thu, 12 Sep 2024 13:34:23 +0530</pubDate>
+      <guid>http://localhost:62620/posts/how-does-tls-works-under-the-hood/</guid>
+      <description>In the cold winter of 1944, Germany’s once-unbreakable Enigma code had been compromised by the Allies. With every intercepted message, their plans were at risk of exposure, and entire operations could be jeopardized. In response, German High Command devised a new, unbreakable system of communication. They called it Operation Valkyrie.
+This wasn’t just another machine like the Enigma; this was a new system that couldn’t be cracked, even if the messages were intercepted.</description>
+    </item>
+    <item>
+      <title>A Beginners Guide to Vim Shortcuts</title>
+      <link>http://localhost:62620/posts/a-beginners-guide-to-vim-shortcuts/</link>
+      <pubDate>Thu, 12 Sep 2024 13:31:52 +0530</pubDate>
+      <guid>http://localhost:62620/posts/a-beginners-guide-to-vim-shortcuts/</guid>
+      <description>Vim is a highly configurable text editor used in programming. It&amp;rsquo;s known for its efficiency, enabling users to navigate and edit documents with minimal use of the mouse. This blog post will introduce you to the most important Vim shortcuts and commands, making your coding journey smoother and more efficient.
+Understanding Vim Modes Before we dive into the commands, it&amp;rsquo;s crucial to understand Vim&amp;rsquo;s modes. Vim operates in several modes, each with a specific purpose:</description>
+    </item>
+  </channel>
+</rss>

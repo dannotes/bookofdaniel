@@ -1,33 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Life Journey on Book Of Daniel</title>
+    <title>Life Journey on Book of Daniel</title>
     <link>https://bookofdaniel.in/categories/life-journey/</link>
-    <description>Recent content in Life Journey on Book Of Daniel</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>2024</copyright>
-    <lastBuildDate>Wed, 20 Dec 2023 16:12:14 +0530</lastBuildDate><atom:link href="https://bookofdaniel.in/categories/life-journey/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Life Journey on Book of Daniel</description>
+    <image>
+      <title>Book of Daniel</title>
+      <url>https://bookofdaniel.in/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://bookofdaniel.in/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.134.0</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 20 Dec 2023 16:12:14 +0530</lastBuildDate>
+    <atom:link href="https://bookofdaniel.in/categories/life-journey/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>15 Ways to Stay Fit While Sitting at Home</title>
       <link>https://bookofdaniel.in/posts/15-ways-to-stay-fit-while-sitting-at-home/</link>
       <pubDate>Wed, 20 Dec 2023 16:12:14 +0530</pubDate>
-      
       <guid>https://bookofdaniel.in/posts/15-ways-to-stay-fit-while-sitting-at-home/</guid>
-      <description>In our current era of remote work and virtual learning, prioritizing physical and mental fitness is more crucial than ever. Luckily, there are numerous strategies you can incorporate into your daily routine without stepping outside your home. The following 15 ways, inspired by the insightful content from a YouTube video by Warikoo, will guide you towards a healthier and more balanced lifestyle.
-Basic Fitness Sit Straight: Maintain a good posture while working or studying.</description>
+      <description>&lt;p&gt;In our current era of remote work and virtual learning, prioritizing physical and mental fitness is more crucial than ever. Luckily, there are numerous strategies you can incorporate into your daily routine without stepping outside your home. The following 15 ways, inspired by the insightful content from a YouTube video by &lt;a href=&#34;https://youtu.be/FKNRNY5ji_M?si=ueCpV5g2vEtG5bjS&#34;&gt;Warikoo&lt;/a&gt;, will guide you towards a healthier and more balanced lifestyle.&lt;/p&gt;
+&lt;h2 id=&#34;basic-fitness&#34;&gt;Basic Fitness&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Sit Straight&lt;/strong&gt;: Maintain a good posture while working or studying. Use a memory foam pillow or a similar support to keep your back straight and avoid slouching.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Why I&#39;m Wearing the Same Outfit to Work Every Day - My Minimalist Journey 🌿</title>
       <link>https://bookofdaniel.in/posts/why-am-wearing-same-outfit-everyday/</link>
       <pubDate>Sat, 11 Nov 2023 09:18:36 +0530</pubDate>
-      
       <guid>https://bookofdaniel.in/posts/why-am-wearing-same-outfit-everyday/</guid>
-      <description>&amp;ldquo;Minimalism is not about having less. It&amp;rsquo;s about making room for more of what matters.&amp;rdquo; - Unknown
-When I first explored minimalism, I was struck by a pattern: many minimalists, myself included, often opt for a simple, repeatable outfit, such as a black t-shirt. Initially, this seemed almost like a uniform. But diving deeper into minimalism, I understood the profound reasons behind this choice.
-🕵️‍♂️ Understanding Minimalism: Minimalism is more than a fashion statement; it&amp;rsquo;s a mindset that encourages us to find beauty and satisfaction in simplicity.</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Minimalism is not about having less. It&amp;rsquo;s about making room for more of what matters.&amp;rdquo; - Unknown&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;When I first explored minimalism, I was struck by a pattern: many minimalists, myself included, often opt for a simple, repeatable outfit, such as a black t-shirt. Initially, this seemed almost like a uniform. But diving deeper into minimalism, I understood the profound reasons behind this choice.&lt;/p&gt;
+&lt;h2 id=&#34;-understanding-minimalism&#34;&gt;🕵️‍♂️ Understanding Minimalism:&lt;/h2&gt;
+&lt;p&gt;Minimalism is more than a fashion statement; it&amp;rsquo;s a mindset that encourages us to find beauty and satisfaction in simplicity. It&amp;rsquo;s about stripping away the non-essential to make room for what truly adds value to our lives.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

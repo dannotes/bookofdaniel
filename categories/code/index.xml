@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Code on Book Of Daniel</title>
+    <title>Code on Book of Daniel</title>
     <link>https://bookofdaniel.in/categories/code/</link>
-    <description>Recent content in Code on Book Of Daniel</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>2024</copyright>
-    <lastBuildDate>Wed, 13 Dec 2023 09:39:37 +0530</lastBuildDate><atom:link href="https://bookofdaniel.in/categories/code/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Code on Book of Daniel</description>
+    <image>
+      <title>Book of Daniel</title>
+      <url>https://bookofdaniel.in/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://bookofdaniel.in/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.134.0</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 13 Dec 2023 09:39:37 +0530</lastBuildDate>
+    <atom:link href="https://bookofdaniel.in/categories/code/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Beginners Guide to Vim Shortcuts</title>
       <link>https://bookofdaniel.in/posts/a-beginners-guide-to-vim-shortcuts/</link>
       <pubDate>Wed, 13 Dec 2023 09:39:37 +0530</pubDate>
-      
       <guid>https://bookofdaniel.in/posts/a-beginners-guide-to-vim-shortcuts/</guid>
-      <description>Vim is a highly configurable text editor used in programming. It&amp;rsquo;s known for its efficiency, enabling users to navigate and edit documents with minimal use of the mouse. This blog post will introduce you to the most important Vim shortcuts and commands, making your coding journey smoother and more efficient.
-Understanding Vim Modes Before we dive into the commands, it&amp;rsquo;s crucial to understand Vim&amp;rsquo;s modes. Vim operates in several modes, each with a specific purpose:</description>
+      <description>&lt;p&gt;Vim is a highly configurable text editor used in programming. It&amp;rsquo;s known for its efficiency, enabling users to navigate and edit documents with minimal use of the mouse. This blog post will introduce you to the most important Vim shortcuts and commands, making your coding journey smoother and more efficient.&lt;/p&gt;
+&lt;h2 id=&#34;understanding-vim-modes&#34;&gt;Understanding Vim Modes&lt;/h2&gt;
+&lt;p&gt;Before we dive into the commands, it&amp;rsquo;s crucial to understand Vim&amp;rsquo;s modes. Vim operates in several modes, each with a specific purpose:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

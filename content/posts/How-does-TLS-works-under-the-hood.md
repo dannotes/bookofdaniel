@@ -6,7 +6,7 @@ author: ["Dan"]
 categories: 
 - Tech
 description: ""
-weight: 1 # 1 means pin the article, sort articles according to this number
+weight:  # 1 means pin the article, sort articles according to this number
 slug: ""
 draft: false # draft or not
 comments: true

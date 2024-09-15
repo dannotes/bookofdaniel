@@ -11,15 +11,14 @@
     </image>
     <generator>Hugo -- 0.134.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 12 Sep 2024 16:31:09 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 14 Sep 2024 21:15:55 +0530</lastBuildDate>
     <atom:link href="https://bookofdaniel.in/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>How Does TLS Works Under the Hood</title>
-      <link>https://bookofdaniel.in/posts/how-does-tls-works-under-the-hood/</link>
-      <pubDate>Thu, 12 Sep 2024 13:34:23 +0530</pubDate>
-      <guid>https://bookofdaniel.in/posts/how-does-tls-works-under-the-hood/</guid>
-      <description>&lt;p&gt;In the cold winter of 1944, Germany’s once-unbreakable &lt;a href=&#34;https://en.wikipedia.org/wiki/Enigma_machine&#34;&gt;Enigma&lt;/a&gt; code had been compromised by the Allies. With every intercepted message, their plans were at risk of exposure, and entire operations could be jeopardized. In response, German High Command devised a new, unbreakable system of communication. They called it &lt;strong&gt;Operation Valkyrie&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;This wasn’t just another machine like the &lt;a href=&#34;https://en.wikipedia.org/wiki/Enigma_machine&#34;&gt;Enigma&lt;/a&gt;; this was a new system that couldn’t be cracked, even if the messages were intercepted. Colonel Franz Richter, a seasoned officer in charge of communications, knew that their most sensitive military orders would need to be protected more securely than ever. He gathered his top commanders, including Major Klaus Weber, to unveil the system that could change the course of the war.&lt;/p&gt;</description>
+      <title>Why YAML and How to Ace It?</title>
+      <link>https://bookofdaniel.in/posts/why-yaml-and-how-to-ace-it/</link>
+      <pubDate>Sat, 14 Sep 2024 21:15:55 +0530</pubDate>
+      <guid>https://bookofdaniel.in/posts/why-yaml-and-how-to-ace-it/</guid>
+      <description>Have you ever wondered why on earth YAML was invented? I’ve been there—it can feel tough with all the indentation rules and quirks! If you’re feeling the same way, this blog post is for you!</description>
     </item>
     <item>
       <title>Understanding Public Key Infrastructure and TLS Certificates</title>
@@ -137,6 +136,14 @@
       <description>&lt;p&gt;In a world where technology is ever-evolving, programmers are constantly seeking ways to enhance their skills and productivity. A treasure trove of wisdom that is often overlooked in the tech community is Stephen Covey&amp;rsquo;s iconic book, &amp;ldquo;7 Habits of Highly Effective People.&amp;rdquo; Sahil, a YouTuber, sheds light on how this book can be a game-changer for programmers aspiring to amplify their effectiveness tenfold.&lt;/p&gt;
 &lt;h4 id=&#34;1-the-essence-of-proactivity-in-programming&#34;&gt;1. The Essence of Proactivity in Programming&lt;/h4&gt;
 &lt;p&gt;Covey distinguishes between reactive and proactive individuals, drawing a parallel with programmers. Reactive programmers might wait for a life-changing tutorial or a list of interview questions to boost their career. In contrast, proactive programmers take ownership of their growth. They invest time in understanding the fundamentals, practicing coding, and building projects. This mindset shift from dependency to self-reliance is crucial for any programmer aiming for excellence.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How Does TLS Works Under the Hood</title>
+      <link>https://bookofdaniel.in/posts/how-does-tls-works-under-the-hood/</link>
+      <pubDate>Thu, 12 Sep 2024 13:34:23 +0530</pubDate>
+      <guid>https://bookofdaniel.in/posts/how-does-tls-works-under-the-hood/</guid>
+      <description>&lt;p&gt;In the cold winter of 1944, Germany’s once-unbreakable &lt;a href=&#34;https://en.wikipedia.org/wiki/Enigma_machine&#34;&gt;Enigma&lt;/a&gt; code had been compromised by the Allies. With every intercepted message, their plans were at risk of exposure, and entire operations could be jeopardized. In response, German High Command devised a new, unbreakable system of communication. They called it &lt;strong&gt;Operation Valkyrie&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;This wasn’t just another machine like the &lt;a href=&#34;https://en.wikipedia.org/wiki/Enigma_machine&#34;&gt;Enigma&lt;/a&gt;; this was a new system that couldn’t be cracked, even if the messages were intercepted. Colonel Franz Richter, a seasoned officer in charge of communications, knew that their most sensitive military orders would need to be protected more securely than ever. He gathered his top commanders, including Major Klaus Weber, to unveil the system that could change the course of the war.&lt;/p&gt;</description>
     </item>
     <item>
       <title>A Beginners Guide to Vim Shortcuts</title>

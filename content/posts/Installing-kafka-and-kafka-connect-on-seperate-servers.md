@@ -102,6 +102,7 @@ Installing Kafka and Kafka Connect on separate servers allows for better resourc
 8. **Format the Log Directory**: Change directory to Kafka folder and
    format the storage with a unique cluster ID:
    ```bash
+   cd /opt/kafka
    KAFKA_CLUSTER_ID="$(bin/kafka-storage.sh random-uuid)"
    sudo -u kafka bin/kafka-storage.sh format -t $KAFKA_CLUSTER_ID -c config/kraft/server.properties
    ```

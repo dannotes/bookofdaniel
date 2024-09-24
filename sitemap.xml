@@ -3,10 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://bookofdaniel.in/</loc>
-    <lastmod>2024-09-19T16:03:25+05:30</lastmod>
+    <lastmod>2024-09-24T13:47:01+05:30</lastmod>
   </url><url>
     <loc>https://bookofdaniel.in/categories/</loc>
-    <lastmod>2024-09-19T16:03:25+05:30</lastmod>
+    <lastmod>2024-09-24T13:47:01+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/tags/kafka/</loc>
+    <lastmod>2024-09-24T13:47:01+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/posts/kafka-explained-the-post-office-of-modern-data-streaming/</loc>
+    <lastmod>2024-09-24T13:47:01+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/posts/</loc>
+    <lastmod>2024-09-24T13:47:01+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/tags/</loc>
+    <lastmod>2024-09-24T13:47:01+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/categories/tech/</loc>
+    <lastmod>2024-09-24T13:47:01+05:30</lastmod>
   </url><url>
     <loc>https://bookofdaniel.in/posts/how-to-create-self-signed-certificate-for-iis/</loc>
     <lastmod>2024-09-19T16:03:25+05:30</lastmod>
@@ -14,16 +29,7 @@
     <loc>https://bookofdaniel.in/tags/posh/</loc>
     <lastmod>2024-09-19T16:03:25+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/posts/</loc>
-    <lastmod>2024-09-19T16:03:25+05:30</lastmod>
-  </url><url>
     <loc>https://bookofdaniel.in/tags/ssl/</loc>
-    <lastmod>2024-09-19T16:03:25+05:30</lastmod>
-  </url><url>
-    <loc>https://bookofdaniel.in/tags/</loc>
-    <lastmod>2024-09-19T16:03:25+05:30</lastmod>
-  </url><url>
-    <loc>https://bookofdaniel.in/categories/tech/</loc>
     <lastmod>2024-09-19T16:03:25+05:30</lastmod>
   </url><url>
     <loc>https://bookofdaniel.in/tags/k8s/</loc>

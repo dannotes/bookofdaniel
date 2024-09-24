@@ -11,8 +11,16 @@
     </image>
     <generator>Hugo -- 0.134.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Sep 2024 16:03:25 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 24 Sep 2024 13:47:01 +0530</lastBuildDate>
     <atom:link href="https://bookofdaniel.in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kafka Explained: The Post Office of Modern Data Streaming</title>
+      <link>https://bookofdaniel.in/posts/kafka-explained-the-post-office-of-modern-data-streaming/</link>
+      <pubDate>Tue, 24 Sep 2024 13:47:01 +0530</pubDate>
+      <guid>https://bookofdaniel.in/posts/kafka-explained-the-post-office-of-modern-data-streaming/</guid>
+      <description>&lt;p&gt;Joshua had been waiting anxiously for weeks. As an aspiring clerk, he knew that the government official&amp;rsquo;s appointment order could arrive any day. This appointment was crucial—it would determine his future and career. Every morning, Joshua checked his local post office, hoping that today would be the day the letter arrived, confirming his new position.&lt;/p&gt;
+&lt;p&gt;In many ways, Joshua’s experience mirrors how Kafka, a powerful distributed streaming platform, manages and delivers data. Just like how Joshua relies on the postal system to receive his appointment letter, modern data systems depend on Kafka to ensure that critical information reaches its intended recipients quickly and reliably.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>How to Create a Self-Signed Certificate for IIS and Host a Website</title>
       <link>https://bookofdaniel.in/posts/how-to-create-self-signed-certificate-for-iis/</link>

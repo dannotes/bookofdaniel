@@ -428,13 +428,13 @@ set autoindent
 set number
 set paste
 syntax on
-set cursorline  
-set mouse=a     
-set showmatch   
+set cursorline      
 set incsearch   
 set ignorecase  
 set smartcase   
 set hlsearch
+set smartindent
+set nowrap
 set background=dark
 
 ```

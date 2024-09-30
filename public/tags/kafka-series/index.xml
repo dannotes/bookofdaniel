@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Kafka Series on Book of Daniel</title>
+    <link>http://localhost:1313/tags/kafka-series/</link>
+    <description>Recent content in Kafka Series on Book of Daniel</description>
+    <image>
+      <title>Book of Daniel</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.134.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Sep 2024 17:53:47 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/kafka-series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title> Kafka Connect and Debezium: Extending Kafka’s Reach</title>
+      <link>http://localhost:1313/posts/kafka-connect-and-debezium-extending-kafkas-reach/</link>
+      <pubDate>Sun, 15 Sep 2024 17:53:47 +0530</pubDate>
+      <guid>http://localhost:1313/posts/kafka-connect-and-debezium-extending-kafkas-reach/</guid>
+      <description>Kafka Series: Part 4</description>
+    </item>
+    <item>
+      <title>Kafka Streams: Real Time Stream Processing</title>
+      <link>http://localhost:1313/posts/kafka-streams-real-time-stream-processing/</link>
+      <pubDate>Sun, 15 Sep 2024 17:50:04 +0530</pubDate>
+      <guid>http://localhost:1313/posts/kafka-streams-real-time-stream-processing/</guid>
+      <description>Kafka Series: Part 3</description>
+    </item>
+    <item>
+      <title>Kafka Architecture and Core Concepts</title>
+      <link>http://localhost:1313/posts/kafka-architecture-and-core-concepts/</link>
+      <pubDate>Sun, 15 Sep 2024 17:41:16 +0530</pubDate>
+      <guid>http://localhost:1313/posts/kafka-architecture-and-core-concepts/</guid>
+      <description>Kafka Series: Part 2</description>
+    </item>
+    <item>
+      <title>Introduction to Kafka With the Coffee Shop Analogy</title>
+      <link>http://localhost:1313/posts/introduction-to-kafka-with-the-coffee-shop-analogy/</link>
+      <pubDate>Sun, 15 Sep 2024 17:35:33 +0530</pubDate>
+      <guid>http://localhost:1313/posts/introduction-to-kafka-with-the-coffee-shop-analogy/</guid>
+      <description>Kafka Series: Part 1</description>
+    </item>
+  </channel>
+</rss>

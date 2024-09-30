@@ -11,8 +11,16 @@
     </image>
     <generator>Hugo -- 0.134.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Sep 2024 13:47:01 +0530</lastBuildDate>
+    <lastBuildDate>Fri, 27 Sep 2024 17:13:56 +0530</lastBuildDate>
     <atom:link href="https://bookofdaniel.in/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SSL Pinning: Safeguarding Your App Against Man-in-the-Middle Attacks</title>
+      <link>https://bookofdaniel.in/posts/ssl-pinning/</link>
+      <pubDate>Fri, 27 Sep 2024 17:13:56 +0530</pubDate>
+      <guid>https://bookofdaniel.in/posts/ssl-pinning/</guid>
+      <description>&lt;p&gt;In 2014, security researchers discovered a critical vulnerability in the HSBC mobile banking app for iOS. The app was found to be susceptible to man-in-the-middle (MITM) attacks, allowing attackers to intercept and manipulate sensitive financial information. The root of the problem? The absence of SSL pinning.&lt;/p&gt;
+&lt;p&gt;Without SSL pinning, the app was vulnerable to accepting any SSL certificate, even a forged one, which enabled attackers to eavesdrop on the communication between the app and HSBC&amp;rsquo;s servers. This security flaw put users&amp;rsquo; banking information at risk and highlighted a significant gap in the app&amp;rsquo;s security framework.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Kafka Explained: The Post Office of Modern Data Streaming</title>
       <link>https://bookofdaniel.in/posts/kafka-explained-the-post-office-of-modern-data-streaming/</link>

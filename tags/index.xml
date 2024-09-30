@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo -- 0.134.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Sep 2024 13:47:01 +0530</lastBuildDate>
+    <lastBuildDate>Fri, 27 Sep 2024 17:13:56 +0530</lastBuildDate>
     <atom:link href="https://bookofdaniel.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ssl</title>
+      <link>https://bookofdaniel.in/tags/ssl/</link>
+      <pubDate>Fri, 27 Sep 2024 17:13:56 +0530</pubDate>
+      <guid>https://bookofdaniel.in/tags/ssl/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Kafka</title>
       <link>https://bookofdaniel.in/tags/kafka/</link>
@@ -25,13 +32,6 @@
       <link>https://bookofdaniel.in/tags/posh/</link>
       <pubDate>Thu, 19 Sep 2024 16:03:25 +0530</pubDate>
       <guid>https://bookofdaniel.in/tags/posh/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Ssl</title>
-      <link>https://bookofdaniel.in/tags/ssl/</link>
-      <pubDate>Thu, 19 Sep 2024 16:03:25 +0530</pubDate>
-      <guid>https://bookofdaniel.in/tags/ssl/</guid>
       <description></description>
     </item>
     <item>

@@ -76,10 +76,11 @@
 }
 
 body {
-    font-family: 'source code pro', sans-serif;
+    font-family: 'Source Code Pro', sans-serif;
     font-size: 1rem;
     line-height: 1.5;
     margin: 0;
+    
 }
 
 .post-content code {

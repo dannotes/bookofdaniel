@@ -79,9 +79,16 @@ I also want to extend a heartfelt thank you to all the creators whose resources 
   - Cloudastic CKA killer.sh problem solving: [Watch on YouTube](https://youtu.be/Lxulhs0Z1r4?si=dRP5MTVfeXFG28D6)  
   - KubernetesWay: [Watch on YouTube](https://www.youtube.com/@kubernetesway)  
   - Tahseer: [Watch on YouTube](https://youtu.be/ZdX4xz_aAfs)  
+  - kubesimplify: https://www.youtube.com/@kubesimplify
 
 - **CKA Notes**  
   - Tahseer Notes: [Link to Notes](https://arkalim.notion.site/Kubernetes-c64b2976b0364cc69864490edef33717)
+
+- **Blogs / Creators to Follow**
+    - Govardhana Miriyala Kannaiah - https://www.linkedin.com/in/govardhana-miriyala-kannaiah/
+    - Bibin Wilson - https://www.linkedin.com/in/bibinwilson/
+    - Saiyam Pathak - https://www.linkedin.com/in/saiyampathak/
+    - Mumshad Mannambeth - https://www.linkedin.com/in/mmumshad/
 
 ---
 

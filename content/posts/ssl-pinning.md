@@ -76,7 +76,7 @@ In addition to extracting certificates from browsers, you can also use the `open
 
 The `openssl s_client` command allows you to connect to a remote server and fetch the SSL certificate being used. Here’s how you can use it:
 
-1. **Connect to the Server and Fetch the Certificate:**
+1. Connect to the Server and Fetch the Certificate:
    Open a terminal and run the following command, replacing `yourserver.com` with the domain of the server you wish to connect to:
 
    ```bash

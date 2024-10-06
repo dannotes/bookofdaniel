@@ -9,10 +9,24 @@
       <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- 0.134.3</generator>
+    <generator>Hugo -- 0.134.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Sep 2024 17:13:56 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 06 Oct 2024 16:25:09 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cka</title>
+      <link>http://localhost:1313/tags/cka/</link>
+      <pubDate>Sun, 06 Oct 2024 16:25:09 +0530</pubDate>
+      <guid>http://localhost:1313/tags/cka/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>K8s</title>
+      <link>http://localhost:1313/tags/k8s/</link>
+      <pubDate>Sun, 06 Oct 2024 16:25:09 +0530</pubDate>
+      <guid>http://localhost:1313/tags/k8s/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Ssl</title>
       <link>http://localhost:1313/tags/ssl/</link>
@@ -32,13 +46,6 @@
       <link>http://localhost:1313/tags/posh/</link>
       <pubDate>Thu, 19 Sep 2024 16:03:25 +0530</pubDate>
       <guid>http://localhost:1313/tags/posh/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>K8s</title>
-      <link>http://localhost:1313/tags/k8s/</link>
-      <pubDate>Sat, 14 Sep 2024 21:15:55 +0530</pubDate>
-      <guid>http://localhost:1313/tags/k8s/</guid>
       <description></description>
     </item>
     <item>

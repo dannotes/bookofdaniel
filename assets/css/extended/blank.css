@@ -76,13 +76,24 @@
 }
 
 body {
-    font-family: 'Source Code Pro', sans-serif;
+   /* font-family: "Inter",system-ui,sans-serif;
     font-size: 1rem;
     line-height: 1.5;
+    margin: 0;*/
+
+    padding: 0;
     margin: 0;
+    
+    
+    font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,noto sans,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.004);
+    text-rendering: optimizeLegibility!important;
+    -webkit-font-smoothing: antialiased!important;
     
 }
 
 .post-content code {
-    font-family: 'source code pro';
+    font-family: 'Source Code Pro', sans-serif;
 }
+
+

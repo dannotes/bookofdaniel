@@ -69,7 +69,7 @@ I also want to extend a heartfelt thank you to all the creators whose resources 
 
 - **Practice Test**
     - [Certified Kubernetes Administrator – Full Mock Exam Series](https://learn.kodekloud.com/user/courses/ultimate-certified-kubernetes-administrator-cka-mock-exam-series)
-    - You get two free sessions when you buy the exam. Each session is valid for 36 hours. I used one two weeks before the exam and the other one the day before.  [Link to Killer.sh](https://killer.sh/)
+    - [Killer.sh](https://killer.sh/) - You get two free sessions when you buy the exam. Each session is valid for 36 hours. I used one two weeks before the exam and the other one the day before.  
     - [KillerCoda](https://killercoda.com/) 
 
 - **YouTube videos**  

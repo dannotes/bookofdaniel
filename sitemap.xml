@@ -3,21 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://bookofdaniel.in/</loc>
-    <lastmod>2024-09-27T17:13:56+05:30</lastmod>
+    <lastmod>2024-10-06T16:25:09+05:30</lastmod>
   </url><url>
     <loc>https://bookofdaniel.in/categories/</loc>
-    <lastmod>2024-09-27T17:13:56+05:30</lastmod>
+    <lastmod>2024-10-06T16:25:09+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/tags/cka/</loc>
+    <lastmod>2024-10-06T16:25:09+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/posts/how-my-15-month-old-baby-helped-me-pass-the-cka-exam/</loc>
+    <lastmod>2024-10-06T16:25:09+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/tags/k8s/</loc>
+    <lastmod>2024-10-06T16:25:09+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/categories/life/</loc>
+    <lastmod>2024-10-06T16:25:09+05:30</lastmod>
   </url><url>
     <loc>https://bookofdaniel.in/posts/</loc>
-    <lastmod>2024-09-27T17:13:56+05:30</lastmod>
+    <lastmod>2024-10-06T16:25:09+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/tags/</loc>
+    <lastmod>2024-10-06T16:25:09+05:30</lastmod>
   </url><url>
     <loc>https://bookofdaniel.in/tags/ssl/</loc>
     <lastmod>2024-09-27T17:13:56+05:30</lastmod>
   </url><url>
     <loc>https://bookofdaniel.in/posts/ssl-pinning/</loc>
-    <lastmod>2024-09-27T17:13:56+05:30</lastmod>
-  </url><url>
-    <loc>https://bookofdaniel.in/tags/</loc>
     <lastmod>2024-09-27T17:13:56+05:30</lastmod>
   </url><url>
     <loc>https://bookofdaniel.in/categories/tech/</loc>
@@ -35,9 +47,6 @@
     <loc>https://bookofdaniel.in/tags/posh/</loc>
     <lastmod>2024-09-19T16:03:25+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/tags/k8s/</loc>
-    <lastmod>2024-09-14T21:15:55+05:30</lastmod>
-  </url><url>
     <loc>https://bookofdaniel.in/posts/why-yaml-and-how-to-ace-it/</loc>
     <lastmod>2024-09-14T21:15:55+05:30</lastmod>
   </url><url>
@@ -46,9 +55,6 @@
   </url><url>
     <loc>https://bookofdaniel.in/posts/understanding-public-key-infrastructure-and-tls-certificates/</loc>
     <lastmod>2024-09-12T16:31:09+05:30</lastmod>
-  </url><url>
-    <loc>https://bookofdaniel.in/categories/life/</loc>
-    <lastmod>2024-09-12T14:07:01+05:30</lastmod>
   </url><url>
     <loc>https://bookofdaniel.in/posts/why-am-wearing-same-outfit-everyday/</loc>
     <lastmod>2024-09-12T14:07:01+05:30</lastmod>
@@ -106,9 +112,6 @@
   </url><url>
     <loc>https://bookofdaniel.in/posts/how-does-tls-works-under-the-hood/</loc>
     <lastmod>2024-09-12T13:34:23+05:30</lastmod>
-  </url><url>
-    <loc>https://bookofdaniel.in/posts/a-daily-plan-for-success/</loc>
-    <lastmod>2024-09-12T13:33:14+05:30</lastmod>
   </url><url>
     <loc>https://bookofdaniel.in/posts/a-beginners-guide-to-vim-shortcuts/</loc>
     <lastmod>2024-09-12T13:31:52+05:30</lastmod>

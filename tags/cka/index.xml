@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Cka on Book of Daniel</title>
+    <link>https://bookofdaniel.in/tags/cka/</link>
+    <description>Recent content in Cka on Book of Daniel</description>
+    <image>
+      <title>Book of Daniel</title>
+      <url>https://bookofdaniel.in/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://bookofdaniel.in/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.134.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 06 Oct 2024 16:25:09 +0530</lastBuildDate>
+    <atom:link href="https://bookofdaniel.in/tags/cka/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How My 15-Month-Old Baby Helped Me Pass the CKA Exam</title>
+      <link>https://bookofdaniel.in/posts/how-my-15-month-old-baby-helped-me-pass-the-cka-exam/</link>
+      <pubDate>Sun, 06 Oct 2024 16:25:09 +0530</pubDate>
+      <guid>https://bookofdaniel.in/posts/how-my-15-month-old-baby-helped-me-pass-the-cka-exam/</guid>
+      <description>&lt;p&gt;Last November, I scheduled my CKA exam, but guess what? I kept putting it off for months. Every time I thought about studying Kubernetes, it felt like I was facing an enormous mountain I wasn’t ready to climb. Life got busy, I lost motivation, and the exam remained on hold.&lt;/p&gt;
+&lt;p&gt;In July, I bought the KodeKloud CKA course, thinking it would push me to start studying. I studied a little, then stopped, and this cycle went on for weeks. Kubernetes seemed too big and complex to handle, and I didn’t know where to begin. And then, life happened—my father was hospitalized, and I had even less drive to study.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

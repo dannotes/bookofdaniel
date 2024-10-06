@@ -11,20 +11,20 @@
     </image>
     <generator>Hugo -- 0.134.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Sep 2024 17:13:56 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 06 Oct 2024 16:25:09 +0530</lastBuildDate>
     <atom:link href="https://bookofdaniel.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Life</title>
+      <link>https://bookofdaniel.in/categories/life/</link>
+      <pubDate>Sun, 06 Oct 2024 16:25:09 +0530</pubDate>
+      <guid>https://bookofdaniel.in/categories/life/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Tech</title>
       <link>https://bookofdaniel.in/categories/tech/</link>
       <pubDate>Fri, 27 Sep 2024 17:13:56 +0530</pubDate>
       <guid>https://bookofdaniel.in/categories/tech/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Life</title>
-      <link>https://bookofdaniel.in/categories/life/</link>
-      <pubDate>Thu, 12 Sep 2024 14:07:01 +0530</pubDate>
-      <guid>https://bookofdaniel.in/categories/life/</guid>
       <description></description>
     </item>
   </channel>

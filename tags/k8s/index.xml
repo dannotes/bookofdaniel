@@ -11,8 +11,16 @@
     </image>
     <generator>Hugo -- 0.134.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Sep 2024 21:15:55 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 06 Oct 2024 16:25:09 +0530</lastBuildDate>
     <atom:link href="https://bookofdaniel.in/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How My 15-Month-Old Baby Helped Me Pass the CKA Exam</title>
+      <link>https://bookofdaniel.in/posts/how-my-15-month-old-baby-helped-me-pass-the-cka-exam/</link>
+      <pubDate>Sun, 06 Oct 2024 16:25:09 +0530</pubDate>
+      <guid>https://bookofdaniel.in/posts/how-my-15-month-old-baby-helped-me-pass-the-cka-exam/</guid>
+      <description>&lt;p&gt;Last November, I scheduled my CKA exam, but guess what? I kept putting it off for months. Every time I thought about studying Kubernetes, it felt like I was facing an enormous mountain I wasn’t ready to climb. Life got busy, I lost motivation, and the exam remained on hold.&lt;/p&gt;
+&lt;p&gt;In July, I bought the KodeKloud CKA course, thinking it would push me to start studying. I studied a little, then stopped, and this cycle went on for weeks. Kubernetes seemed too big and complex to handle, and I didn’t know where to begin. And then, life happened—my father was hospitalized, and I had even less drive to study.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Why YAML and How to Ace It?</title>
       <link>https://bookofdaniel.in/posts/why-yaml-and-how-to-ace-it/</link>

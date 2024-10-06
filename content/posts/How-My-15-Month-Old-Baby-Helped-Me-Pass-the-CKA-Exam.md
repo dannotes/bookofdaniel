@@ -62,27 +62,24 @@ I also want to extend a heartfelt thank you to all the creators whose resources 
 
 ### Resources I Used
 
-- **KodeKloud | Kubernetes for the Absolute Beginners - Hands-on Tutorial**  
-  [Link to course](https://learn.kodekloud.com/user/courses/kubernetes-for-the-absolute-beginners-hands-on-tutorial)
+- **KodeKloud**
+    - [Kubernetes for the Absolute Beginners - Hands-on Tutorial](https://learn.kodekloud.com/user/courses/kubernetes-for-the-absolute-beginners-hands-on-tutorial)
   
-- **KodeKloud | CKA Certification Course – Certified Kubernetes Administrator**  
-  [Link to course](https://learn.kodekloud.com/user/courses/cka-certification-course-certified-kubernetes-administrator)
+    - [CKA Certification Course – Certified Kubernetes Administrator](https://learn.kodekloud.com/user/courses/cka-certification-course-certified-kubernetes-administrator)
 
-- **Certified Kubernetes Administrator – Full Mock Exam Series**  
-  [Link to course](https://learn.kodekloud.com/user/courses/ultimate-certified-kubernetes-administrator-cka-mock-exam-series)
-
-- **Killer.sh practices**  
-  You get two free sessions when you buy the exam. Each session is valid for 36 hours. I used one two weeks before the exam and the other one the day before.  
-  [Link to Killer.sh](https://killer.sh/)
+- **Practice Test**
+    - [Certified Kubernetes Administrator – Full Mock Exam Series](https://learn.kodekloud.com/user/courses/ultimate-certified-kubernetes-administrator-cka-mock-exam-series)
+    - You get two free sessions when you buy the exam. Each session is valid for 36 hours. I used one two weeks before the exam and the other one the day before.  [Link to Killer.sh](https://killer.sh/)
+    - [KillerCoda](https://killercoda.com/) 
 
 - **YouTube videos**  
-  - Cloudastic CKA killer.sh problem solving: [Watch on YouTube](https://youtu.be/Lxulhs0Z1r4?si=dRP5MTVfeXFG28D6)  
-  - KubernetesWay: [Watch on YouTube](https://www.youtube.com/@kubernetesway)  
-  - Tahseer: [Watch on YouTube](https://youtu.be/ZdX4xz_aAfs)  
-  - kubesimplify: https://www.youtube.com/@kubesimplify
+    - Cloudastic CKA killer.sh problem solving: [Watch on YouTube](https://youtu.be/Lxulhs0Z1r4?si=dRP5MTVfeXFG28D6)  
+    - KubernetesWay: [Watch on YouTube](https://www.youtube.com/@kubernetesway)  
+    - Tahseer: [Watch on YouTube](https://youtu.be/ZdX4xz_aAfs)  
+    - kubesimplify: https://www.youtube.com/@kubesimplify
 
 - **CKA Notes**  
-  - Tahseer Notes: [Link to Notes](https://arkalim.notion.site/Kubernetes-c64b2976b0364cc69864490edef33717)
+    - Tahseer Notes: [Link to Notes](https://arkalim.notion.site/Kubernetes-c64b2976b0364cc69864490edef33717)
 
 - **Blogs / Creators to Follow**
     - Govardhana Miriyala Kannaiah - https://www.linkedin.com/in/govardhana-miriyala-kannaiah/

@@ -9,10 +9,24 @@
       <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- 0.134.3</generator>
+    <generator>Hugo -- 0.134.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 06 Oct 2024 16:25:09 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 20 Oct 2024 05:57:26 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Categorie 1</title>
+      <link>http://localhost:1313/categories/categorie-1/</link>
+      <pubDate>Sun, 20 Oct 2024 05:57:26 +0530</pubDate>
+      <guid>http://localhost:1313/categories/categorie-1/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Categorie 2</title>
+      <link>http://localhost:1313/categories/categorie-2/</link>
+      <pubDate>Sun, 20 Oct 2024 05:57:26 +0530</pubDate>
+      <guid>http://localhost:1313/categories/categorie-2/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Life</title>
       <link>http://localhost:1313/categories/life/</link>

@@ -11,8 +11,17 @@
     </image>
     <generator>Hugo -- 0.134.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 06 Oct 2024 16:25:09 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 20 Oct 2024 05:57:26 +0530</lastBuildDate>
     <atom:link href="https://bookofdaniel.in/categories/life/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Passing CKAD After Your CKA</title>
+      <link>https://bookofdaniel.in/posts/passing-ckad-after-your-cka/</link>
+      <pubDate>Sun, 20 Oct 2024 05:57:26 +0530</pubDate>
+      <guid>https://bookofdaniel.in/posts/passing-ckad-after-your-cka/</guid>
+      <description>&lt;p&gt;A lot of Reddit users say that CKAD is easier than CKA. Personally, I agree—it does feel lighter if you attempt CKAD after completing CKA. The CKAD focuses more on scheduling tasks, while CKA involves administration of clusters. So, in CKAD, it&amp;rsquo;s more about speed and being quick with your typing to finish all the questions in time. 🏃‍♂️🕒&lt;/p&gt;
+&lt;h3 id=&#34;my-study-approach&#34;&gt;My Study Approach&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://bookofdaniel.in/posts/how-my-15-month-old-baby-helped-me-pass-the-cka-exam/&#34;&gt;After passing the CKA two weeks earlier&lt;/a&gt;, I had a pretty good idea of what the exam interface and questions would be like. I compared the CKA and CKAD certifications to see what additional topics I needed to cover for CKAD.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>How My 15-Month-Old Baby Helped Me Pass the CKA Exam</title>
       <link>https://bookofdaniel.in/posts/how-my-15-month-old-baby-helped-me-pass-the-cka-exam/</link>

@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo -- 0.134.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Sep 2024 17:13:56 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 22 Oct 2024 17:45:52 +0530</lastBuildDate>
     <atom:link href="https://bookofdaniel.in/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Making Your Kafka Cluster Production-Ready with Strimzi: Best Practices</title>
+      <link>https://bookofdaniel.in/posts/making-your-kafka-cluster-production-ready-with-strimzi/</link>
+      <pubDate>Tue, 22 Oct 2024 17:45:52 +0530</pubDate>
+      <guid>https://bookofdaniel.in/posts/making-your-kafka-cluster-production-ready-with-strimzi/</guid>
+      <description>&lt;p&gt;Apache Kafka is widely used for building distributed, real-time data pipelines. However, running Kafka in a production environment requires a solid setup to ensure performance, reliability, and scalability. Strimzi simplifies deploying and managing Kafka clusters on Kubernetes or OpenShift, but to be truly production-ready, several factors need to be considered. In this article, we will cover essential best practices and optimizations to make your Kafka cluster ready for production, based on insights from the Strimzi Production Ready series and additional knowledge.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>SSL Pinning: Safeguarding Your App Against Man-in-the-Middle Attacks</title>
       <link>https://bookofdaniel.in/posts/ssl-pinning/</link>

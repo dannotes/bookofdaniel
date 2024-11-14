@@ -11,34 +11,20 @@
     </image>
     <generator>Hugo -- 0.134.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Oct 2024 05:57:26 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 22 Oct 2024 17:45:52 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Categorie 1</title>
-      <link>http://localhost:1313/categories/categorie-1/</link>
-      <pubDate>Sun, 20 Oct 2024 05:57:26 +0530</pubDate>
-      <guid>http://localhost:1313/categories/categorie-1/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Categorie 2</title>
-      <link>http://localhost:1313/categories/categorie-2/</link>
-      <pubDate>Sun, 20 Oct 2024 05:57:26 +0530</pubDate>
-      <guid>http://localhost:1313/categories/categorie-2/</guid>
+      <title>Tech</title>
+      <link>http://localhost:1313/categories/tech/</link>
+      <pubDate>Tue, 22 Oct 2024 17:45:52 +0530</pubDate>
+      <guid>http://localhost:1313/categories/tech/</guid>
       <description></description>
     </item>
     <item>
       <title>Life</title>
       <link>http://localhost:1313/categories/life/</link>
-      <pubDate>Sun, 06 Oct 2024 16:25:09 +0530</pubDate>
+      <pubDate>Sun, 20 Oct 2024 05:57:26 +0530</pubDate>
       <guid>http://localhost:1313/categories/life/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tech</title>
-      <link>http://localhost:1313/categories/tech/</link>
-      <pubDate>Fri, 27 Sep 2024 17:13:56 +0530</pubDate>
-      <guid>http://localhost:1313/categories/tech/</guid>
       <description></description>
     </item>
   </channel>

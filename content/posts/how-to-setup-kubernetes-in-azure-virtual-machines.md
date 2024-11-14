@@ -338,9 +338,6 @@ These steps install the core tools required for setting up and managing your Kub
 
 ---
 
-Here’s the blog paragraph based on your snippet:
-
----
 
 # Initializing the Kubernetes Cluster with Kubeadm
 

@@ -3,10 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://bookofdaniel.in/</loc>
-    <lastmod>2024-10-22T17:45:52+05:30</lastmod>
+    <lastmod>2024-12-03T08:55:58+05:30</lastmod>
   </url><url>
     <loc>https://bookofdaniel.in/categories/</loc>
-    <lastmod>2024-10-22T17:45:52+05:30</lastmod>
+    <lastmod>2024-12-03T08:55:58+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/tags/cks/</loc>
+    <lastmod>2024-12-03T08:55:58+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/posts/how-i-passed-the-cks-exam-after-the-october-revamp/</loc>
+    <lastmod>2024-12-03T08:55:58+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/tags/k8s/</loc>
+    <lastmod>2024-12-03T08:55:58+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/categories/life/</loc>
+    <lastmod>2024-12-03T08:55:58+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/posts/</loc>
+    <lastmod>2024-12-03T08:55:58+05:30</lastmod>
+  </url><url>
+    <loc>https://bookofdaniel.in/tags/</loc>
+    <lastmod>2024-12-03T08:55:58+05:30</lastmod>
   </url><url>
     <loc>https://bookofdaniel.in/tags/kafka/</loc>
     <lastmod>2024-10-22T17:45:52+05:30</lastmod>
@@ -14,25 +32,13 @@
     <loc>https://bookofdaniel.in/posts/making-your-kafka-cluster-production-ready-with-strimzi/</loc>
     <lastmod>2024-10-22T17:45:52+05:30</lastmod>
   </url><url>
-    <loc>https://bookofdaniel.in/posts/</loc>
-    <lastmod>2024-10-22T17:45:52+05:30</lastmod>
-  </url><url>
     <loc>https://bookofdaniel.in/tags/strimzi/</loc>
-    <lastmod>2024-10-22T17:45:52+05:30</lastmod>
-  </url><url>
-    <loc>https://bookofdaniel.in/tags/</loc>
     <lastmod>2024-10-22T17:45:52+05:30</lastmod>
   </url><url>
     <loc>https://bookofdaniel.in/categories/tech/</loc>
     <lastmod>2024-10-22T17:45:52+05:30</lastmod>
   </url><url>
     <loc>https://bookofdaniel.in/tags/ckad/</loc>
-    <lastmod>2024-10-20T05:57:26+05:30</lastmod>
-  </url><url>
-    <loc>https://bookofdaniel.in/tags/k8s/</loc>
-    <lastmod>2024-10-20T05:57:26+05:30</lastmod>
-  </url><url>
-    <loc>https://bookofdaniel.in/categories/life/</loc>
     <lastmod>2024-10-20T05:57:26+05:30</lastmod>
   </url><url>
     <loc>https://bookofdaniel.in/posts/passing-ckad-after-your-cka/</loc>

@@ -27,6 +27,10 @@ cover:
 
 Earning the **Certified Kubernetes Security Specialist (CKS)** was the next big goal on my Kubernetes journey after clearing [**CKA**](https://bookofdaniel.in/posts/how-my-15-month-old-baby-helped-me-pass-the-cka-exam/) and [**CKAD**](https://bookofdaniel.in/posts/passing-ckad-after-your-cka/) back in October. Riding high on the success of those certifications, I felt confident and scheduled the CKS for November. Little did I realize that this exam would challenge not just my Kubernetes skills but also my consistency and mindset.  
 
+> But thanks be to God!
+> He gives us the victory through our Lord Jesus Christ.
+>> 1 Corinthians 15:57 NIV 
+
 ---
 
 ### **The Lazy Start**  

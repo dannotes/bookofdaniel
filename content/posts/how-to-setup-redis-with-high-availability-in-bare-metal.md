@@ -50,9 +50,9 @@ sudo apt-get install redis-server
 ## Step 2: Configure Redis Instances
 ### Server Configuration Overview
 
-- Server 1 (Master): Runs Redis as the master.
-- Server 2 (Replica): Runs Redis as a replica of Server 1.
-- Server 3 (Replica): Runs Redis as a replica of Server 1.
+- Server 1 (Master, 10.211.11.7) - Runs Redis as the master.
+- Server 2 (Replica, 10.211.11.8) - Runs Redis as a replica of Server 1.
+- Server 3 (Replica, 10.211.11.9) - Runs Redis as a replica of Server 1.
 
 ### On Server 1 (Master)
 Edit the Redis configuration file located at `/etc/redis/redis.conf`:

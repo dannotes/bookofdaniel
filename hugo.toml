@@ -29,7 +29,7 @@ favicon = "/favicon.ico"
 
   [[menu.main]]
     name = "Blog"
-    url = "/post/"
+    url = "/blog/"
     weight = 2
 
   [[menu.main]]

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+{{ partial "header.html" . }}
+
+<body>
+	<section class="container wrap">
+		{{ partial "head.html" . }}
+
+		<div class="content">
+			{{ if isset .Data "Term" }}
+				<h2>{{ .Data.Term }}</h2>
+			{{ else }}
+			<h2 class="page-title">{{ .Name }}</h2>
+			{{ end }}
+			
+			{{ .Content }}
+
+			<ul class="posts flat">
+				{{ $paginator := .Paginate (where .Data.Pages "Params.hidden" "ne" true) }}
+				{{ range $paginator.Pages }}
+					<li class="post">
+						{{ partial "post-preview.html" . }}
+					</li>
+				{{- end -}}
+				{{ template "partials/paginator.html" . }}
+			</ul>
+		</div>
+	</section>
+
+	<div class="footer">
+		<p>{{ .Site.Title }} © {{ now.Format "2006" }}. Last updated {{ now.Format "Jan 2, 2006" }}.</p>
+	</div>
+</body>
+
+</html>

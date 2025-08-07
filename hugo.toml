@@ -19,6 +19,7 @@ showSlideshow = false
 showGitHub = false
 customcss = "css/custom.css"
 logo = "/images/logo.png"
+favicon = "/favicon.ico"
 
 [menu]
   [[menu.main]]

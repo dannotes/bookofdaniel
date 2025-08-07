@@ -1,13 +1,13 @@
-<link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/custom.css" | absURL }}">
 
 <div class="header">
 	<div class="logo">
 		{{ if .Site.Params.logo }}
-			<a href="{{ .Site.BaseURL }}">
-				<img alt="{{ .Site.Title }}" src="{{ .Site.Params.logo }}">
+			<a href="{{ "/" | absURL }}">
+				<img alt="{{ .Site.Title }}" src="{{ .Site.Params.logo | absURL }}">
 			</a>
 		{{ else }}
-			<h1 class="site-title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+			<h1 class="site-title"><a href="{{ "/" | absURL }}">{{ .Site.Title }}</a></h1>
 		{{ end }}
 	</div>
 	<nav class="nav">

@@ -42,7 +42,7 @@
 			<div class="recent-posts">
 				<h3>Blog posts</h3>
 				<ul class="items">
-				{{ range first 10 (where .Site.RegularPages "Type" "post") }}
+				{{ range first 10 (where .Site.RegularPages "Type" "blog") }}
 					<li>
 						<span class="date">{{ .Date.Format "Jan 2, 2006" }}</span>
 						<a href="{{ .Permalink }}">{{ .Title }}</a>

@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
+
+<div class="header">
+	<div class="logo">
+		{{ if .Site.Params.logo }}
+			<a href="{{ .Site.BaseURL }}">
+				<img alt="{{ .Site.Title }}" src="{{ .Site.Params.logo }}">
+			</a>
+		{{ else }}
+			<h1 class="site-title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+		{{ end }}
+	</div>
+	<nav class="nav">
+		<ul class="flat">
+			{{ range .Site.Menus.main }}
+			<li>
+				<a href="{{ .URL }}">{{ .Name }}</a>
+			</li>
+			{{ end }}
+		</ul>
+	</nav>
+</div>

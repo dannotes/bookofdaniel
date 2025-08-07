@@ -1,0 +1,38 @@
+theme = "hugo-ink"
+baseURL = "https://bookofdaniel.in/"
+languageCode = "en-us"
+title = "Book of Daniel"
+
+# Suppress raw HTML warnings
+ignoreLogs = ['warning-goldmark-raw-html']
+
+# Allow raw HTML in markdown
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+showRecentPosts = true
+showProjects = false
+showSlideshow = false
+showGitHub = false
+customcss = "css/custom.css"
+logo = "/images/logo.png"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Blog"
+    url = "/post/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Certs"
+    url = "/certs/"
+    weight = 3
+

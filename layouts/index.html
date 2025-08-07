@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html {{- if (eq .Site.Params.mode "dark") -}}class="dark"{{ end }}>
+{{ partial "header.html" . }}
+<body>
+	<section class="container wrap">
+		{{ partial "head.html" . }}
+
+		<div class="content">
+			<section class="home">
+				<h2 class="slogan">Developer / Tinkerer / Dreamer</h2>
+
+				<div class="photo">
+					<img src="/images/profile.png" alt="Photo of Daniel" />
+				</div>
+				
+				<div class="bio half">
+					<p>I am a passionate software developer and technology enthusiast.</p>
+					<p>I spend my time building applications, exploring new technologies, and sharing knowledge through writing. I work with modern web technologies, cloud platforms, and enjoy the art of crafting clean, efficient code.</p>
+					<p>When I'm not coding, you'll find me reading, learning something new, or working on personal projects. This is my corner of the internet where I share my thoughts, projects, and discoveries.</p>
+				</div>
+
+				{{ if .Site.Params.showSlideshow }}
+				<div class="slideshow">
+					<figure class="visible">
+						<img class="slide" src="/images/photos/placeholder1.jpg" alt="Placeholder photo" />
+						<figcaption>Location, Country</figcaption>
+					</figure>
+					<figure>
+						<img class="slide" src="/images/photos/placeholder2.jpg" alt="Placeholder photo" />
+						<figcaption>Another Location</figcaption>
+					</figure>
+				</div>
+				{{ end }}
+
+				<div class="half">
+					<p>I discovered the idea of code and have been going down the rabbithole ever since. These days, I mostly work with modern web technologies and cloud platforms. Some of my personal projects can be <a href="/projects/">found here</a>.</p>
+					<p>This website serves as my digital home where I document my journey, share insights, and showcase the projects I'm passionate about.</p>
+				</div>
+			</section>
+
+			{{ if .Site.Params.showRecentPosts }}
+			<div class="recent-posts">
+				<h3>Blog posts</h3>
+				<ul class="items">
+				{{ range first 10 (where .Site.RegularPages "Type" "post") }}
+					<li>
+						<span class="date">{{ .Date.Format "Jan 2, 2006" }}</span>
+						<a href="{{ .Permalink }}">{{ .Title }}</a>
+					</li>
+				{{ end }}
+				</ul>
+			</div>
+			{{ end }}
+
+			{{ if .Site.Params.showGitHub }}
+			<div class="github">
+				<h3>GitHub</h3>
+				<ul>
+					<li>
+						<div class="date">2024</div>
+						<div class="name"><a href="#">project-name</a></div>
+						<div class="desc">Description of a GitHub project or contribution</div>
+					</li>
+				</ul>
+			</div>
+			{{ end }}
+
+			{{ if .Site.Params.showProjects }}
+			<div class="projects">
+				<ul>
+					<li>
+						<div class="desc">
+							<h3><a href="#"><span>2024</span>Project One</a></h3>
+							<p>Description of an interesting project I've worked on. This could be a web application, tool, or open source contribution.</p>
+							<div class="status">Active</div>
+							<div class="tags">JavaScript, React, Node.js</div>
+						</div>
+					</li>
+					<li>
+						<div class="desc">
+							<h3><a href="#"><span>2023</span>Project Two</a></h3>
+							<p>Another project showcasing different technologies and approaches. Always learning and building new things.</p>
+							<div class="status">Completed</div>
+							<div class="tags">Python, Django, PostgreSQL</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			{{ end }}
+
+		</div>
+
+	
+	</section>
+		<div class="footer">
+			<p>{{ .Site.Title }} © {{ now.Format "2006" }}. Last updated {{ now.Format "Jan 2, 2006" }}.</p>
+		</div>
+</body>
+</html>
